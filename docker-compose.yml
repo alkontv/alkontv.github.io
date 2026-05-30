@@ -1,0 +1,25 @@
+# Запуск портфолио (Next.js 16) в dev-режиме через Docker.
+# Зависимости ставятся внутри контейнера; node_modules и .next живут в
+# именованных томах, чтобы bind-mount исходников с хоста их не перекрыл.
+services:
+  app:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - next_cache:/app/.next
+    ports:
+      - "3000:3000"
+    environment:
+      # husky пытается ставить git-хуки при install — в контейнере не нужно
+      HUSKY: "0"
+      # polling нужен, чтобы hot-reload видел изменения через bind-mount macOS->Docker
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 3000"
+
+volumes:
+  node_modules:
+  next_cache:
