@@ -3,22 +3,24 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 import { usePortalStore, useScrollStore } from "@stores";
+import { useT } from "@i18n";
 
 export const ScrollHint = () => {
   const portal = usePortalStore((state) => state.activePortalId);
   const scrollProgress = useScrollStore((state) => state.scrollProgress);
+  const t = useT();
 
   // Show 'Scroll' for Hero and work portals, 'Pan' for Projects portal.
   let hintText = '';
   let showScrollHint = false;
   if (!portal) {
-    hintText = 'SCROLL';
+    hintText = t.hint.scroll;
     showScrollHint = scrollProgress === 0;
   } else if (portal === 'work') {
-    hintText = 'SCROLL';
+    hintText = t.hint.scroll;
     showScrollHint = scrollProgress === 0;
   } else {
-    hintText = 'PAN';
+    hintText = t.hint.pan;
     showScrollHint = true;
   }
 
@@ -38,13 +40,13 @@ export const ScrollHint = () => {
     }
   }, [showScrollHint]);
 
-  const svgSrc = hintText === 'PAN' ? 'icons/chevrons-left-right.svg' : 'icons/chevrons-up-down.svg';
+  const isPan = !!portal && portal !== 'work';
+  const svgSrc = isPan ? 'icons/chevrons-left-right.svg' : 'icons/chevrons-up-down.svg';
 
   return (
     <div className="fixed w-full bottom-5 scroll-hint" style={{ opacity: 0 }}>
       <div className="flex items-center justify-center animate-pulse">
-        { showScrollHint }
-        <Image src={svgSrc} width={18} height={18} alt="night mode" loading="lazy" />
+        <Image src={svgSrc} width={18} height={18} alt={hintText} loading="lazy" />
         <span className="text-white">{hintText}</span>
       </div>
     </div>
