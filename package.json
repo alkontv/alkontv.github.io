@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -34,11 +36,13 @@
     "eslint": "^9",
     "eslint-config-next": "^16.2.4",
     "husky": "^9.1.7",
+    "jsdom": "^25.0.1",
     "lint-staged": "^16.4.0",
     "postcss": "^8",
     "r3f-perf": "^7.2.3",
     "tailwindcss": "^4.2.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^2.1.9"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
