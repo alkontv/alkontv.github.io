@@ -7,15 +7,19 @@ import * as THREE from 'three';
 import GridTile from "./GridTile";
 import Projects from "./projects";
 import Work from "./work";
+import { useLangStore } from "@stores";
+import { DISPLAY_FONT, useT } from "@i18n";
 
 const Experience = () => {
   const titleRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
   const data = useScroll();
   const isActive = usePortalStore((state) => !!state.activePortalId);
+  const t = useT();
+  const lang = useLangStore((state) => state.lang);
 
   const fontProps = {
-    font: "./soria-font.ttf",
+    font: DISPLAY_FONT[lang],
     fontSize: 0.4,
     color: 'white',
   };
@@ -40,7 +44,7 @@ const Experience = () => {
   });
 
   const getTitle = () => {
-    const title = 'experience'.toUpperCase();
+    const title = t.sections.experience;
     return title.split('').map((char, i) => {
       const diff = isMobile ? 0.4 : 0.8;
       return (
@@ -61,14 +65,14 @@ const Experience = () => {
         </group>
 
         <group position={[0, -1, 0]} ref={groupRef}>
-          <GridTile title='WORK AND EDUCATION'
+          <GridTile title={t.sections.work}
             id="work"
             color='#b9c6d6'
             textAlign='left'
             position={new THREE.Vector3(isMobile ? -1 : -2, 0, isMobile ? 0.4 : 0)}>
             <Work/>
           </GridTile>
-          <GridTile title='SIDE PROJECTS'
+          <GridTile title={t.sections.projects}
             id="projects"
             color='#bdd1e3'
             textAlign='right'

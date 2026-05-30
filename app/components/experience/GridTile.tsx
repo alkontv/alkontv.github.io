@@ -1,7 +1,8 @@
 
 import { Edges, MeshPortalMaterial, Text, TextProps, useScroll } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { usePortalStore } from '@stores';
+import { usePortalStore, useLangStore } from '@stores';
+import { DISPLAY_FONT } from '@i18n';
 import gsap from "gsap";
 import { useEffect, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
@@ -29,6 +30,7 @@ const GridTile = (props: GridTileProps) => {
   const isActive = usePortalStore((state) => state.activePortalId === id);
   const activePortalId = usePortalStore((state) => state.activePortalId);
   const data = useScroll();
+  const lang = useLangStore((state) => state.lang);
 
   useEffect(() => {
     // Hanlde the hover box and title animation for mobile.
@@ -128,7 +130,7 @@ const GridTile = (props: GridTileProps) => {
   }
 
   const fontProps: Partial<TextProps> = {
-    font: "./soria-font.ttf",
+    font: DISPLAY_FONT[lang],
     maxWidth: 2,
     anchorX: 'center',
     anchorY: 'bottom',
