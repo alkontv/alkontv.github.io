@@ -10,10 +10,14 @@ import CloudContainer from "../models/Cloud";
 import StarsContainer from "../models/Stars";
 import WindowModel from "../models/WindowModel";
 import TextWindow from "./TextWindow";
+import { useLangStore } from "@stores";
+import { DISPLAY_FONT, useT } from "@i18n";
 
 const Hero = () => {
   const titleRef = useRef<THREE.Mesh>(null);
   const { progress } = useProgress();
+  const t = useT();
+  const lang = useLangStore((state) => state.lang);
 
   useEffect(() => {
     if (progress === 100 && titleRef.current) {
@@ -29,13 +33,13 @@ const Hero = () => {
   }, [progress]);
 
   const fontProps = {
-    font: "./soria-font.ttf",
+    font: DISPLAY_FONT[lang],
     fontSize: 1.2,
   };
 
   return (
     <>
-      <Text position={[0, 2, -10]} {...fontProps} ref={titleRef}>Hi, I am Mohit Virli.</Text>
+      <Text position={[0, 2, -10]} {...fontProps} ref={titleRef}>{t.hero.title}</Text>
       <StarsContainer />
       <CloudContainer/>
       <group position={[0, -25, 5.69]}>

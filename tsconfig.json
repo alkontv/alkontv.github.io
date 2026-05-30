@@ -34,6 +34,9 @@
       ],
       "@constants": [
         "./app/constants"
+      ],
+      "@i18n": [
+        "./app/i18n"
       ]
     }
   },
