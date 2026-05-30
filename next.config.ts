@@ -1,13 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: 'export',
-  // skip strict mode
+  // strict mode временно выключен; вернём в Фазе 2 после фикса утечек
   reactStrictMode: false,
-  env: {
-    googleAnalyticsId: process.env.NODE_ENV === "production" ? process.env.GA_MEASUREMENT_ID : "",
-  }
 };
 
 export default nextConfig;
