@@ -5,8 +5,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
 import * as THREE from "three";
 
-import { usePortalStore } from "@stores";
+import { usePortalStore, useLangStore } from "@stores";
 import { Project } from "@types";
+import { ACCENT_FONT, DISPLAY_FONT, tx } from "@i18n";
 
 interface ProjectTileProps {
   project: Project;
@@ -25,18 +26,19 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick, da
   const isProjectSectionActive = usePortalStore((state) => state.activePortalId === "projects");
   const hovered = isMobile ? activeId === index : desktopHovered;
   const isTop = datePosition === 'top';
+  const lang = useLangStore((state) => state.lang);
 
   const titleProps = useMemo(() => ({
-    font: "./soria-font.ttf",
+    font: DISPLAY_FONT[lang],
     color: "black",
-  }), []);
+  }), [lang]);
 
   const subtitleProps: Partial<TextProps> = useMemo(() => ({
-    font: "./Vercetti-Regular.woff",
+    font: ACCENT_FONT[lang],
     color: "black",
     anchorX: "left",
     anchorY: "top",
-  }), []);
+  }), [lang]);
 
   useEffect(() => {
     if (!projectRef.current) return;
@@ -137,7 +139,7 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick, da
           position={[-1.9, 2.3, 0.1]}
           // scale={[0, 0, 1]}
           fontSize={0.2}>
-          {project.subtext}
+          {tx(project.subtext, lang)}
         </Text>
         {project.url && (
           <group
