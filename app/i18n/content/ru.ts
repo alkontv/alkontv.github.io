@@ -8,9 +8,9 @@ export const ru: Content = {
     slogans: [
       "FULLSTACK-ИНЖЕНЕР",
       "ОТ ИДЕИ К ЗАПУСКУ",
-      "MOBILE · FLUTTER",
-      "WEB · BACKEND",
-      "БОТЫ · CRM",
+      "MOBILE & FLUTTER",
+      "WEB & BACKEND",
+      "БОТЫ & CRM",
       "AI-ИНТЕГРАЦИИ",
     ],
   },

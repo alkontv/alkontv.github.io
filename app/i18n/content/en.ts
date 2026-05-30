@@ -7,10 +7,10 @@ export const en: Content = {
   window: {
     slogans: [
       "FULLSTACK ENGINEER",
-      "IDEA → LAUNCH",
-      "MOBILE · FLUTTER",
-      "WEB · BACKEND",
-      "BOTS · CRM",
+      "IDEA TO LAUNCH",
+      "MOBILE & FLUTTER",
+      "WEB & BACKEND",
+      "BOTS & CRM",
       "AI INTEGRATIONS",
     ],
   },

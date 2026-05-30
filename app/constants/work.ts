@@ -14,7 +14,7 @@ export const WORK_TIMELINE: WorkTimelinePoint[] = [
   {
     point: new THREE.Vector3(-4, -4, -3),
     year: '2021',
-    title: { en: 'Mobile · FlutterFlow', ru: 'Mobile · FlutterFlow' },
+    title: { en: 'Mobile & FlutterFlow', ru: 'Mobile & FlutterFlow' },
     subtitle: { en: 'Mobile apps', ru: 'Мобильные приложения' },
     position: 'left',
   },
@@ -28,7 +28,7 @@ export const WORK_TIMELINE: WorkTimelinePoint[] = [
   {
     point: new THREE.Vector3(0, -1, -10),
     year: '2024',
-    title: { en: 'AI · Automation', ru: 'AI · Автоматизация' },
+    title: { en: 'AI & Automation', ru: 'AI & Автоматизация' },
     subtitle: { en: 'AI integrations, CRM', ru: 'AI-интеграции, CRM' },
     position: 'left',
   },
