@@ -6,13 +6,17 @@ import { isMobile } from "react-device-detect";
 import * as THREE from "three";
 import { FOOTER_LINKS } from "../../constants";
 import { FooterLink } from "../../types";
+import { useLangStore } from "@stores";
+import { tx } from "@i18n";
 
 const FooterLinkItem = ({ link }: { link: FooterLink }) => {
   const textRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
+  const lang = useLangStore((state) => state.lang);
+  const resolvedUrl = link.urlByLang ? tx(link.urlByLang, lang) : link.url;
   const onPointerOver = () => setHovered(true);
   const onPointerOut = () => setHovered(false);
-  const onClick = () => window.open(link.url, '_blank');
+  const onClick = () => window.open(resolvedUrl, '_blank');
   const onPointerMove = (e: MouseEvent) => {
     if (isMobile) return;
     const hoverDiv = document.getElementById(`footer-link-${link.name}`);
@@ -37,7 +41,7 @@ const FooterLinkItem = ({ link }: { link: FooterLink }) => {
     if (!document.getElementById(`footer-link-${link.name}`)) {
       const hoverDiv = document.createElement('div');
       hoverDiv.id = `footer-link-${link.name}`;
-      hoverDiv.textContent = link.hoverText ?? link.name.toUpperCase();
+      hoverDiv.textContent = link.hoverText ? tx(link.hoverText, lang) : link.name.toUpperCase();
       hoverDiv.style.position = 'fixed';
       hoverDiv.style.zIndex = '2';
       hoverDiv.style.bottom = '0';
@@ -48,6 +52,13 @@ const FooterLinkItem = ({ link }: { link: FooterLink }) => {
       document.body.appendChild(hoverDiv);
     }
   }, [])
+
+  useEffect(() => {
+    const hoverDiv = document.getElementById(`footer-link-${link.name}`);
+    if (hoverDiv) {
+      hoverDiv.textContent = link.hoverText ? tx(link.hoverText, lang) : link.name.toUpperCase();
+    }
+  }, [lang]);
 
   useEffect(() => {
     if (isMobile) return

@@ -2,33 +2,28 @@ import { FooterLink } from "../types";
 
 export const FOOTER_LINKS: FooterLink[] = [
   {
-    name: 'LinkedIn',
-    hoverText: 'Connect with me',
-    icon: 'icons/linkedin.svg',
-    url: 'https://www.linkedin.com/in/mohit-virli-4780b6112/',
+    name: 'Telegram',
+    hoverText: { en: 'Message me', ru: 'Написать' },
+    icon: 'icons/telegram.svg',
+    url: 'https://t.me/jdm_as_fuck',
   },
   {
     name: 'GitHub',
-    hoverText: 'Open Sourcing',
+    hoverText: { en: 'Open source', ru: 'Открытый код' },
     icon: 'icons/github.svg',
-    url: 'https://github.com/mohitvirli',
-  },
-  {
-    name: 'Spotify',
-    hoverText: 'Curated playlists',
-    icon: 'icons/spotify.svg',
-    url: 'https://open.spotify.com/user/21hr4w2hzp4ceidewwsb4bxoy',
+    url: 'https://github.com/alkontv',
   },
   {
     name: 'Instagram',
-    hoverText: '@clevirli',
+    hoverText: { en: '@alkontv', ru: '@alkontv' },
     icon: 'icons/instagram.svg',
-    url: 'https://www.instagram.com/clevirli/',
+    url: 'https://www.instagram.com/alkontv/',
   },
   {
     name: 'Resume',
-    hoverText: 'Download',
+    hoverText: { en: 'Download CV', ru: 'Скачать резюме' },
     icon: 'icons/file.svg',
-    url: './Mohit Virli - Resume.pdf',
-  }
+    url: './Alan-CV-en.pdf',
+    urlByLang: { en: './Alan-CV-en.pdf', ru: './Alan-CV-ru.pdf' },
+  },
 ];
