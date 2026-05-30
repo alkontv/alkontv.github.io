@@ -14,13 +14,13 @@ const vercettiFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com/'),
-  title: "Mohit Virli ✌️",
-  description: "A frontend developer by profession, a creative at heart.",
-  keywords: "Mohit Virli, Frontend Engineer, React Developer, Three.js, Creative Developer, Web Development, Angular, JavaScript, TypeScript, Portfolio",
-  authors: [{ name: "Mohit Virli" }],
-  creator: "Mohit Virli",
-  publisher: "Mohit Virli",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://alkontv.github.io/'),
+  title: "Alan — Fullstack Developer",
+  description: "Fullstack developer building web, mobile, bots, CRM and AI-powered products — from idea to launch.",
+  keywords: "Alan, Fullstack Developer, Flutter, FlutterFlow, Mobile Developer, Web, Backend, Telegram Bots, CRM, AI, Supabase, Postgres, Firebase, JavaScript, TypeScript, Python, Portfolio",
+  authors: [{ name: "Alan" }],
+  creator: "Alan",
+  publisher: "Alan",
   formatDetection: {
     email: false,
     address: false,
@@ -37,24 +37,21 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-    siteName: "Mohit Virli's Portfolio",
+    title: "Alan — Fullstack Developer",
+    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
+    siteName: "Alan's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-  },
-  verification: {
-    google: "GsRYY-ivL0F_VKkfs5KAeToliqz0gCrRAJKKmFkAxBA",
+    title: "Alan — Fullstack Developer",
+    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#0690d4",
   initialScale: 1,
   minimumScale: 1,
   maximumScale: 1,
@@ -72,7 +69,9 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''}/>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }
