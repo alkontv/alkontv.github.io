@@ -8,6 +8,8 @@ import * as THREE from "three";
 
 import { WORK_TIMELINE } from "@constants";
 import { WorkTimelinePoint } from "@types";
+import { useLangStore } from "@stores";
+import { ACCENT_FONT, DISPLAY_FONT, tx } from "@i18n";
 
 const reusableLeft = new THREE.Vector3(-0.3, 0, -0.1);
 const reusableRight = new THREE.Vector3(0.3, 0, -0.1);
@@ -23,19 +25,21 @@ const TimelinePoint = ({ point, diff }: { point: WorkTimelinePoint, diff: number
 
   const textAlign = point.position === 'left' ? 'right' : 'left';
 
+  const lang = useLangStore((state) => state.lang);
+
   const textProps: Partial<TextProps> = useMemo(() => ({
-    font: "./Vercetti-Regular.woff",
+    font: ACCENT_FONT[lang],
     color: "white",
     anchorX: textAlign,
     fillOpacity: 2 - 2 * diff,
-  }), [textAlign, diff]);
+  }), [textAlign, diff, lang]);
 
   const titleProps = useMemo(() => ({
     ...textProps,
-    font: "./soria-font.ttf",
+    font: DISPLAY_FONT[lang],
     fontSize: 0.6,
     maxWidth: 3,
-  }), [textProps]);
+  }), [textProps, lang]);
 
   return (
     <group position={point.point} scale={isMobile ? 0.35 : 0.6}>
@@ -50,10 +54,10 @@ const TimelinePoint = ({ point, diff }: { point: WorkTimelinePoint, diff: number
           </Text>
           <group position={[0, -0.5, 0]}>
             <Text {...titleProps} fontSize={0.6} maxWidth={3} position={[0, -diff / 2, 0]}>
-              {point.title}
+              {tx(point.title, lang)}
             </Text>
             <Text {...textProps} fontSize={0.2} position={[0, -0.4 - diff, 0]}>
-              {point.subtitle}
+              {point.subtitle ? tx(point.subtitle, lang) : ''}
             </Text>
           </group>
         </group>
