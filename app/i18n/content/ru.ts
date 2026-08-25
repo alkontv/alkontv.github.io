@@ -52,6 +52,9 @@ export const ru: Content = {
     nextCase: "Следующий кейс",
     skillsTitle: "Что умею",
     skillsLead: "Каждый пункт закрыт хотя бы одним проектом из этого портфолио.",
+    stackTitle: "Стек",
+    softTitle: "Как я работаю",
+    softLead: "Без прилагательных: за каждым пунктом стоит опыт, который можно проверить разговором.",
     processTitle: "Как идёт работа",
     processLead: "Без сюрпризов на середине пути.",
     processSteps: [

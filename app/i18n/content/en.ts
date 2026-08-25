@@ -52,6 +52,9 @@ export const en: Content = {
     nextCase: "Next case",
     skillsTitle: "What I do",
     skillsLead: "Every line here is backed by at least one project in this portfolio.",
+    stackTitle: "Stack",
+    softTitle: "How I work",
+    softLead: "No adjectives: every line here is backed by experience you can probe in a conversation.",
     processTitle: "How the work goes",
     processLead: "No surprises halfway through.",
     processSteps: [

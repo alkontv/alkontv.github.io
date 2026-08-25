@@ -28,6 +28,9 @@ export interface Content {
     nextCase: string;
     skillsTitle: string;
     skillsLead: string;
+    stackTitle: string;
+    softTitle: string;
+    softLead: string;
     processTitle: string;
     processLead: string;
     processSteps: string[];

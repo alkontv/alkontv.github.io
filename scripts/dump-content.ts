@@ -4,7 +4,15 @@
  *
  * Запуск: npx tsx scripts/dump-content.ts > content.json
  */
-import { CASES, EMPLOYMENT, FEATURED_CASES, STATS, SKILL_GROUPS } from "@content";
+import {
+  CASES,
+  EMPLOYMENT,
+  FEATURED_CASES,
+  STATS,
+  SKILL_GROUPS,
+  SOFT_SKILLS,
+  STACK_GROUPS,
+} from "@content";
 import { dict } from "@i18n";
 
 process.stdout.write(
@@ -27,6 +35,8 @@ process.stdout.write(
     })),
     employment: EMPLOYMENT,
     skills: SKILL_GROUPS,
+    stack: STACK_GROUPS,
+    soft: SOFT_SKILLS,
     copy: { ru: dict.ru.cases, en: dict.en.cases },
   })
 );

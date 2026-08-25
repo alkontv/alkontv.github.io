@@ -46,43 +46,13 @@ CONTACTS = {
     ],
 }
 
-STACK = {
-    "ru": [
-        ("MOBILE", "Flutter · FlutterFlow"),
-        ("ЯЗЫКИ", "TypeScript · JavaScript · Python · Dart · Go"),
-        ("ВЕБ", "React · Next.js · Node.js"),
-        ("ДАННЫЕ", "PostgreSQL · Supabase · Firebase · Redis"),
-        ("ИНФРАСТРУКТУРА", "Docker · Nginx · VPS · миграции · мониторинг"),
-        ("ПЛАТЕЖИ", "эквайринг · подписки · эскроу · крипта"),
-    ],
-    "en": [
-        ("MOBILE", "Flutter · FlutterFlow"),
-        ("LANGUAGES", "TypeScript · JavaScript · Python · Dart · Go"),
-        ("WEB", "React · Next.js · Node.js"),
-        ("DATA", "PostgreSQL · Supabase · Firebase · Redis"),
-        ("INFRASTRUCTURE", "Docker · Nginx · VPS · migrations · monitoring"),
-        ("PAYMENTS", "acquiring · subscriptions · escrow · crypto"),
-    ],
-}
-
-EXTRA = {
-    "ru": [
-        "Менторство начинающих разработчиков.",
-        "Предпринимательский бэкграунд: считаю юнит-экономику и понимаю монетизацию.",
-    ],
-    "en": [
-        "Mentoring junior developers.",
-        "Entrepreneurial background: I read unit economics and understand monetisation.",
-    ],
-}
-
 SECTIONS = {
     "ru": {"about": "О СЕБЕ", "exp": "ОПЫТ РАБОТЫ", "projects": "ИЗБРАННЫЕ ПРОЕКТЫ",
            "skills": "ЧТО УМЕЮ", "extra": "ДОПОЛНИТЕЛЬНО",
-           "contacts": "КОНТАКТЫ", "stack": "СТЕК"},
+           "contacts": "КОНТАКТЫ", "stack": "СТЕК", "soft": "КАК РАБОТАЮ"},
     "en": {"about": "ABOUT", "exp": "WORK EXPERIENCE", "projects": "SELECTED PROJECTS",
            "skills": "WHAT I DO", "extra": "ALSO",
-           "contacts": "CONTACTS", "stack": "STACK"},
+           "contacts": "CONTACTS", "stack": "STACK", "soft": "HOW I WORK"},
 }
 
 # На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
@@ -120,7 +90,7 @@ def draw(c, text, x, y, font="Body", size=9, color=INK, leading=12, width=None):
 def build(data, lang, out_path):
     c = canvas.Canvas(str(out_path), pagesize=A4)
     copy = data["copy"][lang]
-    s = SECTIONS[lang]
+    s_ = SECTIONS[lang]
     stats = data["stats"]
 
     c.setTitle("Alan — " + ROLE_TITLE[lang])
@@ -138,7 +108,7 @@ def build(data, lang, out_path):
     y = draw(c, ROLE_TITLE[lang].upper(), x, y, "Body", 7.6, ACCENT, 11, SIDEBAR - 40)
 
     y -= 18
-    y = draw(c, s["contacts"], x, y, "Body", 7.5, MUTED, 14)
+    y = draw(c, s_["contacts"], x, y, "Body", 7.5, MUTED, 14)
     c.setStrokeColor(HexColor("#1f2a3d"))
     c.line(x, y + 5, SIDEBAR - 22, y + 5)
     y -= 6
@@ -147,20 +117,32 @@ def build(data, lang, out_path):
         y = draw(c, value, x, y, "Body-Bold", 8.2, WHITE, 15, SIDEBAR - 40)
 
     y -= 10
-    y = draw(c, s["stack"], x, y, "Body", 7.5, MUTED, 14)
+    y = draw(c, s_["stack"], x, y, "Body", 7.5, MUTED, 14)
     c.line(x, y + 5, SIDEBAR - 22, y + 5)
     y -= 6
-    for label, value in STACK[lang]:
-        y = draw(c, label, x, y, "Body", 6.6, ACCENT, 10)
-        y = draw(c, value, x, y, "Body", 7.8, HexColor("#e6edf5"), 10, SIDEBAR - 40)
-        y -= 5
+    for group in data["stack"]:
+        y = draw(c, group["label"][lang].upper(), x, y, "Body", 6.4, ACCENT, 9.5)
+        y = draw(c, " · ".join(group["items"]), x, y, "Body", 7.4,
+                 HexColor("#e6edf5"), 9.4, SIDEBAR - 40)
+        y -= 3.5
+
+    # Софт-скиллы уходят в боковую колонку: правая забита под завязку,
+    # а здесь до сих пор пустовала нижняя половина.
+    y -= 9
+    y = draw(c, s_["soft"], x, y, "Body", 7.5, MUTED, 13)
+    c.line(x, y + 5, SIDEBAR - 22, y + 5)
+    y -= 5
+    for item in data["soft"]:
+        y = draw(c, item[lang], x, y, "Body", 7.1, HexColor("#c3cede"), 8.8, SIDEBAR - 40)
+        y -= 4.5
+    sidebar_rest = y
 
     # --- светлая колонка ---
     x = SIDEBAR + 30
     colw = W - x - 34
     y = H - 58
 
-    y = draw(c, s["about"], x, y, "Body", 7.5, ACCENT, 14)
+    y = draw(c, s_["about"], x, y, "Body", 7.5, ACCENT, 14)
     y = draw(c, copy["sublead"], x, y, "Body", 9, INK_SOFT, 13, colw)
 
     y -= 12
@@ -182,7 +164,7 @@ def build(data, lang, out_path):
         fx += step
     y -= 34
 
-    y = draw(c, s["exp"], x, y, "Body", 7.5, ACCENT, 14)
+    y = draw(c, s_["exp"], x, y, "Body", 7.5, ACCENT, 14)
     for job in data["employment"]:
         c.setFont("Body-Bold", 7.6)
         c.setFillColor(ACCENT)
@@ -197,7 +179,7 @@ def build(data, lang, out_path):
         y -= 3
 
     y -= 8
-    y = draw(c, s["projects"], x, y, "Body", 7.5, ACCENT, 14)
+    y = draw(c, s_["projects"], x, y, "Body", 7.5, ACCENT, 14)
     for p in data["featured"]:
         c.setFont("Body-Bold", 9)
         c.setFillColor(INK)
@@ -210,7 +192,7 @@ def build(data, lang, out_path):
         y -= 2.5
 
     y -= 6
-    y = draw(c, s["skills"], x, y, "Body", 7.5, ACCENT, 14)
+    y = draw(c, s_["skills"], x, y, "Body", 7.5, ACCENT, 14)
     for group in data["skills"]:
         c.setFont("Body-Bold", 8.2)
         c.setFillColor(INK)
@@ -222,7 +204,7 @@ def build(data, lang, out_path):
         y -= 1
 
     y -= 6
-    y = draw(c, s["extra"], x, y, "Body", 7.5, ACCENT, 14)
+    y = draw(c, s_["extra"], x, y, "Body", 7.5, ACCENT, 14)
     for line in copy["resumeExtraItems"]:
         y = draw(c, line, x, y, "Body", 8.4, INK_SOFT, 11, colw)
         y -= 2
@@ -231,7 +213,7 @@ def build(data, lang, out_path):
 
     c.showPage()
     c.save()
-    return y
+    return min(y, sidebar_rest)
 
 
 if __name__ == "__main__":

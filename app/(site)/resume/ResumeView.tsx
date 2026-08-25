@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 
-import { EMPLOYMENT, FEATURED_CASES, SKILL_GROUPS, STATS } from "@content";
+import {
+  EMPLOYMENT,
+  FEATURED_CASES,
+  SKILL_GROUPS,
+  SOFT_SKILLS,
+  STACK_GROUPS,
+  STATS,
+} from "@content";
 import { dict, tx } from "@i18n";
 
 import { TELEGRAM_URL } from "../SiteChrome";
@@ -103,6 +110,26 @@ const ResumeView = () => {
       <div className="hairline" />
 
       <section className="py-14">
+        <h2 className="display mb-9 text-2xl font-semibold">{t.stackTitle}</h2>
+        <div className="space-y-5">
+          {STACK_GROUPS.map((g, i) => (
+            <div key={i} className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-6">
+              <h3 className="text-sm font-semibold text-accent">{tx(g.label, lang)}</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {g.items.map((item) => (
+                  <span key={item} className="chip">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="hairline" />
+
+      <section className="py-14">
         <h2 className="display mb-9 text-2xl font-semibold">{t.skillsTitle}</h2>
         <div className="space-y-7">
           {SKILL_GROUPS.map((g, i) => (
@@ -114,6 +141,21 @@ const ResumeView = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <div className="hairline" />
+
+      <section className="py-14">
+        <h2 className="display mb-2 text-2xl font-semibold">{t.softTitle}</h2>
+        <p className="mb-9 text-sm text-ink-faint">{t.softLead}</p>
+        <ul className="grid gap-4 sm:grid-cols-2">
+          {SOFT_SKILLS.map((item, i) => (
+            <li key={i} className="flex gap-3 text-sm leading-relaxed text-ink-dim">
+              <span aria-hidden className="mt-2.5 h-px w-4 shrink-0 bg-accent/60" />
+              <span>{tx(item, lang)}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <div className="hairline" />
