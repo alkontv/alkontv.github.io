@@ -11,7 +11,15 @@ export type CaseFormat =
   | "payments";
 
 /** Статус берётся из карточки хранилища и не завышается. */
-export type CaseStatus = "shipped" | "production" | "beta" | "active" | "mvp";
+export type CaseStatus =
+  | "shipped"
+  | "production"
+  | "beta"
+  | "active"
+  | "mvp"
+  /** Каркас и интерфейс без прикладной логики. Отдельно от mvp намеренно:
+   *  MVP обещает работающий минимум, макет — не обещает. */
+  | "prototype";
 
 export type DiagramId = "sos" | "escrow" | "vpn" | "ai-intake";
 

@@ -18,6 +18,7 @@ export const STATUS_LABEL: Record<CaseStatus, LocalizedText> = {
   beta: { ru: "БЕТА", en: "BETA" },
   active: { ru: "В РАБОТЕ", en: "ACTIVE" },
   mvp: { ru: "MVP", en: "MVP" },
+  prototype: { ru: "МАКЕТ", en: "PROTOTYPE" },
 };
 
 export const FORMAT_LABEL: Record<CaseFormat, LocalizedText> = {

@@ -17,7 +17,7 @@ describe("сводные цифры", () => {
 describe("метки статусов", () => {
   it("покрывают все пять статусов", () => {
     expect(Object.keys(STATUS_LABEL).sort()).toEqual(
-      ["active", "beta", "mvp", "production", "shipped"]
+      ["active", "beta", "mvp", "production", "prototype", "shipped"]
     );
   });
 

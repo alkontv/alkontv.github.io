@@ -5,14 +5,14 @@ export const telegramMiniApp: CaseStudy = {
   industry: { ru: "Telegram-приложения", en: "Telegram apps" },
   formats: ["telegram", "web"],
   name: { ru: "Mini App внутри мессенджера", en: "In-Messenger Mini App" },
-  status: "mvp",
+  status: "prototype",
   tagline: {
     ru: "Кроссплатформенный веб-клиент внутри Telegram: авторизация, данные, все экраны",
     en: "A cross-platform web client inside Telegram: authentication, data model, all screens",
   },
   problem: {
-    ru: "Нужно было проверить связку «кроссплатформенный фреймворк внутри мессенджера»: можно ли собрать полноценный интерфейс мини-приложения без отдельного веб-стека.",
-    en: "The goal was to validate a cross-platform framework running inside a messenger: whether a full mini-app interface can be built without a separate web stack.",
+    ru: "Заказчику нужно было мини-приложение внутри мессенджера на том же кроссплатформенном стеке, что и мобильная разработка. Работа остановилась на этапе каркаса и интерфейса.",
+    en: "The client wanted a mini app inside the messenger built on the same cross-platform stack as the mobile work. The work stopped at the shell-and-interface stage.",
   },
   solution: [
     {
@@ -29,8 +29,8 @@ export const telegramMiniApp: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Кейс честно неполный: интерфейс и авторизация собраны, прикладная логика — нет. Показываю его как подтверждение, что связка «кроссплатформенный фреймворк внутри мессенджера» освоена; продуктовая часть этой связки доведена до конца в кейсе VPN-сервиса, где мини-приложение работает кассой.",
-    en: "This case is honestly incomplete: the interface and authentication are done, the domain logic is not. I show it as proof that running a cross-platform framework inside a messenger is a solved problem for me; the product side of that combination is finished in the VPN case, where the mini app works as the checkout.",
+    ru: "Кейс честно неполный: каркас, авторизация и все экраны собраны, прикладной логики нет. Показываю его как подтверждение, что кроссплатформенный фреймворк внутри мессенджера заводится и работает. Продуктово перекликается с кейсом VPN-сервиса, где мини-приложение работает кассой, — но там оно собрано на другом стеке.",
+    en: "This case is honestly incomplete: the shell, authentication and all screens are done, the domain logic is not. I show it as proof that a cross-platform framework runs inside a messenger at all. It rhymes with the VPN case, where a mini app works as the checkout — though that one is built on a different stack.",
   },
   stack: ["Flutter Web", "FlutterFlow", "Firebase", "Cloud Functions", "Node.js"],
   integrations: ["Telegram Web App SDK"],
