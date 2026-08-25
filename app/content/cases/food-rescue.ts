@@ -1,0 +1,48 @@
+import type { CaseStudy } from "../types";
+
+export const foodRescue: CaseStudy = {
+  id: "food-rescue",
+  industry: { ru: "Фудтех, Азербайджан", en: "Food tech, Azerbaijan" },
+  formats: ["mobile", "payments", "admin"],
+  name: { ru: "Спасение еды коробкой-сюрпризом", en: "Surprise Box Food Rescue" },
+  budget: 37700,
+  status: "shipped",
+  tagline: {
+    ru: "Кафе продают непроданное за день со скидкой, покупатели забирают рядом с собой",
+    en: "Cafes sell the day's unsold food at a discount, buyers pick it up nearby",
+  },
+  problem: {
+    ru: "Двусторонняя площадка для локального рынка: с одной стороны кафе с остатками, с другой — покупатели рядом. Обеим сторонам нужен был свой интерфейс, а платформе — комиссия и контроль партнёров.",
+    en: "A two-sided platform for a local market: cafes with leftovers on one side, nearby buyers on the other. Both sides needed their own interface, and the platform needed commission and partner control.",
+  },
+  solution: [
+    {
+      ru: "Покупатель видит ближайшие заведения на карте и в ленте, оформляет заказ и забирает его",
+      en: "The buyer sees nearby venues on a map and in a feed, places an order and picks it up",
+    },
+    {
+      ru: "Оплата картой через локальный платёжный шлюз или списание с внутреннего кошелька",
+      en: "Card payment through a local gateway, or a charge against the in-app wallet",
+    },
+    {
+      ru: "Кабинет мерчанта: приём и выполнение заказов, аналитика остатков на графиках",
+      en: "A merchant cabinet: accepting and fulfilling orders, plus leftover analytics on charts",
+    },
+    {
+      ru: "Бонусно-реферальная программа и админ-панель управления партнёрами",
+      en: "A bonus and referral programme, plus an admin panel for partner management",
+    },
+    {
+      ru: "Кластеризация маркеров на карте, чтобы плотная лента заведений оставалась читаемой",
+      en: "Marker clustering on the map so a dense venue list stays readable",
+    },
+  ],
+  highlight: {
+    ru: "Готовый двусторонний маркетплейс с деньгами под зарубежный рынок: локальный платёжный шлюз через собственную облачную функцию с редиректом, внутренний кошелёк и аналитика для бизнес-стороны — вещь, которой в подобных проектах обычно нет.",
+    en: "A working two-sided marketplace with money for a foreign market: a local payment gateway behind a custom cloud function with redirect, an in-app wallet, and analytics for the business side — something such projects usually lack.",
+  },
+  stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions", "Node.js"],
+  integrations: ["epoint", "Google Maps", "OneSignal", "FCM"],
+  scale: { loc: 76700, files: 317 },
+  featured: false,
+};
