@@ -35,7 +35,7 @@ export const en: Content = {
     navContact: "Contact",
     lead: "The whole product,\nnot a single layer",
     sublead:
-      "Mobile apps, web, Telegram bots, backend and infrastructure. I take a product from brief to release and stay around afterwards, so you do not have to assemble four contractors and keep them in sync.",
+      "Fullstack development and design: mobile apps, web, Telegram bots, backend and infrastructure. I take a product from brief to release, so you do not have to assemble a row of contractors and keep them in sync.",
     statApps: "apps and services",
     statCases: "cases in this portfolio",
     statMarkets: "markets",
@@ -69,11 +69,10 @@ export const en: Content = {
     resumeLead:
       "A short version of the track record and the stack. The full one is a single-page PDF.",
     resumeDownload: "Download PDF",
-    resumeExperience: "Experience",
+    resumeExperience: "Work experience",
     resumeSelected: "Selected projects",
     resumeExtra: "Also",
     resumeExtraItems: [
-      "I work with a designer: layouts arrive finished instead of being invented during markup. Simpler interfaces and fixes I draw myself.",
       "Mentoring junior developers.",
       "Entrepreneurial background: I read unit economics and understand where a product makes money.",
     ],

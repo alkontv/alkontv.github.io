@@ -77,10 +77,10 @@ EXTRA = {
 }
 
 SECTIONS = {
-    "ru": {"about": "О СЕБЕ", "exp": "ОПЫТ", "projects": "ИЗБРАННЫЕ ПРОЕКТЫ",
+    "ru": {"about": "О СЕБЕ", "exp": "ОПЫТ РАБОТЫ", "projects": "ИЗБРАННЫЕ ПРОЕКТЫ",
            "skills": "ЧТО УМЕЮ", "extra": "ДОПОЛНИТЕЛЬНО",
            "contacts": "КОНТАКТЫ", "stack": "СТЕК"},
-    "en": {"about": "ABOUT", "exp": "EXPERIENCE", "projects": "SELECTED PROJECTS",
+    "en": {"about": "ABOUT", "exp": "WORK EXPERIENCE", "projects": "SELECTED PROJECTS",
            "skills": "WHAT I DO", "extra": "ALSO",
            "contacts": "CONTACTS", "stack": "STACK"},
 }
@@ -89,7 +89,7 @@ SECTIONS = {
 CASES_LABEL = {"ru": "кейсов в портфолио", "en": "cases in portfolio"}
 
 # На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
-ROLE_TITLE = {"ru": "Разработчик полного цикла", "en": "Full-cycle developer"}
+ROLE_TITLE = {"ru": "Fullstack-разработчик и дизайнер", "en": "Fullstack developer and designer"}
 
 
 def wrap(c, text, font, size, width):
@@ -187,16 +187,18 @@ def build(data, lang, out_path):
     y -= 34
 
     y = draw(c, s["exp"], x, y, "Body", 7.5, ACCENT, 14)
-    for e in data["timeline"]:
-        c.setFont("Body-Bold", 8.4)
+    for job in data["employment"]:
+        c.setFont("Body-Bold", 7.6)
         c.setFillColor(ACCENT)
-        c.drawString(x, y, e["year"])
-        c.setFont("Body-Bold", 9)
-        c.setFillColor(INK)
-        c.drawString(x + 40, y, e["title"][lang])
+        c.drawString(x, y, job["period"][lang].upper())
         y -= 11
-        y = draw(c, e["subtitle"][lang], x + 40, y, "Body", 8.2, INK_SOFT, 11, colw - 40)
-        y -= 2
+        c.setFont("Body-Bold", 9.6)
+        c.setFillColor(INK)
+        c.drawString(x, y, job["company"][lang])
+        y -= 11
+        y = draw(c, job["role"][lang], x, y, "Body", 8.3, INK, 10, colw)
+        y = draw(c, job["summary"][lang], x, y, "Body", 7.9, INK_SOFT, 9.6, colw)
+        y -= 4
 
     y -= 8
     y = draw(c, s["projects"], x, y, "Body", 7.5, ACCENT, 14)

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { CASES, FEATURED_CASES, SKILL_GROUPS, STATS, TIMELINE } from "@content";
+import { CASES, EMPLOYMENT, FEATURED_CASES, SKILL_GROUPS, STATS } from "@content";
 import { dict, tx } from "@i18n";
 
 import { TELEGRAM_URL } from "../SiteChrome";
@@ -56,22 +56,27 @@ const ResumeView = () => {
 
       <section className="py-14">
         <h2 className="display mb-9 text-2xl font-semibold">{t.resumeExperience}</h2>
-        <ol className="relative space-y-9 pl-8">
+        <ol className="relative space-y-8 pl-8">
           <span
             aria-hidden
             className="absolute left-[3px] top-2 bottom-2 w-px bg-gradient-to-b from-accent/60 via-white/12 to-transparent"
           />
-          {TIMELINE.map((e) => (
-            <li key={e.year} className="relative">
+          {EMPLOYMENT.map((job, i) => (
+            <li key={i} className="relative">
               <span
                 aria-hidden
-                className="absolute -left-8 top-1.5 h-[7px] w-[7px] rounded-full bg-accent shadow-[0_0_0_4px_rgba(76,194,255,0.14)]"
+                className="absolute -left-8 top-2 h-[7px] w-[7px] rounded-full bg-accent shadow-[0_0_0_4px_rgba(76,194,255,0.14)]"
               />
-              <div className="mb-1 text-[0.72rem] uppercase tracking-[0.18em] text-accent">
-                {e.year}
+              <div className="mb-1.5 text-[0.72rem] uppercase tracking-[0.18em] text-accent">
+                {tx(job.period, lang)}
               </div>
-              <div className="display mb-1 text-lg font-semibold">{tx(e.title, lang)}</div>
-              <p className="text-sm leading-relaxed text-ink-dim">{tx(e.subtitle, lang)}</p>
+              <div className="display mb-1 text-lg font-semibold">
+                {tx(job.company, lang)}
+              </div>
+              <div className="mb-2 text-sm text-ink">{tx(job.role, lang)}</div>
+              <p className="max-w-2xl text-sm leading-relaxed text-ink-dim">
+                {tx(job.summary, lang)}
+              </p>
             </li>
           ))}
         </ol>

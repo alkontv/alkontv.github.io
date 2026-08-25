@@ -36,9 +36,3 @@ export interface CaseStudy {
   /** Попадает в 3D-карусель. Ровно шесть кейсов — под раскладку ProjectsCarousel. */
   featured: boolean;
 }
-
-export interface TimelineEntry {
-  year: string;
-  title: LocalizedText;
-  subtitle: LocalizedText;
-}
