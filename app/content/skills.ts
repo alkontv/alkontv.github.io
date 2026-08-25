@@ -68,4 +68,12 @@ export const SKILL_GROUPS: SkillGroup[] = [
       { ru: "PWA как третья платформа продукта", en: "PWA as a product's third platform" },
     ],
   },
+  {
+    title: { ru: "Дизайн", en: "Design" },
+    items: [
+      { ru: "Работаю в паре с дизайнером — макеты приходят готовыми, а не рождаются в вёрстке", en: "I work with a designer, so layouts arrive finished instead of being invented during markup" },
+      { ru: "Несложные интерфейсы и правки рисую сам, не дожидаясь подрядчика", en: "Simpler interfaces and fixes I draw myself, without waiting on a contractor" },
+      { ru: "Вёрстка по дизайн-токенам из Figma, а не по скриншотам макета", en: "Markup driven by Figma design tokens, not by screenshots of a mockup" },
+    ],
+  },
 ];

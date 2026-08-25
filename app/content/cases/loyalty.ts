@@ -5,10 +5,17 @@ export const loyalty: CaseStudy = {
   industry: { ru: "Ритейл и общепит, ОАЭ", en: "Retail and food service, UAE" },
   formats: ["mobile", "backend"],
   name: { ru: "Программа лояльности пекарни", en: "Bakery Loyalty Program" },
-  status: "shipped",
   tagline: {
     ru: "Тонкий клиент с персональным QR поверх кассовой системы заведения",
     en: "A thin client with a personal QR code on top of the venue point-of-sale system",
+  },
+  impact: {
+    ru: "Программа лояльности, которая не мешает кассе: сеть считает баллы там, где уже считает чеки, а приложение остаётся витриной. Такую можно раскатывать на новые точки, ничего не переписывая.",
+    en: "A loyalty programme that does not get in the till's way: the chain counts points where it already counts receipts, and the app stays a storefront. It rolls out to new venues without a rewrite.",
+  },
+  role: {
+    ru: "Мобильное приложение, интеграция с кассовой системой, серверный движок лояльности и локализация под ближневосточный рынок.",
+    en: "Mobile app, point-of-sale integration, the server-side loyalty engine and localisation for a Middle Eastern market.",
   },
   problem: {
     ru: "У пекарни уже работала кассовая система со своей логикой чеков. Приложение не должно было считать баллы само — ему следовало показывать покупателю его профиль и выдавать код, который кассир сканирует.",

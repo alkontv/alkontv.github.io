@@ -8,10 +8,17 @@ export const checklists: CaseStudy = {
     ru: "Корпоративные чек-листы с ассистентом",
     en: "Enterprise Checklists with Assistant",
   },
-  status: "shipped",
   tagline: {
     ru: "Работа по инструкции: шаги с фотофиксацией, видео-гайды и ответы по регламенту",
     en: "Work by the book: steps with photo proof, video guides and answers from the manual",
+  },
+  impact: {
+    ru: "Регламент перестаёт быть бумагой: компания видит, что шаг действительно выполнен, — с фотографией и временем. Это уже не инструкция, а доказательство.",
+    en: "The procedure stops being paper: the company sees that a step was actually done, with a photo and a timestamp. That is no longer an instruction but evidence.",
+  },
+  role: {
+    ru: "Мобильное приложение поверх API заказчика: работа с чужим контрактом данных, видео-гайды, ассистент по регламенту.",
+    en: "The mobile app on top of the client's API: working against someone else's data contract, video guides and the procedure assistant.",
   },
   problem: {
     ru: "Сотруднику на месте нужно выполнить регламент и доказать, что он его выполнил. Бумажные инструкции этого не дают, а бэкенд у заказчика уже был свой — переписывать его никто не собирался.",

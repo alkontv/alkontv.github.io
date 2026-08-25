@@ -5,10 +5,17 @@ export const safety: CaseStudy = {
   industry: { ru: "Личная безопасность", en: "Personal safety" },
   formats: ["mobile", "backend", "payments"],
   name: { ru: "Приложение личной безопасности", en: "Personal Safety App" },
-  status: "beta",
   tagline: {
     ru: "Одна кнопка: обращение в службу спасения, координаты доверенным лицам и видео с камеры",
     en: "One button: an emergency report, coordinates to trusted contacts, camera video",
+  },
+  impact: {
+    ru: "Заказчик получил не приложение, а работающий канал экстренной связи: одно нажатие поднимает три независимых сценария сразу, и если один не дойдёт, сигнал всё равно уйдёт остальными двумя.",
+    en: "The client got a working emergency channel rather than an app: one tap fires three independent paths at once, so if one fails the signal still leaves through the other two.",
+  },
+  role: {
+    ru: "Мобильное приложение, база и серверная логика, платежи, развёртывание и домен — всё на мне.",
+    en: "Mobile app, database and server logic, payments, deployment and domain — all mine.",
   },
   problem: {
     ru: "Человеку в опасности некогда выбирать между «позвонить», «написать» и «включить запись». Нужно было приложение, где всё это делает одно нажатие.",

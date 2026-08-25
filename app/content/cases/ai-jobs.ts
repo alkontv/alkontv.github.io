@@ -5,10 +5,17 @@ export const aiJobs: CaseStudy = {
   industry: { ru: "Найм, Юго-Восточная Азия", en: "Hiring, Southeast Asia" },
   formats: ["mobile", "ai", "backend"],
   name: { ru: "AI-подбор работы и исполнителей", en: "AI Job and Talent Matching" },
-  status: "beta",
   tagline: {
     ru: "Резюме и вакансия собираются в диалоге, а подбор идёт векторным поиском",
     en: "Resumes and vacancies are assembled in a dialogue, and matching runs on vector search",
+  },
+  impact: {
+    ru: "Человек рассказывает о себе словами — и доходит до конца, вместо того чтобы бросить анкету на пятом поле. Подбор при этом становится точнее: он ищет по смыслу, а не по совпадению слов.",
+    en: "A person describes themselves in words — and finishes, instead of abandoning a form at the fifth field. Matching gets sharper too: it searches by meaning, not word overlap.",
+  },
+  role: {
+    ru: "Приложение, база с векторным поиском, диалоговый онбординг и подбор, многоязычность с автопереводом.",
+    en: "The app, a database with vector search, the conversational onboarding and matching, plus multilingual support with auto-translation.",
   },
   problem: {
     ru: "Форма из двадцати полей убивает конверсию, а поиск по ключевым словам не понимает, что «нянчить детей» и «присмотр за ребёнком» — одно и то же. Нужно было убрать и то, и другое.",

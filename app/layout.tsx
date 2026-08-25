@@ -1,7 +1,23 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
+import { Inter, Unbounded } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
+
+// Дисплейная и текстовая пары с полной кириллицей: soria и Vercetti её
+// не содержат и остаются только внутри 3D-сцены.
+const display = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
+
+const body = Inter({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const soriaFont = localFont({
   src: "../public/soria-font.ttf",
@@ -71,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overscroll-y-none">
       <body
-        className={`${soriaFont.variable} ${vercettiFont.variable} font-sans antialiased`}
+        className={`${soriaFont.variable} ${vercettiFont.variable} ${display.variable} ${body.variable} font-sans antialiased`}
       >
         {children}
       </body>

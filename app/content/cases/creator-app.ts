@@ -5,10 +5,17 @@ export const creatorApp: CaseStudy = {
   industry: { ru: "Медиа и инфобизнес", en: "Media and creator economy" },
   formats: ["mobile", "ai", "payments"],
   name: { ru: "Приложение блогера с подпиской", en: "Creator Subscription App" },
-  status: "active",
   tagline: {
     ru: "Образовательный контент, комьюнити и AI-двойник автора по подписке",
     en: "Educational content, community and an AI twin of the author, by subscription",
+  },
+  impact: {
+    ru: "Аудитория перестаёт быть чужим активом на чужой платформе: контент, комьюнити и оплата живут в приложении, которое принадлежит автору, а не алгоритму соцсети.",
+    en: "The audience stops being someone else's asset on someone else's platform: content, community and payments live in an app the creator owns, not a social network's algorithm.",
+  },
+  role: {
+    ru: "Архитектура, разработка, база с миграциями, платежи и подписка; вёрстка по дизайн-токенам из Figma.",
+    en: "Architecture, development, database with migrations, payments and subscription; markup driven by Figma design tokens.",
   },
   problem: {
     ru: "Автору нужно было своё приложение вместо разрозненных площадок: образовательный контент, комьюнити и продуктивность в одном месте, с монетизацией по подписке.",

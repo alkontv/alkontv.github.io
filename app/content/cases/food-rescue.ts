@@ -5,10 +5,17 @@ export const foodRescue: CaseStudy = {
   industry: { ru: "Фудтех, Азербайджан", en: "Food tech, Azerbaijan" },
   formats: ["mobile", "payments", "admin"],
   name: { ru: "Спасение еды коробкой-сюрпризом", en: "Surprise Box Food Rescue" },
-  status: "shipped",
   tagline: {
     ru: "Кафе продают непроданное за день со скидкой, покупатели забирают рядом с собой",
     en: "Cafes sell the day's unsold food at a discount, buyers pick it up nearby",
+  },
+  impact: {
+    ru: "Заведение продаёт то, что иначе выбросило бы, покупатель платит заметно меньше, площадка зарабатывает на обороте. Экономика сходится у всех троих — в маркетплейсах это редкость.",
+    en: "The venue sells what it would otherwise bin, the buyer pays noticeably less, the platform earns on turnover. The economics work for all three — rare in a marketplace.",
+  },
+  role: {
+    ru: "Оба приложения — покупателя и мерчанта, платёжный контур, внутренний кошелёк, админ-панель и аналитика для бизнеса.",
+    en: "Both apps — buyer and merchant — the payment flow, the in-app wallet, the admin panel and the business-side analytics.",
   },
   problem: {
     ru: "Двусторонняя площадка для локального рынка: с одной стороны кафе с остатками, с другой — покупатели рядом. Обеим сторонам нужен был свой интерфейс, а платформе — контроль партнёров.",

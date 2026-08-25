@@ -10,17 +10,6 @@ export type CaseFormat =
   | "admin"
   | "payments";
 
-/** Статус берётся из карточки хранилища и не завышается. */
-export type CaseStatus =
-  | "shipped"
-  | "production"
-  | "beta"
-  | "active"
-  | "mvp"
-  /** Каркас и интерфейс без прикладной логики. Отдельно от mvp намеренно:
-   *  MVP обещает работающий минимум, макет — не обещает. */
-  | "prototype";
-
 export type DiagramId = "sos" | "escrow" | "vpn" | "ai-intake";
 
 export interface CaseStudy {
@@ -30,9 +19,12 @@ export interface CaseStudy {
   formats: CaseFormat[];
   /** Обезличенное имя-описание. name.en уходит в 3D — только ASCII. */
   name: LocalizedText;
-  status: CaseStatus;
   /** Одна строка для 3D-плитки и подзаголовка карточки. */
   tagline: LocalizedText;
+  /** Что клиент получил как бизнес-механику, а не как строчки кода. */
+  impact: LocalizedText;
+  /** Что было на мне в этом проекте. */
+  role: LocalizedText;
   problem: LocalizedText;
   solution: LocalizedText[];
   /** Инженерная соль: почему кейс стоит показывать. */

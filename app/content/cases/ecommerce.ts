@@ -5,10 +5,17 @@ export const ecommerce: CaseStudy = {
   industry: { ru: "Ритуальная флористика", en: "Funeral floristry" },
   formats: ["web", "backend"],
   name: { ru: "Интернет-магазин с админкой", en: "E-commerce Site with CMS" },
-  status: "mvp",
   tagline: {
     ru: "Замена устаревшего сайта: каталог, заявки в админку и в мессенджер, прицел на поиск",
     en: "Replacing a legacy site: catalogue, orders into a CMS and a messenger, built for search",
+  },
+  impact: {
+    ru: "Бизнес перестал платить посреднику за собственных клиентов: трафик приходит на свой сайт, заявка попадает менеджеру за секунды, маржа остаётся внутри компании.",
+    en: "The business stopped paying an intermediary for its own customers: traffic lands on its own site, an order reaches the manager in seconds, and the margin stays in-house.",
+  },
+  role: {
+    ru: "Сайт, админка, база, миграция со старой системы, сервер и эксплуатация, поисковая оптимизация.",
+    en: "Site, admin panel, database, migration off the legacy system, the server and its operation, plus search optimisation.",
   },
   problem: {
     ru: "У действующего бизнеса работал сайт на устаревшей CMS: его нельзя было развивать, а органический трафик уходил к агрегатору-посреднику, который забирал маржу за привлечение.",

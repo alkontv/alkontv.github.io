@@ -37,6 +37,10 @@ describe("целостность кейса", () => {
       expect(c.problem.en.length).toBeGreaterThan(0);
       expect(c.highlight.ru.length).toBeGreaterThan(0);
       expect(c.highlight.en.length).toBeGreaterThan(0);
+      expect(c.impact.ru.length).toBeGreaterThan(0);
+      expect(c.impact.en.length).toBeGreaterThan(0);
+      expect(c.role.ru.length).toBeGreaterThan(0);
+      expect(c.role.en.length).toBeGreaterThan(0);
     }
   );
 
@@ -74,6 +78,15 @@ describe("обезличивание", () => {
     const haystack = JSON.stringify(CASES);
     const found = FORBIDDEN.filter((word) => haystack.includes(word));
     expect(found).toEqual([]);
+  });
+});
+
+describe("статусы", () => {
+  it("ни один кейс не сообщает степень готовности", () => {
+    // Ряд бейджей «БЕТА / MVP / МАКЕТ» читается клиентом как «не доводит
+    // до конца» — вопрос, которого он не задавал.
+    const haystack = JSON.stringify(CASES);
+    expect(haystack).not.toContain("status");
   });
 });
 

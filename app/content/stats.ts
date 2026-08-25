@@ -1,5 +1,5 @@
 import type { LocalizedText } from "@i18n";
-import type { CaseFormat, CaseStatus } from "./types";
+import type { CaseFormat } from "./types";
 
 /**
  * Цифры для шапки. Сознательно НЕ показываем ни выручку, ни число
@@ -15,24 +15,9 @@ export const STATS = {
   apps: 40,
   /** Россия, ОАЭ, Азербайджан, Юго-Восточная Азия. */
   markets: 4,
-  /** Коммерческая разработка с апреля 2023. */
-  sinceYear: 2023,
+  /** В коммерческой разработке с 2022 года. */
+  sinceYear: 2022,
 } as const;
-
-/**
- * Показываем ТОЛЬКО завершённость, и только там, где она есть.
- *
- * Раньше бейдж стоял на каждой карточке и половина набора кричала «БЕТА»,
- * «MVP», «МАКЕТ». Клиент читает такой ряд не как честность, а как «человек
- * не доводит до конца» — вопрос, которого он не задавал. Незавершённые
- * статусы просто не выводятся: врать это не заставляет, а слабость не
- * рекламирует. Сам статус остаётся в данных — по нему решается, что
- * попадает в 3D-карусель.
- */
-export const STATUS_LABEL: Partial<Record<CaseStatus, LocalizedText>> = {
-  shipped: { ru: "СДАН И ЗАКРЫТ", en: "DELIVERED" },
-  production: { ru: "РАБОТАЕТ В ПРОДЕ", en: "LIVE IN PRODUCTION" },
-};
 
 export const FORMAT_LABEL: Record<CaseFormat, LocalizedText> = {
   mobile: { ru: "Мобильное", en: "Mobile" },

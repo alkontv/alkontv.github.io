@@ -5,10 +5,17 @@ export const escrowMarketplace: CaseStudy = {
   industry: { ru: "Подработки и услуги", en: "Gig work and services" },
   formats: ["mobile", "web", "admin", "payments"],
   name: { ru: "Маркетплейс подработок с эскроу", en: "Escrow Gig Marketplace" },
-  status: "production",
   tagline: {
     ru: "Деньги депонируются площадкой и уходят исполнителю только после работы",
     en: "Money is held by the platform and released to the worker only after the job",
+  },
+  impact: {
+    ru: "Эскроу снимает единственное, что мешает двусторонней площадке взлететь, — недоверие. Пока деньги не держит платформа, заказчик не платит вперёд, а исполнитель не выходит на работу.",
+    en: "Escrow removes the one thing that keeps a two-sided platform from taking off — distrust. Until the platform holds the money, the client will not pay upfront and the worker will not show up.",
+  },
+  role: {
+    ru: "Мобильное приложение, веб-версия, админка, платёжный контур с холдированием и выплатами, нативные обвязки под iOS и Android.",
+    en: "Mobile app, web build, admin panel, the payment flow with holds and payouts, plus native bridges for iOS and Android.",
   },
   problem: {
     ru: "На площадке подработок обе стороны боятся друг друга: заказчик — что заплатит и не получит работу, исполнитель — что сделает и не получит денег. Снять этот страх можно только деньгами, которые держит платформа.",

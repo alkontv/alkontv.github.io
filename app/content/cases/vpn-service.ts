@@ -5,10 +5,17 @@ export const vpnService: CaseStudy = {
   industry: { ru: "Телеком и приватность", en: "Telecom and privacy" },
   formats: ["telegram", "backend", "web", "admin", "payments"],
   name: { ru: "VPN-сервис по подписке", en: "Subscription VPN Service" },
-  status: "mvp",
   tagline: {
     ru: "Бот, мини-приложение и админка поверх собственного биллинга и агентов на нодах",
     en: "A bot, a mini app and an admin panel over an own billing system and node agents",
+  },
+  impact: {
+    ru: "Подписка живёт без человека: оплата, выдача доступа, продление и отключение происходят сами. Владельцу остаётся считать выручку, а не заводить пользователей руками.",
+    en: "The subscription runs without a human: payment, provisioning, renewal and cut-off happen on their own. The owner counts revenue instead of registering users by hand.",
+  },
+  role: {
+    ru: "Всё: бэкенд, агенты на серверах, бот, мини-приложение, админка, инфраструктура, мониторинг и тесты.",
+    en: "Everything: backend, server agents, bot, mini app, admin panel, infrastructure, monitoring and tests.",
   },
   problem: {
     ru: "Подписочный сервис — это не клиент для подключения, а конвейер: продать тариф, принять деньги, автоматически выдать доступ на нужном сервере, продлить и вовремя отключить. Всю эту цепочку нужно было построить целиком.",

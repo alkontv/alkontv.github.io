@@ -5,10 +5,17 @@ export const consultations: CaseStudy = {
   industry: { ru: "Консультации и услуги", en: "Consulting and services" },
   formats: ["mobile", "payments"],
   name: { ru: "Маркетплейс консультаций", en: "Consultations Marketplace" },
-  status: "active",
   tagline: {
     ru: "Запись к специалисту с расчётом свободных слотов и авточатом после оплаты",
     en: "Booking a specialist with computed free slots and an auto-created chat after payment",
+  },
+  impact: {
+    ru: "Расписание, которому можно доверять: клиент физически не может занять чужой час, а специалист не окажется без перерыва между сессиями. На этом держится вся выручка площадки.",
+    en: "A schedule you can trust: a client physically cannot take an occupied hour, and a specialist never ends up without a gap between sessions. The platform's entire revenue rests on this.",
+  },
+  role: {
+    ru: "Приложение, модель данных, алгоритм расписания и связка оплаты с чатом.",
+    en: "The app, the data model, the scheduling algorithm and the link between payment and chat.",
   },
   problem: {
     ru: "Площадке для записи к консультантам и психологам нужна была честная сетка времени: чтобы клиент не мог забронировать занятый час и чтобы у специалиста оставался перерыв между сессиями.",

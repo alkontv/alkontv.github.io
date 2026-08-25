@@ -14,11 +14,11 @@ export const TIMELINE: TimelineEntry[] = [
     },
   },
   {
-    year: "2023",
+    year: "2022",
     title: { ru: "Первые заказы", en: "First orders" },
     subtitle: {
-      ru: "Коммерческая разработка, апрель",
-      en: "Commercial development, April",
+      ru: "Коммерческая разработка под клиента",
+      en: "Commercial development for clients",
     },
   },
   {

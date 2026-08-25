@@ -5,10 +5,17 @@ export const meditation: CaseStudy = {
   industry: { ru: "Здоровье и саморазвитие", en: "Wellness and self-development" },
   formats: ["mobile", "payments"],
   name: { ru: "Платформа медитаций и практик", en: "Meditation Platform" },
-  status: "shipped",
   tagline: {
     ru: "Курсы, аудио-практики и подкасты с фоновым воспроизведением и подпиской",
     en: "Courses, audio practices and podcasts with background playback and a subscription",
+  },
+  impact: {
+    ru: "Продукт, который слушают, а не смотрят: практика продолжается с выключенным экраном, и подписка перестаёт зависеть от того, держит ли человек телефон в руке.",
+    en: "A product you listen to rather than look at: the practice keeps going with the screen off, so the subscription no longer depends on holding the phone.",
+  },
+  role: {
+    ru: "Приложение целиком, включая аудиодвижок, дописанный руками поверх сгенерированного кода, и подписки.",
+    en: "The whole app, including the audio engine hand-written on top of generated code, and the subscriptions.",
   },
   problem: {
     ru: "Контентному проекту про тело, разум и душу нужно было приложение, где практику можно слушать с выключенным экраном, а полный доступ открывается по подписке.",

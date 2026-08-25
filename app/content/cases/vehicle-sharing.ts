@@ -5,10 +5,17 @@ export const vehicleSharing: CaseStudy = {
   industry: { ru: "Туризм и шеринг", en: "Travel and sharing" },
   formats: ["mobile"],
   name: { ru: "Шеринг мототехники и лодок", en: "Powersports and Boat Sharing" },
-  status: "shipped",
   tagline: {
     ru: "Владелец публикует поездку с маршрутом, остальные бронируют места",
     en: "An owner publishes a ride with a route, others book seats on it",
+  },
+  impact: {
+    ru: "Владелец техники становится перевозчиком за три экрана: добавил транспорт, собрал маршрут, продал места. Площадка получает предложение, не покупая собственный парк.",
+    en: "An owner becomes a carrier in three screens: add the vehicle, build the route, sell the seats. The platform gets supply without buying a fleet.",
+  },
+  role: {
+    ru: "Приложение целиком: карты и маршруты, бронирование мест, две роли в одном аккаунте, рейтинги и чат.",
+    en: "The whole app: maps and routes, seat booking, two roles in one account, ratings and chat.",
   },
   problem: {
     ru: "Нужен был шеринг не автомобилей, а мотоциклов, квадроциклов, багги, гидроциклов и лодок — где важны маршрут, число мест и ограничение по весу пассажира.",

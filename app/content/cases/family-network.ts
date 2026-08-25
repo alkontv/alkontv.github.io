@@ -5,10 +5,17 @@ export const familyNetwork: CaseStudy = {
   industry: { ru: "Социальные сети", en: "Social networks" },
   formats: ["mobile", "web"],
   name: { ru: "Семейная соцсеть", en: "Family Social Network" },
-  status: "mvp",
   tagline: {
     ru: "Родственники на орбитах по степени родства вместо привычной ленты",
     en: "Relatives on orbits by degree of kinship instead of a conventional feed",
+  },
+  impact: {
+    ru: "Соцсеть, которую невозможно спутать с другой: вместо ленты — карта рода. Именно она заставляет людей приводить туда родственников, а не листать чужие посты.",
+    en: "A social network you cannot mistake for another: a map of kinship instead of a feed. That is what makes people bring their relatives in rather than scroll strangers' posts.",
+  },
+  role: {
+    ru: "Приложение и веб на общей кодовой базе, собственная графическая механика орбит, серверная часть на облачных функциях.",
+    en: "App and web from one codebase, a custom orbital graphics mechanic, and the server side on cloud functions.",
   },
   problem: {
     ru: "Заказчик хотел не очередное семейное древо списком, а метафору: семья как планетарная система, где пользователь в центре, а родня расходится по орбитам.",

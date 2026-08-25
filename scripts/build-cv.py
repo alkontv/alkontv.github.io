@@ -88,6 +88,9 @@ SECTIONS = {
 # «кейсов ниже» осмысленно на странице, но не в резюме.
 CASES_LABEL = {"ru": "кейсов в портфолио", "en": "cases in portfolio"}
 
+# На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
+ROLE_TITLE = {"ru": "Разработчик полного цикла", "en": "Full-cycle developer"}
+
 
 def wrap(c, text, font, size, width):
     """Разбивает строку по ширине — reportlab сам этого не делает."""
@@ -123,7 +126,7 @@ def build(data, lang, out_path):
     s = SECTIONS[lang]
     stats = data["stats"]
 
-    c.setTitle("Alan — " + copy["lead"])
+    c.setTitle("Alan — " + ROLE_TITLE[lang])
     c.setAuthor("Alan")
 
     # --- тёмная колонка ---
@@ -135,7 +138,7 @@ def build(data, lang, out_path):
     c.setFillColor(WHITE)
     c.drawString(x, y, "ALAN")
     y -= 20
-    y = draw(c, copy["lead"].upper(), x, y, "Body", 7.6, ACCENT, 11, SIDEBAR - 40)
+    y = draw(c, ROLE_TITLE[lang].upper(), x, y, "Body", 7.6, ACCENT, 11, SIDEBAR - 40)
 
     y -= 18
     y = draw(c, s["contacts"], x, y, "Body", 7.5, MUTED, 14)
@@ -168,7 +171,7 @@ def build(data, lang, out_path):
         (f"{stats['apps']}+", copy["statApps"]),
         (str(data["casesTotal"]), CASES_LABEL[lang]),
         (str(stats["markets"]), copy["statMarkets"]),
-        (("с " if lang == "ru" else "since ") + str(stats["sinceYear"]), copy["statSince"]),
+        (str(stats["sinceYear"]), copy["statSince"]),
     ]
     fx = x
     step = colw / 4
@@ -215,13 +218,14 @@ def build(data, lang, out_path):
         c.setFillColor(INK)
         c.drawString(x, y, group["title"][lang])
         y -= 9.5
-        items = " · ".join(i[lang] for i in group["items"])
+        # В резюме — по два пункта на группу: это выжимка, а не каталог.
+        items = " · ".join(i[lang] for i in group["items"][:2])
         y = draw(c, items, x, y, "Body", 7.6, INK_SOFT, 9.2, colw)
-        y -= 2.5
+        y -= 1.5
 
     y -= 6
     y = draw(c, s["extra"], x, y, "Body", 7.5, ACCENT, 14)
-    for line in EXTRA[lang]:
+    for line in copy["resumeExtraItems"]:
         y = draw(c, line, x, y, "Body", 8.4, INK_SOFT, 11, colw)
         y -= 2
 
