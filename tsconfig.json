@@ -37,6 +37,9 @@
       ],
       "@i18n": [
         "./app/i18n"
+      ],
+      "@content": [
+        "./app/content"
       ]
     }
   },
