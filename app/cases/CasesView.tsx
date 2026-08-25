@@ -84,12 +84,6 @@ const CasesView = () => {
           >
             {t.cv}
           </a>
-          <a
-            href={lang === "ru" ? "/Alan-Cases-ru.pdf" : "/Alan-Cases-en.pdf"}
-            className="rounded-full border border-current/25 px-5 py-2 text-sm opacity-70"
-          >
-            {t.deck}
-          </a>
           <Link
             href="/"
             className="rounded-full border border-current/25 px-5 py-2 text-sm opacity-70"

@@ -27,7 +27,6 @@ export interface Content {
     ctaButton: string;
     back: string;
     cv: string;
-    deck: string;
     anonNote: string;
   };
 }

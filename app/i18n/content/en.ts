@@ -56,7 +56,6 @@ export const en: Content = {
     ctaButton: "Discuss on Telegram",
     back: "Back to 3D",
     cv: "Resume",
-    deck: "Case deck",
     anonNote:
       "Client and product names are withheld: some projects are under non-disclosure agreements. The problems, solutions and technical details are real.",
   },
