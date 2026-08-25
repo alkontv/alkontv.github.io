@@ -43,8 +43,8 @@ export const EMPLOYMENT: Job[] = [
     period: { ru: "2024 — 2025", en: "2024 — 2025" },
     since: "2024",
     summary: {
-      ru: "Работа в штате над продуктом компании: разработка и поддержка функциональности в команде, задачи от постановки до релиза.",
-      en: "In-house work on the company product: building and maintaining features as part of a team, from brief to release.",
+      ru: "Продуктовая разработка в штате: участвовал в проработке идеи, писал бэкенд, внедрял AI-функциональность. Командный процесс в Яндекс Трекере, на части задач — в роли лида.",
+      en: "In-house product development: took part in shaping the idea, wrote the backend and built AI features. Team process in Yandex Tracker, leading on part of the work.",
     },
   },
   {
