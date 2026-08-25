@@ -37,8 +37,8 @@ export const escrowMarketplace: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Самая взрослая денежная логика в списке: холдирование, выплата исполнителю и комиссия сделаны на реальном эквайринге отдельными облачными функциями. Самый объёмный репозиторий портфолио — около 110,8 тыс. строк, 347 файлов, порядка 30 маршрутов. В проде на трёх платформах.",
-    en: "The most grown-up money logic in the list: holding, payout and commission built on real acquiring through dedicated cloud functions. The largest repository in this portfolio — around 110.8k lines, 347 files, some 30 routes. Live in production on three platforms.",
+    ru: "Одна из самых взрослых денежных логик в списке: холдирование, выплата исполнителю и комиссия сделаны на реальном эквайринге отдельными облачными функциями. Самый объёмный репозиторий портфолио — около 110,8 тыс. строк, 347 файлов, порядка 30 маршрутов. В проде на iOS, Android и PWA.",
+    en: "One of the most grown-up money logics in the list: holding, payout and commission built on real acquiring through dedicated cloud functions. The largest repository in this portfolio — around 110.8k lines, 347 files, some 30 routes. Live in production on iOS, Android and PWA.",
   },
   stack: ["Flutter", "FlutterFlow", "Kotlin", "Swift", "Firebase", "Cloud Functions"],
   integrations: ["Google Maps", "FCM", "Remote Config"],

@@ -17,8 +17,8 @@ export const vehicleSharing: CaseStudy = {
   },
   solution: [
     {
-      ru: "Водитель добавляет транспорт с категорией и создаёт поездку: точка А, промежуточные точки, точка Б, даты до десяти дней, цена, число мест, ограничение по весу",
-      en: "The driver registers a vehicle with its category and creates a ride: origin, waypoints, destination, dates up to ten days out, price, seat count and weight limit",
+      ru: "Водитель добавляет транспорт с категорией и создаёт поездку: точка А, промежуточные точки, точка Б, даты, цена, число мест, ограничение по весу",
+      en: "The driver registers a vehicle with its category and creates a ride: origin, waypoints, destination, dates, price, seat count and weight limit",
     },
     {
       ru: "Пассажир ищет поездки по городу и дате, фильтрует по расстоянию от себя, бронирует места и смотрит маршрут на карте",

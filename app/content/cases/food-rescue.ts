@@ -12,8 +12,8 @@ export const foodRescue: CaseStudy = {
     en: "Cafes sell the day's unsold food at a discount, buyers pick it up nearby",
   },
   problem: {
-    ru: "Двусторонняя площадка для локального рынка: с одной стороны кафе с остатками, с другой — покупатели рядом. Обеим сторонам нужен был свой интерфейс, а платформе — комиссия и контроль партнёров.",
-    en: "A two-sided platform for a local market: cafes with leftovers on one side, nearby buyers on the other. Both sides needed their own interface, and the platform needed commission and partner control.",
+    ru: "Двусторонняя площадка для локального рынка: с одной стороны кафе с остатками, с другой — покупатели рядом. Обеим сторонам нужен был свой интерфейс, а платформе — контроль партнёров.",
+    en: "A two-sided platform for a local market: cafes with leftovers on one side, nearby buyers on the other. Both sides needed their own interface, and the platform needed partner control.",
   },
   solution: [
     {
@@ -33,8 +33,8 @@ export const foodRescue: CaseStudy = {
       en: "A bonus and referral programme, plus an admin panel for partner management",
     },
     {
-      ru: "Кластеризация маркеров на карте, чтобы плотная лента заведений оставалась читаемой",
-      en: "Marker clustering on the map so a dense venue list stays readable",
+      ru: "Кластеризация маркеров, чтобы плотная карта заведений оставалась читаемой",
+      en: "Marker clustering so a dense map of venues stays readable",
     },
   ],
   highlight: {
@@ -42,7 +42,7 @@ export const foodRescue: CaseStudy = {
     en: "A working two-sided marketplace with money for a foreign market: a local payment gateway behind a custom cloud function with redirect, an in-app wallet, and analytics for the business side — something such projects usually lack.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions", "Node.js"],
-  integrations: ["epoint", "Google Maps", "OneSignal", "FCM"],
+  integrations: ["Google Maps", "OneSignal", "FCM"],
   scale: { loc: 76700, files: 317 },
   featured: false,
 };

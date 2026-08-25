@@ -29,15 +29,15 @@ export const consultations: CaseStudy = {
       en: "A client-to-specialist chat created automatically on successful payment, driven by a payment webhook",
     },
     {
-      ru: "Каталог специалистов и услуг, история записей",
-      en: "A catalogue of specialists and services, plus booking history",
+      ru: "Каталог специалистов и услуг с категориями",
+      en: "A catalogue of specialists and services with categories",
     },
   ],
   highlight: {
     ru: "Расчёт слотов — та часть, где обычно ломаются маркетплейсы услуг: пересечения, длительности и перерывы считаются в одном месте, а не размазаны по экранам. Проект ведётся до сих пор.",
     en: "Slot computation is where service marketplaces usually break: overlaps, durations and gaps are handled in one place instead of being smeared across screens. The project is still ongoing.",
   },
-  stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions"],
+  stack: ["Flutter", "FlutterFlow", "Firebase"],
   integrations: [],
   featured: false,
 };

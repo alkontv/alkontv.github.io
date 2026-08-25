@@ -11,8 +11,8 @@ export const creatorApp: CaseStudy = {
     en: "Educational content, community and an AI twin of the author, by subscription",
   },
   problem: {
-    ru: "У автора с большой аудиторией контент жил в соцсетях и не приносил подписочной выручки. Нужно было своё приложение: уроки, комьюнити, продуктивность — и монетизация.",
-    en: "A creator with a large audience had all content living on social platforms and no subscription revenue. The ask was an owned app: lessons, community, productivity — and monetisation.",
+    ru: "Автору нужно было своё приложение вместо разрозненных площадок: образовательный контент, комьюнити и продуктивность в одном месте, с монетизацией по подписке.",
+    en: "The creator needed an owned app instead of scattered platforms: educational content, community and productivity in one place, monetised by subscription.",
   },
   solution: [
     {

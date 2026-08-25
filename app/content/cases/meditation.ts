@@ -29,8 +29,8 @@ export const meditation: CaseStudy = {
       en: "Tracking of total practice time and streaks",
     },
     {
-      ru: "Платная подписка, открывающая полный доступ, и разовые покупки",
-      en: "A paid subscription unlocking full access, plus one-off purchases",
+      ru: "Платная подписка, открывающая полный доступ",
+      en: "A paid subscription unlocking full access",
     },
   ],
   highlight: {
@@ -38,7 +38,7 @@ export const meditation: CaseStudy = {
     en: "An audio product cannot be assembled from a builder alone: the player, audio sessions and background playback were written by hand on top of generated code. Around 51k lines, 157 files, version 1.0.0+37 — many release iterations.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "just_audio", "Rive", "Lottie"],
-  integrations: ["RevenueCat", "ЮKassa"],
+  integrations: ["RevenueCat"],
   scale: { loc: 51000, files: 157 },
   featured: false,
 };
