@@ -56,9 +56,6 @@ SECTIONS = {
 }
 
 # На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
-CORE_LABEL = {"ru": "ОСНОВНОЕ", "en": "CORE"}
-ALSO_LABEL = {"ru": "РАБОТАЛ С", "en": "WORKED WITH"}
-
 ROLE_TITLE = {"ru": "Senior fullstack-разработчик и дизайнер", "en": "Senior fullstack developer and designer"}
 
 
@@ -123,18 +120,13 @@ def build(data, lang, out_path):
     y = draw(c, s_["stack"], x, y, "Body", 7.5, MUTED, 14)
     c.line(x, y + 5, SIDEBAR - 22, y + 5)
     y -= 6
-
-    # Основное — то, за что отвечаешь на любой глубине.
-    y = draw(c, CORE_LABEL[lang], x, y, "Body", 6.4, ACCENT, 10)
-    y = draw(c, " · ".join(data["core"]), x, y, "Body", 7.8,
-             HexColor("#ffffff"), 10, SIDEBAR - 40)
-
-    # Второй уровень тише: это не заявление о владении, а карта охвата.
-    y -= 9
-    y = draw(c, ALSO_LABEL[lang], x, y, "Body", 6.4, HexColor("#7d8ca3"), 10)
-    rest = [i for g in data["stack"] for i in g["items"] if i not in data["core"]]
-    y = draw(c, " · ".join(rest), x, y, "Body", 7,
-             HexColor("#aab6c8"), 8.8, SIDEBAR - 40)
+    for group in data["stack"]:
+        y = draw(c, group["label"][lang].upper(), x, y, "Body", 6.3, ACCENT, 9)
+        # В резюме — первые позиции группы: полный список живёт на сайте,
+        # а PDF читают придирчивее всего.
+        y = draw(c, " · ".join(group["items"][:4]), x, y, "Body", 7.4,
+                 HexColor("#e6edf5"), 9, SIDEBAR - 40)
+        y -= 2
 
     # Софт-скиллы уходят в боковую колонку: правая забита под завязку,
     # а здесь до сих пор пустовала нижняя половина.

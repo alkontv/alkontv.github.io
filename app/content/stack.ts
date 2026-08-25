@@ -6,45 +6,22 @@ export interface StackGroup {
 }
 
 /**
- * Два уровня вместо одного длинного списка.
+ * Один уровень, без деления на «основное» и «работал с».
  *
- * Плоский перечень читается не как «много умеет», а как «много где побывал»:
- * владеть сотней технологий нельзя, и достоверность падает у всего списка
- * разом. Разделение решает это честнее, чем обрезка: читатель сразу видит,
- * где дно, а где потолок, и перестаёт искать слабое звено — граница
- * показана добровольно.
+ * Деление пробовали — оно читается как ограничение: всё, что оказалось
+ * во втором уровне, выглядит как «этим не владею», хотя задумывалось
+ * ровно наоборот.
  *
- * CORE_STACK — то, за что отвечаешь на любой глубине. Всё остальное
- * выводится как «работал с» и заявлением о владении не является.
+ * Порядок внутри групп значим: первыми идут технологии, подтверждённые
+ * проектами портфолио. В резюме попадают только первые позиции каждой
+ * группы — PDF читают придирчивее всего.
  */
-export const CORE_STACK: string[] = [
-  "Flutter",
-  "Dart",
-  "FlutterFlow",
-  "TypeScript",
-  "Python",
-  "React",
-  "Next.js",
-  "FastAPI",
-  "Node.js",
-  "PostgreSQL",
-  "Redis",
-  "Supabase",
-  "Firebase",
-  "Docker",
-  "Nginx",
-  "Telegram Bot API",
-  "Figma",
-];
-
-/** Полный перечень по темам. Позиции из CORE_STACK на странице не дублируются. */
 export const STACK_GROUPS: StackGroup[] = [
   {
     label: { ru: "Мобильная разработка", en: "Mobile" },
     items: [
-      "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift",
-      "Jetpack Compose", "SwiftUI", "Codemagic", "Fastlane",
-      "Публикация в App Store и Google Play",
+      "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift", "SwiftUI",
+      "Codemagic", "Публикация в App Store и Google Play",
     ],
   },
   {
@@ -53,7 +30,7 @@ export const STACK_GROUPS: StackGroup[] = [
   },
   {
     label: { ru: "Веб-фронтенд", en: "Web frontend" },
-    items: ["React", "Next.js", "Tailwind CSS", "three.js / react-three-fiber", "GSAP"],
+    items: ["React", "Next.js"],
   },
   {
     label: { ru: "Бэкенд", en: "Backend" },
@@ -64,16 +41,13 @@ export const STACK_GROUPS: StackGroup[] = [
   },
   {
     label: { ru: "Базы и хранилища", en: "Databases and storage" },
-    items: [
-      "PostgreSQL", "Redis", "Firebase", "Supabase",
-      "MongoDB", "Elasticsearch", "ClickHouse", "pgvector",
-    ],
+    items: ["PostgreSQL", "Redis", "Firebase", "Supabase", "MongoDB", "pgvector"],
   },
   {
     label: { ru: "AI в продукте", en: "AI in the product" },
     items: [
-      "OpenAI API", "Anthropic Claude", "Gemini", "LangChain",
-      "Векторный поиск", "Whisper", "ElevenLabs", "n8n", "Компьютерное зрение",
+      "OpenAI API", "Anthropic Claude", "Gemini", "Векторный поиск",
+      "Whisper", "ElevenLabs", "n8n", "Компьютерное зрение",
     ],
   },
   {
@@ -90,7 +64,7 @@ export const STACK_GROUPS: StackGroup[] = [
   {
     label: { ru: "Платежи и подписки", en: "Payments and subscriptions" },
     items: [
-      "CloudPayments", "ЮKassa", "T-Bank", "RevenueCat", "Stripe",
+      "CloudPayments", "ЮKassa", "T-Bank", "Продамус", "RevenueCat", "Stripe",
       "Telegram Stars", "CryptoBot", "epoint", "Эскроу",
     ],
   },
