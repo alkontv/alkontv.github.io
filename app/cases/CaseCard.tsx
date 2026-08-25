@@ -3,6 +3,8 @@
 import { FORMAT_LABEL, STATUS_LABEL, type CaseStudy } from "@content";
 import { dict, tx, type Lang } from "@i18n";
 
+import { DIAGRAMS } from "./diagrams";
+
 const Chip = ({ text }: { text: string }) => (
   <span className="rounded border border-current/20 px-2 py-0.5 text-xs opacity-70">
     {text}
@@ -50,6 +52,12 @@ const CaseCard = ({ item, lang }: { item: CaseStudy; lang: Lang }) => {
         <h4 className="mb-2 text-xs uppercase tracking-wider opacity-50">{t.highlight}</h4>
         <p className="max-w-3xl text-sm leading-relaxed">{tx(item.highlight, lang)}</p>
       </section>
+
+      {item.diagram &&
+        (() => {
+          const Diagram = DIAGRAMS[item.diagram];
+          return <Diagram lang={lang} />;
+        })()}
 
       <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
         <div className="flex flex-wrap items-center gap-1.5">
