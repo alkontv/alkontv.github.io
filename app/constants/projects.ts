@@ -1,4 +1,4 @@
-import { FEATURED_CASES, STATUS_LABEL } from "@content";
+import { FEATURED_CASES } from "@content";
 import { Project } from "../types";
 
 /**
@@ -7,7 +7,7 @@ import { Project } from "../types";
  */
 export const PROJECTS: Project[] = FEATURED_CASES.map((c) => ({
   title: c.name,
-  status: STATUS_LABEL[c.status],
+  caption: c.industry,
   subtext: c.tagline,
   url: `/cases#${c.id}`,
 }));

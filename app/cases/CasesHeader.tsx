@@ -38,8 +38,6 @@ const CasesHeader = ({ lang }: { lang: Lang }) => {
           label={t.statSince}
         />
       </div>
-
-      <p className="max-w-2xl text-xs leading-relaxed opacity-50">{t.anonNote}</p>
     </header>
   );
 };

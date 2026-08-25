@@ -13,7 +13,6 @@ import { ecommerce } from "./ecommerce";
 import { vpnService } from "./vpn-service";
 import { checklists } from "./checklists";
 import { aiJobs } from "./ai-jobs";
-import { telegramMiniApp } from "./telegram-mini-app";
 
 /**
  * Порядок — по убыванию силы кейса, а не по дате: именно так их читают
@@ -33,7 +32,6 @@ export const CASES: CaseStudy[] = [
   vehicleSharing,
   foodRescue,
   checklists,
-  telegramMiniApp,
 ];
 
 /** Шесть кейсов для 3D-карусели: раскладка ProjectsCarousel рассчитана на шесть. */

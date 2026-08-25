@@ -19,13 +19,19 @@ export const STATS = {
   sinceYear: 2023,
 } as const;
 
-export const STATUS_LABEL: Record<CaseStatus, LocalizedText> = {
-  shipped: { ru: "СДАН", en: "SHIPPED" },
-  production: { ru: "В ПРОДЕ", en: "IN PROD" },
-  beta: { ru: "БЕТА", en: "BETA" },
-  active: { ru: "В РАБОТЕ", en: "ACTIVE" },
-  mvp: { ru: "MVP", en: "MVP" },
-  prototype: { ru: "МАКЕТ", en: "PROTOTYPE" },
+/**
+ * Показываем ТОЛЬКО завершённость, и только там, где она есть.
+ *
+ * Раньше бейдж стоял на каждой карточке и половина набора кричала «БЕТА»,
+ * «MVP», «МАКЕТ». Клиент читает такой ряд не как честность, а как «человек
+ * не доводит до конца» — вопрос, которого он не задавал. Незавершённые
+ * статусы просто не выводятся: врать это не заставляет, а слабость не
+ * рекламирует. Сам статус остаётся в данных — по нему решается, что
+ * попадает в 3D-карусель.
+ */
+export const STATUS_LABEL: Partial<Record<CaseStatus, LocalizedText>> = {
+  shipped: { ru: "СДАН И ЗАКРЫТ", en: "DELIVERED" },
+  production: { ru: "РАБОТАЕТ В ПРОДЕ", en: "LIVE IN PRODUCTION" },
 };
 
 export const FORMAT_LABEL: Record<CaseFormat, LocalizedText> = {

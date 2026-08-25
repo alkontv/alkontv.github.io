@@ -20,6 +20,8 @@ export interface Content {
     stack: string;
     integrations: string;
     skillsTitle: string;
+    processTitle: string;
+    processSteps: string[];
     ctaTitle: string;
     ctaText: string;
     ctaButton: string;

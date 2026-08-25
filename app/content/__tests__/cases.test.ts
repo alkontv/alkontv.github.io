@@ -6,8 +6,8 @@ import { CASES, FEATURED_CASES, getCase } from "../cases";
 const ASCII_SAFE = /^[A-Za-z0-9 \-&.,/()]+$/;
 
 describe("каталог кейсов", () => {
-  it("содержит ровно 14 кейсов", () => {
-    expect(CASES).toHaveLength(14);
+  it("содержит ровно 13 кейсов", () => {
+    expect(CASES).toHaveLength(13);
   });
 
   it("идентификаторы уникальны", () => {

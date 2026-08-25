@@ -13,6 +13,12 @@ describe("проекция кейсов в 3D-карусель", () => {
     );
   });
 
+  it("подпись плитки — отрасль кейса", () => {
+    PROJECTS.forEach((p, i) => {
+      expect(p.caption.ru).toBe(FEATURED_CASES[i].industry.ru);
+    });
+  });
+
   it("каждая плитка ведёт на якорь своего кейса", () => {
     PROJECTS.forEach((p, i) => {
       expect(p.url).toBe(`/cases#${FEATURED_CASES[i].id}`);

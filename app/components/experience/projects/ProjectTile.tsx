@@ -130,7 +130,7 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick, da
             {...subtitleProps}
             position={[-0.7, 0.2, 0]}
             fontSize={0.3}>
-            {tx(project.status, lang).toUpperCase()}
+            {tx(project.caption, lang).toUpperCase()}
           </Text>
         </group>
         <Text

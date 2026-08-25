@@ -9,6 +9,7 @@ import { dict } from "@i18n";
 import CaseCard from "./CaseCard";
 import CasesHeader from "./CasesHeader";
 import FormatFilter from "./FormatFilter";
+import ProcessBlock from "./ProcessBlock";
 import SkillsBlock from "./SkillsBlock";
 import { useResolvedLang } from "./useResolvedLang";
 
@@ -63,9 +64,11 @@ const CasesView = () => {
 
       <SkillsBlock lang={lang} />
 
+      <ProcessBlock lang={lang} />
+
       <section className="border-t border-current/15 py-12">
         <h2 className="mb-2 text-2xl font-semibold">{t.ctaTitle}</h2>
-        <p className="mb-6 opacity-80">{t.ctaText}</p>
+        <p className="mb-6 max-w-xl opacity-80">{t.ctaText}</p>
         <div className="flex flex-wrap gap-3">
           <a
             href={TELEGRAM_URL}
@@ -94,6 +97,10 @@ const CasesView = () => {
             {t.back}
           </Link>
         </div>
+
+        {/* Оговорка про NDA — разговор для конца страницы. В шапке она была
+            третьим, что читает клиент, и открывала знакомство с отказа. */}
+        <p className="mt-10 max-w-2xl text-xs leading-relaxed opacity-40">{t.anonNote}</p>
       </section>
     </main>
   );

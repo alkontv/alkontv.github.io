@@ -14,10 +14,14 @@ const CaseCard = ({ item, lang }: { item: CaseStudy; lang: Lang }) => {
 
   return (
     <article id={item.id} className="scroll-mt-24 border-t border-current/15 py-10">
-      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs uppercase tracking-wider opacity-60">
-        <span>{tx(item.industry, lang)}</span>
-        <span aria-hidden>&middot;</span>
-        <span>{tx(STATUS_LABEL[item.status], lang)}</span>
+      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs uppercase tracking-wider">
+        <span className="opacity-60">{tx(item.industry, lang)}</span>
+        {STATUS_LABEL[item.status] && (
+          <>
+            <span aria-hidden className="opacity-40">&middot;</span>
+            <span className="opacity-80">{tx(STATUS_LABEL[item.status]!, lang)}</span>
+          </>
+        )}
       </div>
 
       <h3 className="mb-2 text-2xl font-semibold sm:text-3xl">{tx(item.name, lang)}</h3>

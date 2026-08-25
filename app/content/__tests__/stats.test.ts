@@ -24,15 +24,16 @@ describe("сводные цифры", () => {
 });
 
 describe("метки статусов", () => {
-  it("покрывают все пять статусов", () => {
-    expect(Object.keys(STATUS_LABEL).sort()).toEqual(
-      ["active", "beta", "mvp", "production", "prototype", "shipped"]
-    );
+  it("подписаны только завершённые статусы", () => {
+    // Ряд бейджей «БЕТА / MVP / МАКЕТ» читается клиентом как «не доводит
+    // до конца». Незавершённое просто не выводится — врать не заставляет,
+    // но и слабость не рекламирует.
+    expect(Object.keys(STATUS_LABEL).sort()).toEqual(["production", "shipped"]);
   });
 
   it("EN-метки безопасны для шрифта 3D-сцены", () => {
     for (const label of Object.values(STATUS_LABEL)) {
-      expect(label.en).toMatch(ASCII_SAFE);
+      expect(label!.en).toMatch(ASCII_SAFE);
     }
   });
 });
