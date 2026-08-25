@@ -1,14 +1,11 @@
 import type { LocalizedText } from "@i18n";
 
-interface ProjectUrl {
-  text: string;
-  url: string;
-}
-
 export interface Project {
-  title: string;
-  date: string;
+  /** Обезличенное имя кейса. EN-версия рисуется шрифтом soria — только ASCII. */
+  title: LocalizedText;
+  /** Метка статуса вместо даты: даты из git недостоверны, см. §6.1 спеки. */
+  status: LocalizedText;
   subtext: LocalizedText;
+  /** Якорь на страницу кейсов. */
   url?: string;
-  urls?: ProjectUrl[];
 }
