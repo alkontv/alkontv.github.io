@@ -1,0 +1,31 @@
+# Портфолио — статический экспорт Next.js. Ни ноды, ни контейнера
+# приложения: Caddy отдаёт файлы напрямую и сам выпускает сертификат.
+#
+# Вставить в основной Caddyfile сервера рядом с блоком магазина.
+# Если Caddy запущен в docker-compose, каталог нужно примонтировать:
+#   volumes:
+#     - /srv/alkontv:/srv/alkontv:ro
+
+alkontv.ru, www.alkontv.ru {
+	root * /srv/alkontv
+	encode zstd gzip
+
+	# Статический экспорт кладёт страницы как cases.html и resume.html,
+	# а ссылки на сайте ведут на /cases и /resume. Без проверки .html
+	# раньше самого пути каталог /cases перехватит запрос и вернёт 404.
+	try_files {path}.html {path} {path}/index.html /404.html
+	file_server
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+
+	# Хешированные ассеты Next неизменяемы — их можно кешировать надолго.
+	@immutable path /_next/static/*
+	header @immutable Cache-Control "public, max-age=31536000, immutable"
+
+	# HTML — наоборот, всегда свежий, иначе правки не доедут до посетителя.
+	@html path *.html /
+	header @html Cache-Control "public, max-age=0, must-revalidate"
+}

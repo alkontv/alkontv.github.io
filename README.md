@@ -1,37 +1,47 @@
-# alkontv.github.io
+# alkontv.ru
 
-Двуязычное (RU/EN) 3D-портфолио Alan — fullstack-разработчика:
-web, mobile, боты, CRM и продукты с AI, от идеи до запуска.
+Двуязычное (RU/EN) портфолио Alan — fullstack-разработчика и дизайнера:
+3D-главная, страница работ с кейсами и раздел с резюме.
 
 ## Технологии
 
-- Next.js, React, react-three-fiber, DREI, GSAP, Zustand, Tailwind
+- Next.js (статический экспорт), React, TypeScript, Tailwind
+- react-three-fiber, DREI, GSAP — только для 3D-главной
 - Самописный i18n: Zustand + словари `app/i18n/content/{en,ru}.ts`
+- Контент кейсов, стека и опыта — `app/content/`
 
 ## Локальный запуск
 
 ```bash
-docker compose up -d   # http://localhost:3000
-# либо
-npm install && npm run dev
+npm install && npm run dev   # http://localhost:3000
 ```
 
-## Деплой
+## Выкладка
 
-GitHub Pages через `.github/workflows/nextjs.yml` (ветка `main`).
-Кастомный домен — секрет `GH_PAGES_CUSTOM_DOMAIN` (сгенерирует `public/CNAME`).
-Google Analytics — секрет `NEXT_PUBLIC_GA_ID`.
+Сайт — статика, серверу нужен только `file_server`.
 
-> Форк open-source портфолио [mohitvirli/mohitvirli.github.io](https://github.com/mohitvirli/mohitvirli.github.io), переработанный под Alan.
+```bash
+PORTFOLIO_SSH=user@host ./scripts/deploy.sh
+```
+
+Скрипт прогоняет тесты и линт, собирает статику, заливает `out/` по rsync
+и проверяет, что боевые адреса отвечают 200. Падает на любом шаге, а не
+выкладывает битое.
+
+Конфигурация веб-сервера — `deploy/Caddyfile.alkontv`. Ключевая строка там
+`try_files {path}.html {path} ...`: статический экспорт кладёт страницы как
+`cases.html`, а ссылки ведут на `/cases`, и без проверки `.html` раньше
+самого пути каталог перехватит запрос.
 
 ## Резюме
 
-`public/Alan-CV-{ru,en}.pdf` собираются скриптом из того же контента, что и сайт,
-поэтому не расходятся с ним:
+`public/Alan-CV-{ru,en}.pdf` собираются из того же контента, что и сайт:
 
 ```bash
 npx tsx scripts/dump-content.ts > /tmp/content.json
-python3 scripts/build-cv.py /tmp/content.json   # нужен reportlab
+PORTFOLIO_HOST=alkontv.ru python3 scripts/build-cv.py /tmp/content.json
 ```
 
 Скрипт падает с ошибкой, если контент не помещается на страницу.
+
+> Форк open-source портфолио [mohitvirli/mohitvirli.github.io](https://github.com/mohitvirli/mohitvirli.github.io), переработанный под Alan.
