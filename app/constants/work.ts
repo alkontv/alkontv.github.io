@@ -1,42 +1,30 @@
 import * as THREE from "three";
+
+import { TIMELINE } from "@content";
 import { WorkTimelinePoint } from "../types";
 
-// Плейсхолдеры карьеры Alan (координаты точек из оригинала — подогнаны
-// под сцену). Заменить реальными вехами.
-export const WORK_TIMELINE: WorkTimelinePoint[] = [
-  {
-    point: new THREE.Vector3(0, 0, 0),
-    year: '2019',
-    title: { en: 'Started in dev', ru: 'Старт в разработке' },
-    subtitle: { en: 'First sites & bots', ru: 'Первые сайты и боты' },
-    position: 'right',
-  },
-  {
-    point: new THREE.Vector3(-4, -4, -3),
-    year: '2021',
-    title: { en: 'Mobile & FlutterFlow', ru: 'Mobile & FlutterFlow' },
-    subtitle: { en: 'Mobile apps', ru: 'Мобильные приложения' },
-    position: 'left',
-  },
-  {
-    point: new THREE.Vector3(-3, -1, -6),
-    year: '2023',
-    title: { en: 'Fullstack', ru: 'Fullstack' },
-    subtitle: { en: 'Web, backend, databases', ru: 'Web, backend, базы данных' },
-    position: 'left',
-  },
-  {
-    point: new THREE.Vector3(0, -1, -10),
-    year: '2024',
-    title: { en: 'AI & Automation', ru: 'AI & Автоматизация' },
-    subtitle: { en: 'AI integrations, CRM', ru: 'AI-интеграции, CRM' },
-    position: 'left',
-  },
-  {
-    point: new THREE.Vector3(1, 1, -12),
-    year: 'now',
-    title: { en: 'In a team', ru: 'В команде' },
-    subtitle: { en: 'With a senior engineer', ru: 'С senior-инженером' },
-    position: 'right',
-  },
+/**
+ * Координаты точек — часть 3D-сцены, а не контента, поэтому живут здесь.
+ * Значения взяты из исходной сцены и не меняются: под них подобрана
+ * траектория камеры в work/index.tsx.
+ */
+const POINTS: Pick<WorkTimelinePoint, "point" | "position">[] = [
+  { point: new THREE.Vector3(0, 0, 0), position: "right" },
+  { point: new THREE.Vector3(-4, -4, -3), position: "left" },
+  { point: new THREE.Vector3(-3, -1, -6), position: "left" },
+  { point: new THREE.Vector3(0, -1, -10), position: "left" },
+  { point: new THREE.Vector3(1, 1, -12), position: "right" },
 ];
+
+if (POINTS.length !== TIMELINE.length) {
+  throw new Error(
+    `Точек сцены ${POINTS.length}, а вех таймлайна ${TIMELINE.length} — добавь координаты в POINTS`
+  );
+}
+
+export const WORK_TIMELINE: WorkTimelinePoint[] = TIMELINE.map((entry, i) => ({
+  ...POINTS[i],
+  year: entry.year,
+  title: entry.title,
+  subtitle: entry.subtitle,
+}));
