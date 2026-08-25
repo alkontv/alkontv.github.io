@@ -4,7 +4,7 @@ export const creatorApp: CaseStudy = {
   id: "creator-app",
   industry: { ru: "Медиа и инфобизнес", en: "Media and creator economy" },
   formats: ["mobile", "ai", "payments"],
-  name: { ru: "Приложение блогера с подпиской", en: "Creator Subscription App" },
+  name: { ru: "Приложение блогера", en: "Creator App" },
   tagline: {
     ru: "Образовательный контент, комьюнити и AI-двойник автора по подписке",
     en: "Educational content, community and an AI twin of the author, by subscription",

@@ -4,10 +4,7 @@ export const checklists: CaseStudy = {
   id: "checklists",
   industry: { ru: "Корпоративные процессы", en: "Enterprise operations" },
   formats: ["mobile", "ai"],
-  name: {
-    ru: "Корпоративные чек-листы с ассистентом",
-    en: "Enterprise Checklists with Assistant",
-  },
+  name: { ru: "Чек-листы с ассистентом", en: "Checklists with Assistant" },
   tagline: {
     ru: "Работа по инструкции: шаги с фотофиксацией, видео-гайды и ответы по регламенту",
     en: "Work by the book: steps with photo proof, video guides and answers from the manual",

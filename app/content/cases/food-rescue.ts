@@ -4,7 +4,7 @@ export const foodRescue: CaseStudy = {
   id: "food-rescue",
   industry: { ru: "Фудтех, Азербайджан", en: "Food tech, Azerbaijan" },
   formats: ["mobile", "payments", "admin"],
-  name: { ru: "Спасение еды коробкой-сюрпризом", en: "Surprise Box Food Rescue" },
+  name: { ru: "Спасение еды", en: "Food Rescue" },
   tagline: {
     ru: "Кафе продают непроданное за день со скидкой, покупатели забирают рядом с собой",
     en: "Cafes sell the day's unsold food at a discount, buyers pick it up nearby",

@@ -63,6 +63,22 @@ describe("целостность кейса", () => {
       expect(nameEn).toMatch(ASCII_SAFE);
     }
   );
+
+  it.each(CASES.map((c) => [c.id, c.name] as const))(
+    "%s назван коротко — длинное имя переносится в 3D-плитке",
+    (_id, name) => {
+      expect(name.ru.length).toBeLessThanOrEqual(26);
+      expect(name.en.length).toBeLessThanOrEqual(26);
+    }
+  );
+
+  it("имя кейса не повторяет его отрасль", () => {
+    // Отрасль стоит строкой выше имени: дублирование выглядит как заминка.
+    const same = CASES.filter(
+      (c) => c.name.ru.toLowerCase() === c.industry.ru.toLowerCase()
+    ).map((c) => c.id);
+    expect(same).toEqual([]);
+  });
 });
 
 describe("обезличивание", () => {

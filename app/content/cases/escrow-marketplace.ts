@@ -4,7 +4,7 @@ export const escrowMarketplace: CaseStudy = {
   id: "escrow-marketplace",
   industry: { ru: "Подработки и услуги", en: "Gig work and services" },
   formats: ["mobile", "web", "admin", "payments"],
-  name: { ru: "Маркетплейс подработок с эскроу", en: "Escrow Gig Marketplace" },
+  name: { ru: "Эскроу-маркетплейс", en: "Escrow Marketplace" },
   tagline: {
     ru: "Деньги депонируются площадкой и уходят исполнителю только после работы",
     en: "Money is held by the platform and released to the worker only after the job",

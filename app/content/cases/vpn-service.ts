@@ -4,7 +4,7 @@ export const vpnService: CaseStudy = {
   id: "vpn-service",
   industry: { ru: "Телеком и приватность", en: "Telecom and privacy" },
   formats: ["telegram", "backend", "web", "admin", "payments"],
-  name: { ru: "VPN-сервис по подписке", en: "Subscription VPN Service" },
+  name: { ru: "VPN по подписке", en: "Subscription VPN" },
   tagline: {
     ru: "Бот, мини-приложение и админка поверх собственного биллинга и агентов на нодах",
     en: "A bot, a mini app and an admin panel over an own billing system and node agents",

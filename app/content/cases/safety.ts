@@ -4,7 +4,7 @@ export const safety: CaseStudy = {
   id: "safety",
   industry: { ru: "Личная безопасность", en: "Personal safety" },
   formats: ["mobile", "backend", "payments"],
-  name: { ru: "Приложение личной безопасности", en: "Personal Safety App" },
+  name: { ru: "Кнопка SOS", en: "SOS Button" },
   tagline: {
     ru: "Одна кнопка: обращение в службу спасения, координаты доверенным лицам и видео с камеры",
     en: "One button: an emergency report, coordinates to trusted contacts, camera video",

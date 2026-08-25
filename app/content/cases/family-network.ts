@@ -4,7 +4,7 @@ export const familyNetwork: CaseStudy = {
   id: "family-network",
   industry: { ru: "Социальные сети", en: "Social networks" },
   formats: ["mobile", "web"],
-  name: { ru: "Семейная соцсеть", en: "Family Social Network" },
+  name: { ru: "Семейная соцсеть", en: "Family Network" },
   tagline: {
     ru: "Родственники на орбитах по степени родства вместо привычной ленты",
     en: "Relatives on orbits by degree of kinship instead of a conventional feed",

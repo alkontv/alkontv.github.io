@@ -4,7 +4,7 @@ export const aiJobs: CaseStudy = {
   id: "ai-jobs",
   industry: { ru: "Найм, Юго-Восточная Азия", en: "Hiring, Southeast Asia" },
   formats: ["mobile", "ai", "backend"],
-  name: { ru: "AI-подбор работы и исполнителей", en: "AI Job and Talent Matching" },
+  name: { ru: "AI-подбор работы", en: "AI Job Matching" },
   tagline: {
     ru: "Резюме и вакансия собираются в диалоге, а подбор идёт векторным поиском",
     en: "Resumes and vacancies are assembled in a dialogue, and matching runs on vector search",

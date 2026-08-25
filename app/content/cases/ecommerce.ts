@@ -4,7 +4,7 @@ export const ecommerce: CaseStudy = {
   id: "ecommerce",
   industry: { ru: "Ритуальная флористика", en: "Funeral floristry" },
   formats: ["web", "backend"],
-  name: { ru: "Интернет-магазин с админкой", en: "E-commerce Site with CMS" },
+  name: { ru: "Интернет-магазин", en: "E-commerce Site" },
   tagline: {
     ru: "Замена устаревшего сайта: каталог, заявки в админку и в мессенджер, прицел на поиск",
     en: "Replacing a legacy site: catalogue, orders into a CMS and a messenger, built for search",

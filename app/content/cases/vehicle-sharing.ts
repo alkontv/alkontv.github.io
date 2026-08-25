@@ -4,7 +4,7 @@ export const vehicleSharing: CaseStudy = {
   id: "vehicle-sharing",
   industry: { ru: "Туризм и шеринг", en: "Travel and sharing" },
   formats: ["mobile"],
-  name: { ru: "Шеринг мототехники и лодок", en: "Powersports and Boat Sharing" },
+  name: { ru: "Мотошеринг", en: "Powersports Sharing" },
   tagline: {
     ru: "Владелец публикует поездку с маршрутом, остальные бронируют места",
     en: "An owner publishes a ride with a route, others book seats on it",
