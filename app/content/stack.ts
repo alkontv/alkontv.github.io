@@ -15,95 +15,73 @@ export const STACK_GROUPS: StackGroup[] = [
     label: { ru: "Мобильная разработка", en: "Mobile" },
     items: [
       "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift",
-      "Jetpack Compose", "SwiftUI", "Android SDK", "iOS SDK",
-      "Gradle", "CocoaPods", "Codemagic", "Fastlane", "App Store Connect", "Google Play Console",
-      "Push (FCM, APNs)", "Deep links", "In-app purchases",
+      "Jetpack Compose", "SwiftUI", "Gradle", "CocoaPods",
+      "Codemagic", "Fastlane", "App Store Connect", "Google Play Console",
     ],
   },
   {
     label: { ru: "Языки", en: "Languages" },
-    items: ["TypeScript", "JavaScript", "Python", "Dart", "Go", "Kotlin", "Swift", "SQL", "Bash"],
+    items: ["TypeScript", "JavaScript", "Python", "Go"],
   },
   {
     label: { ru: "Веб-фронтенд", en: "Web frontend" },
-    items: [
-      "React", "Next.js", "Vite", "Tailwind CSS", "Zustand", "TanStack Query",
-      "React Router", "React Hook Form", "Zod", "Radix UI", "shadcn/ui",
-      "i18next", "three.js", "react-three-fiber", "GSAP", "PWA",
-    ],
+    items: ["React", "Next.js", "Tailwind CSS", "three.js / react-three-fiber", "GSAP", "PWA"],
   },
   {
     label: { ru: "Бэкенд", en: "Backend" },
     items: [
-      "FastAPI", "Node.js", "Django REST", "Express", "NestJS",
-      "SQLAlchemy", "Alembic", "Pydantic", "aiogram", "Telegraf",
-      "Cloud Functions", "Edge Functions", "REST", "WebSocket", "GraphQL",
-      "Celery", "ARQ", "APScheduler",
+      "FastAPI", "Node.js", "Django REST", "NestJS",
+      "SQLAlchemy", "Alembic", "Cloud Functions", "Edge Functions",
+      "WebSocket", "GraphQL", "Celery", "ARQ",
     ],
   },
   {
     label: { ru: "Базы и хранилища", en: "Databases and storage" },
     items: [
-      "PostgreSQL", "Redis", "Firebase Firestore", "Supabase", "SQLite",
-      "MySQL", "MongoDB", "Elasticsearch", "ClickHouse",
-      "pgvector", "Chroma", "S3", "MinIO",
+      "PostgreSQL", "Redis", "Firebase Firestore", "Supabase", "MySQL",
+      "MongoDB", "Elasticsearch", "ClickHouse", "pgvector", "S3",
     ],
   },
   {
     label: { ru: "AI в продукте", en: "AI in the product" },
     items: [
-      "OpenAI API", "Anthropic Claude", "Gemini", "LangChain",
-      "Векторный поиск", "Эмбеддинги", "RAG", "Whisper", "ElevenLabs",
-      "n8n", "OCR", "Компьютерное зрение",
+      "OpenAI API", "Anthropic Claude", "Gemini", "LangChain", "Векторный поиск",
+      "Whisper", "ElevenLabs", "n8n", "OCR", "Компьютерное зрение",
     ],
   },
   {
     label: { ru: "Инфраструктура и DevOps", en: "Infrastructure and DevOps" },
     items: [
-      "Docker", "Docker Compose", "Nginx", "Caddy", "Linux", "VPS",
-      "GitHub Actions", "Codemagic", "CI/CD", "Kubernetes", "Traefik", "Ansible", "Terraform",
-      "Cloudflare", "systemd", "Let's Encrypt", "Google Cloud Run",
+      "Docker", "Nginx", "Caddy", "systemd", "GitHub Actions", "Google Cloud Run",
+      "Cloudflare", "Kubernetes", "Traefik", "Ansible", "Terraform",
     ],
   },
   {
-    label: { ru: "Мониторинг и надёжность", en: "Monitoring and reliability" },
-    items: [
-      "Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry",
-      "Firebase Crashlytics", "Firebase Performance", "Алертинг", "Логирование",
-    ],
+    label: { ru: "Мониторинг", en: "Monitoring" },
+    items: ["Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry", "Firebase Crashlytics"],
   },
   {
     label: { ru: "Платежи и подписки", en: "Payments and subscriptions" },
     items: [
       "CloudPayments", "ЮKassa", "T-Bank", "RevenueCat", "Stripe",
-      "Telegram Stars", "CryptoBot", "epoint", "Apple Pay", "Google Pay",
-      "Эскроу", "Рекуррентные списания", "Вебхуки", "3-D Secure",
+      "Telegram Stars", "CryptoBot", "epoint", "Эскроу",
     ],
   },
   {
     label: { ru: "Telegram", en: "Telegram" },
-    items: ["Bot API", "Mini Apps", "Web App SDK", "Payments API", "aiogram", "Telegraf"],
+    items: ["Bot API", "Mini Apps", "aiogram", "Telegraf"],
   },
   {
     label: { ru: "Аналитика", en: "Analytics" },
-    items: [
-      "Firebase Analytics", "Google Analytics", "AppMetrica", "Amplitude",
-      "Событийная аналитика", "A/B-тесты", "Воронки",
-    ],
+    items: ["Firebase Analytics", "AppMetrica", "Amplitude", "A/B-тесты"],
   },
   {
     label: { ru: "Дизайн", en: "Design" },
-    items: [
-      "Figma", "Дизайн-токены", "Дизайн-системы", "Прототипирование",
-      "Адаптивная вёрстка", "Rive", "Lottie",
-    ],
+    items: ["Figma", "Дизайн-токены", "Rive", "Lottie"],
   },
   {
-    label: { ru: "Процесс и качество", en: "Process and quality" },
-    items: [
-      "Git", "GitHub", "GitLab", "Code review", "Яндекс Трекер", "Jira",
-      "Scrum", "pytest", "Vitest", "Playwright", "Postman", "TDD",
-    ],
+    label: { ru: "Тестирование", en: "Testing" },
+    items: ["pytest", "Vitest", "Playwright", "TDD"],
   },
 ];
 
