@@ -6,11 +6,13 @@ export interface StackGroup {
 }
 
 /**
- * Один уровень, без деления на «основное» и «работал с».
+ * Один уровень, без деления на «основное» и «работал с»: деление читалось
+ * как ограничение — всё, что попадало во второй уровень, выглядело как
+ * «этим не владею».
  *
- * Деление пробовали — оно читается как ограничение: всё, что оказалось
- * во втором уровне, выглядит как «этим не владею», хотя задумывалось
- * ровно наоборот.
+ * Групп намеренно немного и они плотные. Тринадцать групп по три-четыре
+ * пункта выглядели обрывками; языки убраны в те области, где на них пишут,
+ * мониторинг сведён с инфраструктурой, тесты — с аналитикой.
  *
  * Порядок внутри групп значим: первыми идут технологии, подтверждённые
  * проектами портфолио. В резюме попадают только первые позиции каждой
@@ -25,19 +27,16 @@ export const STACK_GROUPS: StackGroup[] = [
     ],
   },
   {
-    label: { ru: "Языки", en: "Languages" },
-    items: ["TypeScript", "Python", "Go"],
-  },
-  {
-    label: { ru: "Веб-фронтенд", en: "Web frontend" },
-    items: ["React", "Next.js"],
-  },
-  {
-    label: { ru: "Бэкенд", en: "Backend" },
+    label: { ru: "Веб и бэкенд", en: "Web and backend" },
     items: [
-      "FastAPI", "Node.js", "Django REST", "NestJS", "SQLAlchemy",
-      "Serverless-функции", "WebSocket", "GraphQL", "Celery", "ARQ",
+      "TypeScript", "React", "Next.js", "Python", "FastAPI", "Node.js",
+      "Django REST", "NestJS", "Go", "SQLAlchemy", "Serverless-функции",
+      "WebSocket", "GraphQL", "Celery", "ARQ",
     ],
+  },
+  {
+    label: { ru: "Telegram", en: "Telegram" },
+    items: ["Telegram Bot API", "Mini Apps", "aiogram"],
   },
   {
     label: { ru: "Базы и хранилища", en: "Databases and storage" },
@@ -51,15 +50,12 @@ export const STACK_GROUPS: StackGroup[] = [
     ],
   },
   {
-    label: { ru: "Инфраструктура и DevOps", en: "Infrastructure and DevOps" },
+    label: { ru: "Инфраструктура и мониторинг", en: "Infrastructure and monitoring" },
     items: [
       "Docker", "Nginx", "Caddy", "GitHub Actions", "Google Cloud Run",
       "Kubernetes", "Traefik", "Ansible", "Terraform",
+      "Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry",
     ],
-  },
-  {
-    label: { ru: "Мониторинг", en: "Monitoring" },
-    items: ["Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry"],
   },
   {
     label: { ru: "Платежи и подписки", en: "Payments and subscriptions" },
@@ -69,20 +65,12 @@ export const STACK_GROUPS: StackGroup[] = [
     ],
   },
   {
-    label: { ru: "Telegram", en: "Telegram" },
-    items: ["Telegram Bot API", "Mini Apps", "aiogram"],
-  },
-  {
-    label: { ru: "Аналитика", en: "Analytics" },
-    items: ["AppMetrica", "Amplitude", "A/B-тесты"],
-  },
-  {
     label: { ru: "Дизайн", en: "Design" },
     items: ["Figma", "Дизайн-токены", "Rive", "Lottie"],
   },
   {
-    label: { ru: "Тестирование", en: "Testing" },
-    items: ["pytest", "Vitest", "Playwright", "TDD"],
+    label: { ru: "Качество и аналитика", en: "Quality and analytics" },
+    items: ["pytest", "Vitest", "Playwright", "TDD", "AppMetrica", "Amplitude", "A/B-тесты"],
   },
 ];
 
