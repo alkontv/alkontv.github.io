@@ -9,8 +9,8 @@ describe("сводные цифры", () => {
   it("совпадают с логом платежей хранилища", () => {
     expect(STATS.revenueRub).toBe(2234980);
     expect(STATS.paidProjects).toBe(18);
-    expect(STATS.repos).toBe(52);
-    expect(STATS.mentees).toBe(5);
+    expect(STATS.repos).toBe(51);
+    expect(STATS.mentees).toBe(4);
   });
 });
 

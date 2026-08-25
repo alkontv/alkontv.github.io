@@ -88,3 +88,13 @@ body {
 .close:after {
   transform: rotate(-45deg);
 }
+/* На странице кейсов текст читают и копируют — глобальный запрет выделения
+   из 3D-сцены здесь мешает. */
+.cases-page,
+.cases-page * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
