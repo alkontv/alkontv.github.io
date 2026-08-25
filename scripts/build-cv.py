@@ -121,10 +121,12 @@ def build(data, lang, out_path):
     c.line(x, y + 5, SIDEBAR - 22, y + 5)
     y -= 6
     for group in data["stack"]:
-        y = draw(c, group["label"][lang].upper(), x, y, "Body", 6.4, ACCENT, 9.5)
-        y = draw(c, " · ".join(group["items"]), x, y, "Body", 7.4,
-                 HexColor("#e6edf5"), 9.4, SIDEBAR - 40)
-        y -= 3.5
+        y = draw(c, group["label"][lang].upper(), x, y, "Body", 6.3, ACCENT, 9)
+        # В резюме — первые позиции группы: список полностью живёт на сайте,
+        # а PDF читают придирчивее всего, здесь должно стоять самое крепкое.
+        y = draw(c, " · ".join(group["items"][:4]), x, y, "Body", 7.4,
+                 HexColor("#e6edf5"), 9, SIDEBAR - 40)
+        y -= 2
 
     # Софт-скиллы уходят в боковую колонку: правая забита под завязку,
     # а здесь до сих пор пустовала нижняя половина.
@@ -133,8 +135,8 @@ def build(data, lang, out_path):
     c.line(x, y + 5, SIDEBAR - 22, y + 5)
     y -= 5
     for item in data["soft"]:
-        y = draw(c, item[lang], x, y, "Body", 7.1, HexColor("#c3cede"), 8.8, SIDEBAR - 40)
-        y -= 4.5
+        y = draw(c, item[lang], x, y, "Body", 7, HexColor("#c3cede"), 8.6, SIDEBAR - 40)
+        y -= 3.5
     sidebar_rest = y
 
     # --- светлая колонка ---
