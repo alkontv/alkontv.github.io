@@ -85,9 +85,6 @@ SECTIONS = {
            "contacts": "CONTACTS", "stack": "STACK"},
 }
 
-# «кейсов ниже» осмысленно на странице, но не в резюме.
-CASES_LABEL = {"ru": "кейсов в портфолио", "en": "cases in portfolio"}
-
 # На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
 ROLE_TITLE = {"ru": "Senior fullstack-разработчик и дизайнер", "en": "Senior fullstack developer and designer"}
 
@@ -169,12 +166,11 @@ def build(data, lang, out_path):
     y -= 12
     figures = [
         (f"{stats['apps']}+", copy["statApps"]),
-        (str(data["casesTotal"]), CASES_LABEL[lang]),
         (str(stats["markets"]), copy["statMarkets"]),
         (str(stats["sinceYear"]), copy["statSince"]),
     ]
     fx = x
-    step = colw / 4
+    step = colw / max(len(figures), 1)
     for value, label in figures:
         c.setFont("Body-Bold", 13)
         c.setFillColor(INK)

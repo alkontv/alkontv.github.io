@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { CASES, EMPLOYMENT, FEATURED_CASES, SKILL_GROUPS, STATS } from "@content";
+import { EMPLOYMENT, FEATURED_CASES, SKILL_GROUPS, STATS } from "@content";
 import { dict, tx } from "@i18n";
 
 import { TELEGRAM_URL } from "../SiteChrome";
@@ -19,7 +19,6 @@ const ResumeView = () => {
 
   const stats = [
     { value: `${STATS.apps}+`, label: t.statApps },
-    { value: String(CASES.length), label: t.statCases },
     { value: String(STATS.markets), label: t.statMarkets },
     { value: String(STATS.sinceYear), label: t.statSince },
   ];
@@ -40,7 +39,7 @@ const ResumeView = () => {
           {t.resumeDownload}
         </a>
 
-        <div className="mt-14 grid grid-cols-2 gap-y-8 sm:grid-cols-4">
+        <div className="mt-14 grid grid-cols-3 gap-6">
           {stats.map((s) => (
             <div key={s.label}>
               <div className="display text-2xl font-semibold sm:text-3xl">{s.value}</div>

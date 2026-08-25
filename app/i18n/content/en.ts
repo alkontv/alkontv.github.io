@@ -37,7 +37,6 @@ export const en: Content = {
     sublead:
       "Fullstack development and design: mobile apps, web, Telegram bots, backend and infrastructure. I take a product from brief to release, so you do not have to assemble a row of contractors and keep them in sync.",
     statApps: "apps and services",
-    statCases: "cases in this portfolio",
     statMarkets: "markets",
     statSince: "first paid work",
     filterAll: "All",

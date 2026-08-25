@@ -27,7 +27,6 @@ const CasesIndex = () => {
 
   const stats = [
     { value: `${STATS.apps}+`, label: t.statApps },
-    { value: String(CASES.length), label: t.statCases },
     { value: String(STATS.markets), label: t.statMarkets },
     { value: String(STATS.sinceYear), label: t.statSince },
   ];
@@ -52,7 +51,7 @@ const CasesIndex = () => {
           </Link>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-y-8 sm:grid-cols-4">
+        <div className="mt-16 grid grid-cols-3 gap-6">
           {stats.map((s) => (
             <div key={s.label}>
               <div className="display text-3xl font-semibold sm:text-4xl">{s.value}</div>

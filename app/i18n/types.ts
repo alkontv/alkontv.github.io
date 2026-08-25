@@ -13,7 +13,6 @@ export interface Content {
     lead: string;
     sublead: string;
     statApps: string;
-    statCases: string;
     statMarkets: string;
     statSince: string;
     filterAll: string;
