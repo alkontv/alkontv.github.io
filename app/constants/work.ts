@@ -32,11 +32,9 @@ const spread = (count: number) =>
         POINTS[Math.round((i * (POINTS.length - 1)) / (count - 1))]
       );
 
-/** В сцене — от раннего к позднему, поэтому список разворачиваем. */
-const chronological = [...EMPLOYMENT].reverse();
-
-export const WORK_TIMELINE: WorkTimelinePoint[] = chronological.map((job, i) => ({
-  ...spread(chronological.length)[i],
+// Список уже идёт по нарастанию — разворачивать не нужно.
+export const WORK_TIMELINE: WorkTimelinePoint[] = EMPLOYMENT.map((job, i) => ({
+  ...spread(EMPLOYMENT.length)[i],
   year: job.since,
   title: job.company,
   subtitle: job.role,

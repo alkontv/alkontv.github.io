@@ -4,9 +4,9 @@ import { EMPLOYMENT } from "../employment";
 const ASCII_SAFE = /^[A-Za-z0-9 \-&.,/()]+$/;
 
 describe("опыт работы", () => {
-  it("идёт в обратном хронологическом порядке — как в резюме", () => {
+  it("идёт по нарастанию — от раннего к позднему", () => {
     const years = EMPLOYMENT.map((j) => Number(j.since));
-    expect(years).toEqual([...years].sort((a, b) => b - a));
+    expect(years).toEqual([...years].sort((a, b) => a - b));
   });
 
   it("каждое место заполнено на обоих языках", () => {

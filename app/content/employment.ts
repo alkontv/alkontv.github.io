@@ -12,7 +12,8 @@ export interface Job {
 }
 
 /**
- * Опыт работы в обратном хронологическом порядке — как в резюме.
+ * Опыт работы по нарастанию: от раннего к позднему. Так читается как
+ * траектория — от частной практики к найму и росту до Senior.
  *
  * Раньше здесь была тематическая линия («маркетплейсы», «бэкенд», «AI»).
  * Её убрали: под заголовком «Опыт» читатель ждёт места работы, а получал
@@ -21,16 +22,16 @@ export interface Job {
  */
 export const EMPLOYMENT: Job[] = [
   {
-    company: { ru: "AppFyl", en: "AppFyl" },
+    company: { ru: "Частная практика", en: "Independent practice" },
     role: {
-      ru: "Senior fullstack-разработчик и дизайнер",
-      en: "Senior fullstack developer and designer",
+      ru: "Fullstack-разработчик и дизайнер",
+      en: "Fullstack developer and designer",
     },
-    period: { ru: "2025 — сейчас", en: "2025 — now" },
-    since: "2025",
+    period: { ru: "2022 — сейчас", en: "2022 — now" },
+    since: "2022",
     summary: {
-      ru: "Студия разработки: клиентские продукты от макета до релиза — мобильные приложения, веб, бэкенд и интерфейсы. Работа по процессу студии: постановка, ревью, сдача.",
-      en: "A development studio: client products from mockup to release — mobile apps, web, backend and interfaces. Delivered inside the studio's process: briefing, review, handover.",
+      ru: "Продукты под ключ для заказчиков из России, ОАЭ, Азербайджана и Юго-Восточной Азии: маркетплейсы с платежами, приложения с подписками, Telegram-боты, self-hosted инфраструктура.",
+      en: "End-to-end products for clients in Russia, the UAE, Azerbaijan and Southeast Asia: marketplaces with payments, subscription apps, Telegram bots and self-hosted infrastructure.",
     },
   },
   {
@@ -47,16 +48,16 @@ export const EMPLOYMENT: Job[] = [
     },
   },
   {
-    company: { ru: "Частная практика", en: "Independent practice" },
+    company: { ru: "AppFyl", en: "AppFyl" },
     role: {
-      ru: "Fullstack-разработчик и дизайнер",
-      en: "Fullstack developer and designer",
+      ru: "Senior fullstack-разработчик",
+      en: "Senior fullstack developer",
     },
-    period: { ru: "2022 — сейчас", en: "2022 — now" },
-    since: "2022",
+    period: { ru: "2025 — сейчас", en: "2025 — now" },
+    since: "2025",
     summary: {
-      ru: "Продукты под ключ для заказчиков из России, ОАЭ, Азербайджана и Юго-Восточной Азии: маркетплейсы с платежами, приложения с подписками, Telegram-боты, self-hosted инфраструктура.",
-      en: "End-to-end products for clients in Russia, the UAE, Azerbaijan and Southeast Asia: marketplaces with payments, subscription apps, Telegram bots and self-hosted infrastructure.",
+      ru: "Студия разработки: клиентские продукты от макета до релиза — мобильные приложения, веб, бэкенд и интерфейсы. Работа по процессу студии: постановка, ревью, сдача.",
+      en: "A development studio: client products from mockup to release — mobile apps, web, backend and interfaces. Delivered inside the studio's process: briefing, review, handover.",
     },
   },
 ];
