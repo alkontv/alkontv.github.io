@@ -1,9 +1,16 @@
 import type { LocalizedText } from "@i18n";
 
+/** Технология: либо имя, одинаковое в обоих языках, либо переводимое понятие. */
+export type StackItem = string | LocalizedText;
+
 export interface StackGroup {
   label: LocalizedText;
-  items: string[];
+  items: StackItem[];
 }
+
+/** Резолвит позицию стека: строка — как есть, объект — по языку. */
+export const txItem = (item: StackItem, lang: "ru" | "en"): string =>
+  typeof item === "string" ? item : item[lang];
 
 /**
  * Один уровень, без деления на «основное» и «работал с»: деление читалось
@@ -23,14 +30,14 @@ export const STACK_GROUPS: StackGroup[] = [
     label: { ru: "Мобильная разработка", en: "Mobile" },
     items: [
       "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift", "SwiftUI",
-      "Codemagic", "Публикация в App Store и Google Play",
+      "Codemagic", { ru: "Публикация в App Store и Google Play", en: "App Store and Google Play releases" },
     ],
   },
   {
     label: { ru: "Веб и бэкенд", en: "Web and backend" },
     items: [
       "TypeScript", "React", "Next.js", "Python", "FastAPI", "Node.js",
-      "Django REST", "NestJS", "Go", "SQLAlchemy", "Serverless-функции",
+      "Django REST", "NestJS", "Go", "SQLAlchemy", { ru: "Serverless-функции", en: "Serverless functions" },
       "WebSocket", "GraphQL", "Celery", "ARQ",
     ],
   },
@@ -45,8 +52,8 @@ export const STACK_GROUPS: StackGroup[] = [
   {
     label: { ru: "AI в продукте", en: "AI in the product" },
     items: [
-      "OpenAI API", "Anthropic Claude", "Gemini", "Векторный поиск",
-      "Whisper", "ElevenLabs", "n8n", "Компьютерное зрение",
+      "OpenAI API", "Anthropic Claude", "Gemini", { ru: "Векторный поиск", en: "Vector search" },
+      "Whisper", "ElevenLabs", "n8n", { ru: "Компьютерное зрение", en: "Computer vision" },
     ],
   },
   {
@@ -60,17 +67,17 @@ export const STACK_GROUPS: StackGroup[] = [
   {
     label: { ru: "Платежи и подписки", en: "Payments and subscriptions" },
     items: [
-      "CloudPayments", "ЮKassa", "T-Bank", "Продамус", "RevenueCat", "Stripe",
-      "Telegram Stars", "CryptoBot", "epoint", "Эскроу",
+      "CloudPayments", { ru: "ЮKassa", en: "YooKassa" }, "T-Bank", { ru: "Продамус", en: "Prodamus" }, "RevenueCat", "Stripe",
+      "Telegram Stars", "CryptoBot", "epoint", { ru: "Эскроу", en: "Escrow" },
     ],
   },
   {
     label: { ru: "Дизайн", en: "Design" },
-    items: ["Figma", "Дизайн-токены", "Rive", "Lottie"],
+    items: ["Figma", { ru: "Дизайн-токены", en: "Design tokens" }, "Rive", "Lottie"],
   },
   {
     label: { ru: "Качество и аналитика", en: "Quality and analytics" },
-    items: ["pytest", "Vitest", "Playwright", "TDD", "AppMetrica", "Amplitude", "A/B-тесты"],
+    items: ["pytest", "Vitest", "Playwright", "TDD", "AppMetrica", "Amplitude", { ru: "A/B-тесты", en: "A/B testing" }],
   },
 ];
 

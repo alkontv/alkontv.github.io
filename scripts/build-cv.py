@@ -59,6 +59,11 @@ SECTIONS = {
 ROLE_TITLE = {"ru": "Senior fullstack-разработчик и дизайнер", "en": "Senior fullstack developer and designer"}
 
 
+def item_name(item, lang):
+    """Позиция стека: строка — как есть, объект — по языку."""
+    return item if isinstance(item, str) else item[lang]
+
+
 def wrap(c, text, font, size, width):
     """Разбивает строку по ширине — reportlab сам этого не делает."""
     words, lines, cur = text.split(), [], ""
@@ -124,7 +129,8 @@ def build(data, lang, out_path):
         y = draw(c, group["label"][lang].upper(), x, y, "Body", 6.3, ACCENT, 9)
         # В резюме — первые позиции группы: полный список живёт на сайте,
         # а PDF читают придирчивее всего.
-        y = draw(c, " · ".join(group["items"][:4]), x, y, "Body", 7.4,
+        y = draw(c, " · ".join(item_name(i, lang) for i in group["items"][:4]),
+                 x, y, "Body", 7.4,
                  HexColor("#e6edf5"), 9, SIDEBAR - 40)
         y -= 2
 

@@ -9,6 +9,7 @@ import {
   SOFT_SKILLS,
   STACK_GROUPS,
   STATS,
+  txItem,
 } from "@content";
 import { dict, tx } from "@i18n";
 
@@ -116,11 +117,14 @@ const ResumeView = () => {
             <div key={i} className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-6">
               <h3 className="text-sm font-semibold text-accent">{tx(g.label, lang)}</h3>
               <div className="flex flex-wrap gap-1.5">
-                {g.items.map((item) => (
-                  <span key={item} className="chip">
-                    {item}
-                  </span>
-                ))}
+                {g.items.map((item) => {
+                  const name = txItem(item, lang);
+                  return (
+                    <span key={name} className="chip">
+                      {name}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           ))}
