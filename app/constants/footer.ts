@@ -2,6 +2,12 @@ import { FooterLink } from "../types";
 
 export const FOOTER_LINKS: FooterLink[] = [
   {
+    name: 'Cases',
+    hoverText: { en: 'Selected work', ru: 'Избранные работы' },
+    icon: 'icons/chevrons-left-right.svg',
+    url: './cases',
+  },
+  {
     name: 'Telegram',
     hoverText: { en: 'Message me', ru: 'Написать' },
     icon: 'icons/telegram.svg',

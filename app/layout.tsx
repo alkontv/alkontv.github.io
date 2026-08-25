@@ -15,9 +15,11 @@ const vercettiFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://alkontv.github.io/'),
-  title: "Alan — Fullstack Developer",
-  description: "Fullstack developer building web, mobile, bots, CRM and AI-powered products — from idea to launch.",
-  keywords: "Alan, Fullstack Developer, Flutter, FlutterFlow, Mobile Developer, Web, Backend, Telegram Bots, CRM, AI, Supabase, Postgres, Firebase, JavaScript, TypeScript, Python, Portfolio",
+  title: "Alan — Full-Cycle Developer",
+  description:
+    "Full-cycle developer: mobile apps, web, Telegram bots, backend and AI. From idea to release, infrastructure included.",
+  keywords:
+    "Alan, Full-Cycle Developer, Flutter, Mobile Developer, Web, Next.js, Backend, FastAPI, Telegram Bots, Mini Apps, Supabase, PostgreSQL, AI Integration, Vector Search, Escrow Marketplace, Portfolio",
   authors: [{ name: "Alan" }],
   creator: "Alan",
   publisher: "Alan",
@@ -37,16 +39,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Alan — Fullstack Developer",
-    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
+    title: "Alan — Full-Cycle Developer",
+    description: "Mobile, web, Telegram bots, backend and AI — from idea to release.",
     siteName: "Alan's Portfolio",
     locale: "en_US",
     type: "website",
+    // Статический файл, а не маршрут метаданных: Pages отдаёт расширение
+    // как Content-Type, и без .png превью в мессенджерах не разворачивается.
+    images: [{ url: "/og.png", width: 1200, height: 630, type: "image/png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alan — Fullstack Developer",
-    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
+    title: "Alan — Full-Cycle Developer",
+    description: "Mobile, web, Telegram bots, backend and AI — from idea to release.",
+    images: ["/og.png"],
   },
 };
 
