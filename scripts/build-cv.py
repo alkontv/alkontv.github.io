@@ -11,6 +11,7 @@
     python3 scripts/build-cv.py /tmp/content.json
 """
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -33,16 +34,19 @@ MUTED = HexColor("#9fb0c4")
 INK = HexColor("#111827")
 INK_SOFT = HexColor("#4b5563")
 
+# Меняется одним местом при переезде на свой домен.
+SITE_HOST = os.environ.get("PORTFOLIO_HOST", "alkontv.github.io")
+
 CONTACTS = {
     "ru": [
         ("Telegram", "@jdm_as_fuck"),
         ("GitHub", "github.com/alkontv"),
-        ("Портфолио", "alkontv.github.io/cases"),
+        ("Портфолио", f"{SITE_HOST}/cases"),
     ],
     "en": [
         ("Telegram", "@jdm_as_fuck"),
         ("GitHub", "github.com/alkontv"),
-        ("Portfolio", "alkontv.github.io/cases"),
+        ("Portfolio", f"{SITE_HOST}/cases"),
     ],
 }
 

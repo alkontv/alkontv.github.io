@@ -67,8 +67,12 @@ jobs:
       - name: Determine site URL
         run: |
           if [ -n "${GH_PAGES_CUSTOM_DOMAIN:-}" ]; then
-            echo "$GH_PAGES_CUSTOM_DOMAIN" > public/CNAME
-            echo "NEXT_PUBLIC_SITE_URL=$GH_PAGES_CUSTOM_DOMAIN" >> $GITHUB_ENV
+            # Одно значение секрета идёт в два места с разными требованиями:
+            # CNAME принимает только голый хост, metadataBase — только со схемой.
+            # Поэтому нормализуем, а не доверяем тому, как записан секрет.
+            HOST=$(printf '%s' "$GH_PAGES_CUSTOM_DOMAIN" | sed -E 's#^https?://##; s#/.*$##')
+            echo "$HOST" > public/CNAME
+            echo "NEXT_PUBLIC_SITE_URL=https://$HOST" >> $GITHUB_ENV
           else
             OWNER=${GITHUB_REPOSITORY_OWNER}
             REPO=${GITHUB_REPOSITORY#*/}
