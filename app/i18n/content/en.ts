@@ -32,11 +32,11 @@ export const en: Content = {
   cases: {
     lead: "Full-cycle developer",
     sublead:
-      "Mobile apps, web, Telegram bots, backend and AI. I take a product from idea to production, infrastructure included.",
-    statRevenue: "earned on client work",
-    statProjects: "paid projects",
-    statRepos: "repositories",
-    statMentees: "mentees",
+      "I take the whole product: mobile app, web, Telegram bot, backend and infrastructure. From idea to release, without a separate contractor for every layer.",
+    statApps: "apps and services",
+    statCases: "cases below",
+    statMarkets: "markets",
+    statSince: "in commercial development",
     filterAll: "All",
     problem: "The problem",
     solution: "What I built",
@@ -51,6 +51,6 @@ export const en: Content = {
     cv: "Resume",
     deck: "Case deck",
     anonNote:
-      "Client and product names are withheld: some projects are under non-disclosure agreements. Technical details, stack and figures are real.",
+      "Client and product names are withheld: some projects are under non-disclosure agreements. The problems, solutions and technical details are real.",
   },
 };

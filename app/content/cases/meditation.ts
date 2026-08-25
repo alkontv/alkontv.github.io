@@ -5,7 +5,6 @@ export const meditation: CaseStudy = {
   industry: { ru: "Здоровье и саморазвитие", en: "Wellness and self-development" },
   formats: ["mobile", "payments"],
   name: { ru: "Платформа медитаций и практик", en: "Meditation Platform" },
-  budget: 100000,
   status: "shipped",
   tagline: {
     ru: "Курсы, аудио-практики и подкасты с фоновым воспроизведением и подпиской",

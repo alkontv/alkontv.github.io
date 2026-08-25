@@ -3,11 +3,6 @@
 import { FORMAT_LABEL, STATUS_LABEL, type CaseStudy } from "@content";
 import { dict, tx, type Lang } from "@i18n";
 
-const formatBudget = (rub: number, lang: Lang) =>
-  lang === "ru"
-    ? `${rub.toLocaleString("ru-RU")} ₽`
-    : `${rub.toLocaleString("en-US")} RUB`;
-
 const Chip = ({ text }: { text: string }) => (
   <span className="rounded border border-current/20 px-2 py-0.5 text-xs opacity-70">
     {text}
@@ -23,12 +18,6 @@ const CaseCard = ({ item, lang }: { item: CaseStudy; lang: Lang }) => {
         <span>{tx(item.industry, lang)}</span>
         <span aria-hidden>&middot;</span>
         <span>{tx(STATUS_LABEL[item.status], lang)}</span>
-        {item.budget !== undefined && (
-          <>
-            <span aria-hidden>&middot;</span>
-            <span>{formatBudget(item.budget, lang)}</span>
-          </>
-        )}
       </div>
 
       <h3 className="mb-2 text-2xl font-semibold sm:text-3xl">{tx(item.name, lang)}</h3>

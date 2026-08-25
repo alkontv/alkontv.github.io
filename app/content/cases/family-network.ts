@@ -5,7 +5,6 @@ export const familyNetwork: CaseStudy = {
   industry: { ru: "Социальные сети", en: "Social networks" },
   formats: ["mobile", "web"],
   name: { ru: "Семейная соцсеть", en: "Family Social Network" },
-  budget: 272000,
   status: "mvp",
   tagline: {
     ru: "Родственники на орбитах по степени родства вместо привычной ленты",

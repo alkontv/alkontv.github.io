@@ -5,7 +5,6 @@ export const loyalty: CaseStudy = {
   industry: { ru: "Ритейл и общепит, ОАЭ", en: "Retail and food service, UAE" },
   formats: ["mobile", "backend"],
   name: { ru: "Программа лояльности пекарни", en: "Bakery Loyalty Program" },
-  budget: 75000,
   status: "shipped",
   tagline: {
     ru: "Тонкий клиент с персональным QR поверх кассовой системы заведения",

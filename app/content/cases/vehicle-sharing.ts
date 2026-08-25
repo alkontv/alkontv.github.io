@@ -5,7 +5,6 @@ export const vehicleSharing: CaseStudy = {
   industry: { ru: "Туризм и шеринг", en: "Travel and sharing" },
   formats: ["mobile"],
   name: { ru: "Шеринг мототехники и лодок", en: "Powersports and Boat Sharing" },
-  budget: 100000,
   status: "shipped",
   tagline: {
     ru: "Владелец публикует поездку с маршрутом, остальные бронируют места",

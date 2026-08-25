@@ -6,11 +6,20 @@ import { STATS, STATUS_LABEL, FORMAT_LABEL } from "../stats";
 const ASCII_SAFE = /^[A-Za-z0-9 \-&.,/()]+$/;
 
 describe("сводные цифры", () => {
-  it("совпадают с логом платежей хранилища", () => {
-    expect(STATS.revenueRub).toBe(2234980);
-    expect(STATS.paidProjects).toBe(18);
-    expect(STATS.repos).toBe(51);
-    expect(STATS.mentees).toBe(4);
+  it("не содержат ни выручки, ни числа репозиториев, ни учеников", () => {
+    // Сумма гонорара даёт клиенту якорь на прайс и сбивает ставку;
+    // репозитории и ученики ничего ему не говорят. Тест не даёт вернуть.
+    const keys = Object.keys(STATS);
+    expect(keys).not.toContain("revenueRub");
+    expect(keys).not.toContain("paidProjects");
+    expect(keys).not.toContain("repos");
+    expect(keys).not.toContain("mentees");
+  });
+
+  it("состоят из того, что отвечает на вопрос «справится ли он»", () => {
+    expect(STATS.apps).toBe(40);
+    expect(STATS.markets).toBe(4);
+    expect(STATS.sinceYear).toBe(2023);
   });
 });
 

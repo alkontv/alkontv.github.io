@@ -5,7 +5,6 @@ export const aiJobs: CaseStudy = {
   industry: { ru: "Найм, Юго-Восточная Азия", en: "Hiring, Southeast Asia" },
   formats: ["mobile", "ai", "backend"],
   name: { ru: "AI-подбор работы и исполнителей", en: "AI Job and Talent Matching" },
-  budget: 64800,
   status: "beta",
   tagline: {
     ru: "Резюме и вакансия собираются в диалоге, а подбор идёт векторным поиском",

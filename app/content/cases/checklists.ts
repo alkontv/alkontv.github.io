@@ -8,7 +8,6 @@ export const checklists: CaseStudy = {
     ru: "Корпоративные чек-листы с ассистентом",
     en: "Enterprise Checklists with Assistant",
   },
-  budget: 50000,
   status: "shipped",
   tagline: {
     ru: "Работа по инструкции: шаги с фотофиксацией, видео-гайды и ответы по регламенту",

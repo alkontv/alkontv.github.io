@@ -9,10 +9,10 @@ export interface Content {
   cases: {
     lead: string;
     sublead: string;
-    statRevenue: string;
-    statProjects: string;
-    statRepos: string;
-    statMentees: string;
+    statApps: string;
+    statCases: string;
+    statMarkets: string;
+    statSince: string;
     filterAll: string;
     problem: string;
     solution: string;

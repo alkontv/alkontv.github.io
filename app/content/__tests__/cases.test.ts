@@ -77,28 +77,13 @@ describe("обезличивание", () => {
   });
 });
 
-describe("правило сумм", () => {
-  it("сумма указана только там, где деньги получены", () => {
-    const withBudget = CASES.filter((c) => c.budget !== undefined).map((c) => c.id);
-    expect(withBudget.sort()).toEqual(
-      [
-        "ai-jobs",
-        "checklists",
-        "consultations",
-        "family-network",
-        "food-rescue",
-        "loyalty",
-        "meditation",
-        "safety",
-        "vehicle-sharing",
-      ].sort()
-    );
-  });
-
-  it("суммы положительные и целые", () => {
-    CASES.filter((c) => c.budget !== undefined).forEach((c) => {
-      expect(c.budget).toBeGreaterThan(0);
-      expect(Number.isInteger(c.budget)).toBe(true);
+describe("гонорары", () => {
+  it("ни в одном кейсе нет суммы", () => {
+    // Клиент, увидевший гонорар рядом с кейсом, получает якорь на прайс.
+    const haystack = JSON.stringify(CASES);
+    expect(haystack).not.toContain("budget");
+    CASES.forEach((c) => {
+      expect(c as unknown as Record<string, unknown>).not.toHaveProperty("budget");
     });
   });
 });

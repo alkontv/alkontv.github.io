@@ -5,7 +5,6 @@ export const safety: CaseStudy = {
   industry: { ru: "Личная безопасность", en: "Personal safety" },
   formats: ["mobile", "backend", "payments"],
   name: { ru: "Приложение личной безопасности", en: "Personal Safety App" },
-  budget: 110000,
   status: "beta",
   tagline: {
     ru: "Одна кнопка: обращение в службу спасения, координаты доверенным лицам и видео с камеры",

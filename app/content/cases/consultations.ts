@@ -5,7 +5,6 @@ export const consultations: CaseStudy = {
   industry: { ru: "Консультации и услуги", en: "Consulting and services" },
   formats: ["mobile", "payments"],
   name: { ru: "Маркетплейс консультаций", en: "Consultations Marketplace" },
-  budget: 242500,
   status: "active",
   tagline: {
     ru: "Запись к специалисту с расчётом свободных слотов и авточатом после оплаты",

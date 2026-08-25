@@ -30,8 +30,6 @@ export interface CaseStudy {
   formats: CaseFormat[];
   /** Обезличенное имя-описание. name.en уходит в 3D — только ASCII. */
   name: LocalizedText;
-  /** Фактически полученные деньги в рублях. Нет — если не получены или проект свой. */
-  budget?: number;
   status: CaseStatus;
   /** Одна строка для 3D-плитки и подзаголовка карточки. */
   tagline: LocalizedText;
