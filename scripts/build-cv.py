@@ -89,7 +89,7 @@ SECTIONS = {
 CASES_LABEL = {"ru": "кейсов в портфолио", "en": "cases in portfolio"}
 
 # На сайте лид — двухстрочный слоган; в резюме нужна должность одной строкой.
-ROLE_TITLE = {"ru": "Fullstack-разработчик и дизайнер", "en": "Fullstack developer and designer"}
+ROLE_TITLE = {"ru": "Senior fullstack-разработчик и дизайнер", "en": "Senior fullstack developer and designer"}
 
 
 def wrap(c, text, font, size, width):
@@ -197,8 +197,8 @@ def build(data, lang, out_path):
         c.drawString(x, y, job["company"][lang])
         y -= 11
         y = draw(c, job["role"][lang], x, y, "Body", 8.3, INK, 10, colw)
-        y = draw(c, job["summary"][lang], x, y, "Body", 7.9, INK_SOFT, 9.6, colw)
-        y -= 4
+        y = draw(c, job["summary"][lang], x, y, "Body", 7.8, INK_SOFT, 9.2, colw)
+        y -= 3
 
     y -= 8
     y = draw(c, s["projects"], x, y, "Body", 7.5, ACCENT, 14)
@@ -210,8 +210,8 @@ def build(data, lang, out_path):
         c.setFillColor(HexColor("#9aa3af"))
         c.drawString(x + c.stringWidth(p["name"][lang], "Body-Bold", 9) + 7, y, p["industry"][lang].upper())
         y -= 10
-        y = draw(c, p["tagline"][lang], x, y, "Body", 8.2, INK_SOFT, 10.5, colw)
-        y -= 3
+        y = draw(c, p["tagline"][lang], x, y, "Body", 8.1, INK_SOFT, 10, colw)
+        y -= 2.5
 
     y -= 6
     y = draw(c, s["skills"], x, y, "Body", 7.5, ACCENT, 14)
@@ -222,8 +222,8 @@ def build(data, lang, out_path):
         y -= 9.5
         # В резюме — по два пункта на группу: это выжимка, а не каталог.
         items = " · ".join(i[lang] for i in group["items"][:2])
-        y = draw(c, items, x, y, "Body", 7.6, INK_SOFT, 9.2, colw)
-        y -= 1.5
+        y = draw(c, items, x, y, "Body", 7.5, INK_SOFT, 8.9, colw)
+        y -= 1
 
     y -= 6
     y = draw(c, s["extra"], x, y, "Body", 7.5, ACCENT, 14)

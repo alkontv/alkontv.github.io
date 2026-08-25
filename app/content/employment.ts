@@ -23,14 +23,27 @@ export const EMPLOYMENT: Job[] = [
   {
     company: { ru: "AppFyl", en: "AppFyl" },
     role: {
-      ru: "Fullstack-разработчик и дизайнер",
-      en: "Fullstack developer and designer",
+      ru: "Senior fullstack-разработчик и дизайнер",
+      en: "Senior fullstack developer and designer",
     },
     period: { ru: "2025 — сейчас", en: "2025 — now" },
     since: "2025",
     summary: {
       ru: "Студия разработки: клиентские продукты от макета до релиза — мобильные приложения, веб, бэкенд и интерфейсы. Работа по процессу студии: постановка, ревью, сдача.",
       en: "A development studio: client products from mockup to release — mobile apps, web, backend and interfaces. Delivered inside the studio's process: briefing, review, handover.",
+    },
+  },
+  {
+    company: { ru: "Продуктовая компания", en: "Product company" },
+    role: {
+      ru: "Middle fullstack-разработчик",
+      en: "Middle fullstack developer",
+    },
+    period: { ru: "2024 — 2025", en: "2024 — 2025" },
+    since: "2024",
+    summary: {
+      ru: "Работа в штате над продуктом компании: разработка и поддержка функциональности в команде, задачи от постановки до релиза.",
+      en: "In-house work on the company product: building and maintaining features as part of a team, from brief to release.",
     },
   },
   {
