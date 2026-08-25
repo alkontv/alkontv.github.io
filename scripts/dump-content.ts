@@ -12,6 +12,7 @@ import {
   SKILL_GROUPS,
   SOFT_SKILLS,
   STACK_GROUPS,
+  CORE_STACK,
 } from "@content";
 import { dict } from "@i18n";
 
@@ -36,6 +37,7 @@ process.stdout.write(
     employment: EMPLOYMENT,
     skills: SKILL_GROUPS,
     stack: STACK_GROUPS,
+    core: CORE_STACK,
     soft: SOFT_SKILLS,
     copy: { ru: dict.ru.cases, en: dict.en.cases },
   })

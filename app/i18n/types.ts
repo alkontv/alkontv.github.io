@@ -29,6 +29,8 @@ export interface Content {
     skillsTitle: string;
     skillsLead: string;
     stackTitle: string;
+    stackCore: string;
+    stackAlso: string;
     softTitle: string;
     softLead: string;
     processTitle: string;

@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import {
+  CORE_STACK,
   EMPLOYMENT,
   FEATURED_CASES,
   SKILL_GROUPS,
@@ -111,19 +112,43 @@ const ResumeView = () => {
 
       <section className="py-14">
         <h2 className="display mb-9 text-2xl font-semibold">{t.stackTitle}</h2>
-        <div className="space-y-5">
-          {STACK_GROUPS.map((g, i) => (
-            <div key={i} className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-6">
-              <h3 className="text-sm font-semibold text-accent">{tx(g.label, lang)}</h3>
-              <div className="flex flex-wrap gap-1.5">
-                {g.items.map((item) => (
-                  <span key={item} className="chip">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+
+        <h3 className="mb-4 text-[0.72rem] uppercase tracking-[0.18em] text-accent">
+          {t.stackCore}
+        </h3>
+        <div className="mb-10 flex flex-wrap gap-2">
+          {CORE_STACK.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-accent/35 bg-accent/8 px-3.5 py-1.5 text-sm text-ink"
+            >
+              {item}
+            </span>
           ))}
+        </div>
+
+        {/* Второй уровень намеренно тише: это не заявление о владении,
+            а карта того, с чем приходилось иметь дело. */}
+        <h3 className="mb-4 text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
+          {t.stackAlso}
+        </h3>
+        <div className="space-y-4 opacity-75">
+          {STACK_GROUPS.map((g, i) => {
+            const rest = g.items.filter((item) => !CORE_STACK.includes(item));
+            if (rest.length === 0) return null;
+            return (
+              <div key={i} className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <h4 className="text-sm text-ink-dim">{tx(g.label, lang)}</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {rest.map((item) => (
+                    <span key={item} className="chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

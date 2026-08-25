@@ -2,63 +2,90 @@ import type { LocalizedText } from "@i18n";
 
 export interface StackGroup {
   label: LocalizedText;
-  /**
-   * Порядок значим: первыми идут технологии, подтверждённые проектами
-   * из портфолио. В резюме попадают только первые позиции каждой группы —
-   * PDF читают придирчивее всего, там должно стоять самое крепкое.
-   */
   items: string[];
 }
 
+/**
+ * Два уровня вместо одного длинного списка.
+ *
+ * Плоский перечень читается не как «много умеет», а как «много где побывал»:
+ * владеть сотней технологий нельзя, и достоверность падает у всего списка
+ * разом. Разделение решает это честнее, чем обрезка: читатель сразу видит,
+ * где дно, а где потолок, и перестаёт искать слабое звено — граница
+ * показана добровольно.
+ *
+ * CORE_STACK — то, за что отвечаешь на любой глубине. Всё остальное
+ * выводится как «работал с» и заявлением о владении не является.
+ */
+export const CORE_STACK: string[] = [
+  "Flutter",
+  "Dart",
+  "FlutterFlow",
+  "TypeScript",
+  "Python",
+  "React",
+  "Next.js",
+  "FastAPI",
+  "Node.js",
+  "PostgreSQL",
+  "Redis",
+  "Supabase",
+  "Firebase",
+  "Docker",
+  "Nginx",
+  "Telegram Bot API",
+  "Figma",
+];
+
+/** Полный перечень по темам. Позиции из CORE_STACK на странице не дублируются. */
 export const STACK_GROUPS: StackGroup[] = [
   {
     label: { ru: "Мобильная разработка", en: "Mobile" },
     items: [
       "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift",
-      "Jetpack Compose", "SwiftUI", "Gradle", "CocoaPods",
-      "Codemagic", "Fastlane", "App Store Connect", "Google Play Console",
+      "Jetpack Compose", "SwiftUI", "Codemagic", "Fastlane",
+      "Публикация в App Store и Google Play",
     ],
   },
   {
     label: { ru: "Языки", en: "Languages" },
-    items: ["TypeScript", "JavaScript", "Python", "Go"],
+    items: ["TypeScript", "Python", "Go"],
   },
   {
     label: { ru: "Веб-фронтенд", en: "Web frontend" },
-    items: ["React", "Next.js", "Tailwind CSS", "three.js / react-three-fiber", "GSAP", "PWA"],
+    items: ["React", "Next.js", "Tailwind CSS", "three.js / react-three-fiber", "GSAP"],
   },
   {
     label: { ru: "Бэкенд", en: "Backend" },
     items: [
-      "FastAPI", "Node.js", "Django REST", "NestJS",
-      "SQLAlchemy", "Alembic", "Cloud Functions", "Edge Functions",
-      "WebSocket", "GraphQL", "Celery", "ARQ",
+      "FastAPI", "Node.js", "Django REST", "NestJS", "SQLAlchemy",
+      "Serverless-функции", "WebSocket", "GraphQL", "Celery", "ARQ",
     ],
   },
   {
     label: { ru: "Базы и хранилища", en: "Databases and storage" },
     items: [
-      "PostgreSQL", "Redis", "Firebase Firestore", "Supabase", "MySQL",
-      "MongoDB", "Elasticsearch", "ClickHouse", "pgvector", "S3",
+      "PostgreSQL", "Redis", "Firebase", "Supabase",
+      "MongoDB", "Elasticsearch", "ClickHouse", "pgvector",
     ],
   },
   {
     label: { ru: "AI в продукте", en: "AI in the product" },
     items: [
-      "OpenAI API", "Anthropic Claude", "Gemini", "LangChain", "Векторный поиск",
-      "Whisper", "ElevenLabs", "n8n", "OCR", "Компьютерное зрение",
+      "OpenAI API", "Anthropic Claude", "Gemini", "LangChain",
+      "Векторный поиск", "Whisper", "ElevenLabs", "n8n", "Компьютерное зрение",
     ],
   },
   {
     label: { ru: "Инфраструктура и DevOps", en: "Infrastructure and DevOps" },
     items: [
-      "Docker", "Nginx", "Caddy", "systemd", "GitHub Actions", "Google Cloud Run",
-      "Cloudflare", "Kubernetes", "Traefik", "Ansible", "Terraform",
+      "Docker", "Nginx", "Caddy", "GitHub Actions", "Google Cloud Run",
+      "Kubernetes", "Traefik", "Ansible", "Terraform",
     ],
   },
   {
     label: { ru: "Мониторинг", en: "Monitoring" },
-    items: ["Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry", "Firebase Crashlytics"],
+    items: ["Sentry", "Prometheus", "Grafana", "Loki", "OpenTelemetry"],
   },
   {
     label: { ru: "Платежи и подписки", en: "Payments and subscriptions" },
@@ -69,11 +96,11 @@ export const STACK_GROUPS: StackGroup[] = [
   },
   {
     label: { ru: "Telegram", en: "Telegram" },
-    items: ["Bot API", "Mini Apps", "aiogram", "Telegraf"],
+    items: ["Telegram Bot API", "Mini Apps", "aiogram"],
   },
   {
     label: { ru: "Аналитика", en: "Analytics" },
-    items: ["Firebase Analytics", "AppMetrica", "Amplitude", "A/B-тесты"],
+    items: ["AppMetrica", "Amplitude", "A/B-тесты"],
   },
   {
     label: { ru: "Дизайн", en: "Design" },

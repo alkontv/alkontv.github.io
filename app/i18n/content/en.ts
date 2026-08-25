@@ -53,6 +53,8 @@ export const en: Content = {
     skillsTitle: "What I do",
     skillsLead: "Every line here is backed by at least one project in this portfolio.",
     stackTitle: "Stack",
+    stackCore: "Core",
+    stackAlso: "Worked with",
     softTitle: "How I work",
     softLead: "No adjectives: every line here is backed by experience you can probe in a conversation.",
     processTitle: "How the work goes",
