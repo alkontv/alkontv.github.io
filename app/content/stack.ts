@@ -16,7 +16,7 @@ export const STACK_GROUPS: StackGroup[] = [
     items: [
       "Flutter", "Dart", "FlutterFlow", "Kotlin", "Swift",
       "Jetpack Compose", "SwiftUI", "Android SDK", "iOS SDK",
-      "Gradle", "CocoaPods", "Fastlane", "App Store Connect", "Google Play Console",
+      "Gradle", "CocoaPods", "Codemagic", "Fastlane", "App Store Connect", "Google Play Console",
       "Push (FCM, APNs)", "Deep links", "In-app purchases",
     ],
   },
@@ -61,7 +61,7 @@ export const STACK_GROUPS: StackGroup[] = [
     label: { ru: "Инфраструктура и DevOps", en: "Infrastructure and DevOps" },
     items: [
       "Docker", "Docker Compose", "Nginx", "Caddy", "Linux", "VPS",
-      "GitHub Actions", "CI/CD", "Kubernetes", "Traefik", "Ansible", "Terraform",
+      "GitHub Actions", "Codemagic", "CI/CD", "Kubernetes", "Traefik", "Ansible", "Terraform",
       "Cloudflare", "systemd", "Let's Encrypt", "Google Cloud Run",
     ],
   },
