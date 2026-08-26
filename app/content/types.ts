@@ -1,6 +1,6 @@
 import type { LocalizedText } from "@i18n";
 
-/** Чем закрыт кейс — используется для фильтра и чипов на /cases. */
+/** Чем закрыт кейс — используется для фильтра и чипов на витрине. */
 export type CaseFormat =
   | "mobile"
   | "web"
@@ -13,7 +13,7 @@ export type CaseFormat =
 export type DiagramId = "sos" | "escrow" | "vpn" | "ai-intake";
 
 export interface CaseStudy {
-  /** Якорь на /cases и цель ссылки из 3D-плитки. */
+  /** Адрес страницы кейса и цель ссылки из 3D-плитки. */
   id: string;
   industry: LocalizedText;
   formats: CaseFormat[];

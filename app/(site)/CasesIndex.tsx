@@ -6,8 +6,8 @@ import { useMemo, useState } from "react";
 import { CASES, FORMAT_LABEL, SKILL_GROUPS, STATS, type CaseFormat } from "@content";
 import { dict, tx } from "@i18n";
 
-import { TELEGRAM_URL } from "../SiteChrome";
-import { useResolvedLang } from "../useResolvedLang";
+import { TELEGRAM_URL } from "./SiteChrome";
+import { useResolvedLang } from "./useResolvedLang";
 
 const CasesIndex = () => {
   const { lang } = useResolvedLang();

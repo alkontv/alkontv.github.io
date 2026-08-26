@@ -5,7 +5,7 @@ export const FOOTER_LINKS: FooterLink[] = [
     name: 'Cases',
     hoverText: { en: 'Selected work', ru: 'Избранные работы' },
     icon: 'icons/chevrons-left-right.svg',
-    url: './cases',
+    url: './',
   },
   {
     name: 'Telegram',

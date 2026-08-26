@@ -18,7 +18,7 @@ const SiteChrome = ({ children }: { children: ReactNode }) => {
   const path = usePathname();
 
   const nav = [
-    { href: "/cases", label: t.navCases },
+    { href: "/", label: t.navCases },
     { href: "/resume", label: t.navResume },
   ];
 
@@ -36,7 +36,8 @@ const SiteChrome = ({ children }: { children: ReactNode }) => {
                 key={item.href}
                 href={item.href}
                 className={
-                  path.startsWith(item.href)
+                  // Для корня нужно точное совпадение: startsWith("/") верен всегда.
+                  (item.href === "/" ? path === "/" : path.startsWith(item.href))
                     ? "text-ink"
                     : "text-ink-faint transition-colors hover:text-ink"
                 }
@@ -86,7 +87,7 @@ const SiteChrome = ({ children }: { children: ReactNode }) => {
             <Link href="/resume" className="hover:text-ink">
               {t.navResume}
             </Link>
-            <Link href="/" className="hover:text-ink">
+            <Link href="/3d" className="hover:text-ink">
               3D
             </Link>
           </div>

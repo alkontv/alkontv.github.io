@@ -19,9 +19,9 @@ describe("проекция кейсов в 3D-карусель", () => {
     });
   });
 
-  it("каждая плитка ведёт на якорь своего кейса", () => {
+  it("каждая плитка ведёт на страницу своего кейса", () => {
     PROJECTS.forEach((p, i) => {
-      expect(p.url).toBe(`/cases#${FEATURED_CASES[i].id}`);
+      expect(p.url).toBe(`/cases/${FEATURED_CASES[i].id}`);
     });
   });
 
