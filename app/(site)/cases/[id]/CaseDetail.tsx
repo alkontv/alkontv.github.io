@@ -36,7 +36,7 @@ const CaseDetail = ({ id }: { id: string }) => {
     <main className="mx-auto max-w-4xl px-5 sm:px-8">
       <div className="rise pt-12 pb-4">
         <Link
-          href="/cases"
+          href="/"
           className="inline-flex items-center gap-2 text-sm text-ink-faint transition-colors hover:text-ink"
         >
           <span>&larr;</span>

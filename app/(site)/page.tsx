@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import CasesIndex from "./CasesIndex";
 
 export const metadata: Metadata = {
-  title: "Alan — Работы",
+  title: "Alan — Fullstack-разработчик и дизайнер",
   description:
     "Маркетплейсы с эскроу, платежи, AI в продукте, self-hosted инфраструктура, Telegram-боты и веб. Тринадцать кейсов из одиннадцати отраслей.",
 };
