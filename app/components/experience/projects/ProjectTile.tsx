@@ -118,7 +118,7 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick, da
           anchorY="bottom"
           maxWidth={4}
           fontSize={0.8}>
-          {project.title}
+          {tx(project.title, lang)}
         </Text>
         <group position={[-1.25, 1.4, 0.01]}>
           <mesh>
@@ -130,7 +130,7 @@ const ProjectTile = ({ project, index, position, rotation, activeId, onClick, da
             {...subtitleProps}
             position={[-0.7, 0.2, 0]}
             fontSize={0.3}>
-            {project.date.toUpperCase()}
+            {tx(project.caption, lang).toUpperCase()}
           </Text>
         </group>
         <Text

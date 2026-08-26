@@ -1,0 +1,41 @@
+# Портфолио alkontv.ru — статический экспорт Next.js.
+# Ни ноды, ни контейнера приложения: Caddy отдаёт файлы напрямую
+# и сам выпускает сертификат, как только домен начнёт резолвиться.
+
+(portfolio) {
+	root * /srv/alkontv
+	encode zstd gzip
+
+	# Статический экспорт кладёт страницы как cases.html и resume.html,
+	# а ссылки ведут на /cases и /resume. Проверка .html обязана идти
+	# раньше самого пути: иначе каталог /cases перехватит запрос и вернёт 404.
+	# Без запасного /404.html в конце: иначе Caddy отдаёт страницу ошибки
+	# кодом 200, и поисковик индексирует любой мусорный адрес как настоящий.
+	try_files {path}.html {path} {path}/index.html
+	file_server
+
+	handle_errors {
+		rewrite * /404.html
+		# status сохраняет исходный код ответа — иначе снова получится 200.
+		file_server {
+			status {err.status_code}
+		}
+	}
+
+	# Хешированные ассеты Next неизменяемы — кешируем надолго.
+	@immutable path /_next/static/*
+	header @immutable Cache-Control "public, max-age=31536000, immutable"
+
+	# HTML всегда свежий, иначе правки не доедут до посетителя.
+	# Матчить по *.html нельзя: запрос приходит на /cases, а расширение
+	# подставляет try_files уже внутри. Ловим адреса без точки — это ровно
+	# страницы — и явные .html на всякий случай.
+	@html path_regexp ^/[^.]*$
+	header @html Cache-Control "public, max-age=0, must-revalidate"
+	@htmlfile path *.html
+	header @htmlfile Cache-Control "public, max-age=0, must-revalidate"
+}
+
+alkontv.ru, www.alkontv.ru {
+	import portfolio
+}

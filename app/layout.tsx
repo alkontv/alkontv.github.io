@@ -1,7 +1,23 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
+import { Inter, Unbounded } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
+
+// Дисплейная и текстовая пары с полной кириллицей: soria и Vercetti её
+// не содержат и остаются только внутри 3D-сцены.
+const display = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
+
+const body = Inter({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const soriaFont = localFont({
   src: "../public/soria-font.ttf",
@@ -15,9 +31,11 @@ const vercettiFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://alkontv.github.io/'),
-  title: "Alan — Fullstack Developer",
-  description: "Fullstack developer building web, mobile, bots, CRM and AI-powered products — from idea to launch.",
-  keywords: "Alan, Fullstack Developer, Flutter, FlutterFlow, Mobile Developer, Web, Backend, Telegram Bots, CRM, AI, Supabase, Postgres, Firebase, JavaScript, TypeScript, Python, Portfolio",
+  title: "Alan — Full-Cycle Developer",
+  description:
+    "Full-cycle developer: mobile apps, web, Telegram bots, backend and AI. From idea to release, infrastructure included.",
+  keywords:
+    "Alan, Full-Cycle Developer, Flutter, Mobile Developer, Web, Next.js, Backend, FastAPI, Telegram Bots, Mini Apps, Supabase, PostgreSQL, AI Integration, Vector Search, Escrow Marketplace, Portfolio",
   authors: [{ name: "Alan" }],
   creator: "Alan",
   publisher: "Alan",
@@ -37,16 +55,20 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Alan — Fullstack Developer",
-    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
+    title: "Alan — Full-Cycle Developer",
+    description: "Mobile, web, Telegram bots, backend and AI — from idea to release.",
     siteName: "Alan's Portfolio",
     locale: "en_US",
     type: "website",
+    // Статический файл, а не маршрут метаданных: Pages отдаёт расширение
+    // как Content-Type, и без .png превью в мессенджерах не разворачивается.
+    images: [{ url: "/og.png", width: 1200, height: 630, type: "image/png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alan — Fullstack Developer",
-    description: "Web, mobile, bots, CRM and AI — from idea to launch.",
+    title: "Alan — Full-Cycle Developer",
+    description: "Mobile, web, Telegram bots, backend and AI — from idea to release.",
+    images: ["/og.png"],
   },
 };
 
@@ -65,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overscroll-y-none">
       <body
-        className={`${soriaFont.variable} ${vercettiFont.variable} font-sans antialiased`}
+        className={`${soriaFont.variable} ${vercettiFont.variable} ${display.variable} ${body.variable} font-sans antialiased`}
       >
         {children}
       </body>

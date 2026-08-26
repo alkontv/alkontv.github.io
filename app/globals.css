@@ -5,6 +5,20 @@
   --color-foreground: var(--foreground);
   --font-serif: var(--font-soria);
   --font-sans: var(--font-vercetti);
+
+  /* Разделы вне 3D-сцены: кейсы и резюме. Тёмная тема без переключателя —
+     у контентных страниц один выверенный вид, сцена остаётся со своими. */
+  --font-display: var(--font-unbounded);
+  --font-body: var(--font-inter);
+
+  --color-base: #06070a;
+  --color-surface: #0c0f16;
+  --color-line: #1e2532;
+  --color-ink: #e9edf5;
+  --color-ink-dim: #9aa7bd;
+  --color-ink-faint: #5f6c82;
+  --color-accent: #4cc2ff;
+  --color-accent-deep: #0690d4;
 }
 
 :root {
@@ -87,4 +101,188 @@ body {
 
 .close:after {
   transform: rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Разделы вне 3D-сцены: кейсы и резюме.
+   ───────────────────────────────────────────────────────────── */
+
+.site {
+  --glow-a: rgba(76, 194, 255, 0.16);
+  --glow-b: rgba(120, 90, 255, 0.12);
+
+  position: relative;
+  min-height: 100vh;
+  color: var(--color-ink);
+  background-color: var(--color-base);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+.site * {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Три источника света вместо плоской заливки. */
+.site::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, var(--glow-a), transparent 60%),
+    radial-gradient(48rem 36rem at 92% 6%, var(--glow-b), transparent 62%),
+    radial-gradient(70rem 50rem at 50% 108%, rgba(76, 194, 255, 0.07), transparent 65%);
+  z-index: 0;
+}
+
+/* Едва различимая сетка — даёт поверхности фактуру. */
+.site::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(72rem 60rem at 50% 0%, #000 20%, transparent 78%);
+  mask-image: radial-gradient(72rem 60rem at 50% 0%, #000 20%, transparent 78%);
+  z-index: 0;
+}
+
+.site > * {
+  position: relative;
+  z-index: 1;
+}
+
+.display {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Карточка со светящейся кромкой: градиентная рамка плюс внутренний блик. */
+.card {
+  position: relative;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.014)) padding-box,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03)) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 24px 48px -28px rgba(0, 0, 0, 0.9);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.card-link:hover .card,
+.card-link:focus-visible .card {
+  transform: translateY(-4px);
+  background:
+    linear-gradient(180deg, rgba(76, 194, 255, 0.1), rgba(255, 255, 255, 0.02)) padding-box,
+    linear-gradient(180deg, rgba(76, 194, 255, 0.5), rgba(255, 255, 255, 0.06)) border-box;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 32px 60px -30px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(76, 194, 255, 0.12);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.14) 18%,
+    rgba(255, 255, 255, 0.14) 82%,
+    transparent
+  );
+}
+
+.chip {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 999px;
+  padding: 0.22rem 0.62rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--color-ink-dim);
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip-active {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--color-ink);
+}
+
+.chip:hover {
+  color: var(--color-ink);
+}
+
+.btn-primary {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.72rem 1.45rem;
+  font-weight: 600;
+  color: #04121c;
+  background: linear-gradient(180deg, #7ad3ff, var(--color-accent-deep));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 14px 30px -14px rgba(76, 194, 255, 0.75);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 18px 38px -14px rgba(76, 194, 255, 0.9);
+}
+
+.btn-ghost {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.72rem 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--color-ink-dim);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-ghost:hover {
+  color: var(--color-ink);
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* Появление при скролле. Уважает системную настройку уменьшения движения. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+  .card {
+    transition: none;
+  }
 }
