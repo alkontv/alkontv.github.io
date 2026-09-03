@@ -6,16 +6,16 @@ export const safety: CaseStudy = {
   formats: ["mobile", "backend", "payments"],
   name: { ru: "Кнопка SOS", en: "SOS Button" },
   tagline: {
-    ru: "Одна кнопка: обращение в службу спасения, координаты доверенным лицам и видео с камеры",
-    en: "One button: an emergency report, coordinates to trusted contacts, camera video",
+    ru: "Одно нажатие: заявление в службу спасения, координаты доверенным лицам и видео с камеры",
+    en: "One tap: an emergency report, coordinates to trusted contacts and camera video",
   },
   impact: {
     ru: "Заказчик получил не приложение, а работающий канал экстренной связи: одно нажатие поднимает три независимых сценария сразу, и если один не дойдёт, сигнал всё равно уйдёт остальными двумя.",
     en: "The client got a working emergency channel rather than an app: one tap fires three independent paths at once, so if one fails the signal still leaves through the other two.",
   },
   role: {
-    ru: "Мобильное приложение, база и серверная логика, платежи, развёртывание и домен — всё на мне.",
-    en: "Mobile app, database and server logic, payments, deployment and domain — all mine.",
+    ru: "Всё, от первого экрана до сервера: мобильное приложение, база и серверная логика, платежи, развёртывание, домен.",
+    en: "Everything from the first screen to the server: mobile app, database and server logic, payments, deployment, domain.",
   },
   problem: {
     ru: "Человеку в опасности некогда выбирать между «позвонить», «написать» и «включить запись». Нужно было приложение, где всё это делает одно нажатие.",
@@ -23,15 +23,15 @@ export const safety: CaseStudy = {
   },
   solution: [
     {
-      ru: "Вход по номеру телефона: одноразовый код через SMS-шлюз, подключённый к GoTrue собственным хуком",
-      en: "Phone sign-in: a one-time code through an SMS gateway wired into GoTrue with a custom hook",
+      ru: "Вход по номеру телефона: одноразовый код через SMS-шлюз, подключённый к авторизации отдельным хуком",
+      en: "Phone sign-in: a one-time code through an SMS gateway wired into auth with a dedicated hook",
     },
     {
-      ru: "Сценарий SOS: обращение в службу спасения с текстом заявления, координатами и ссылкой на видео",
+      ru: "Сценарий SOS: заявление в службу спасения с текстом, координатами и ссылкой на видео",
       en: "SOS flow: an emergency report carrying the statement text, coordinates and a video link",
     },
     {
-      ru: "Одновременно — SMS доверенным лицам с координатами и короткой ссылкой, событие пишется в базу",
+      ru: "Одновременно — SMS доверенным лицам с координатами и короткой ссылкой, событие фиксируется в базе",
       en: "In parallel: SMS to trusted contacts with coordinates and a short link, plus an event row in the database",
     },
     {
@@ -44,8 +44,8 @@ export const safety: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Инфраструктура развёрнута самостоятельно, а не взята облаком: схема PostgreSQL с триггерами и функциями, авторизация с собственным хуком на SMS-шлюз, хранилище с подписанными ссылками, edge-функции на Deno, свой домен. Единственный кейс, где весь стек собран руками под сценарий, критичный по надёжности.",
-    en: "The infrastructure was deployed by hand instead of taken from a managed cloud: a PostgreSQL schema with triggers and functions, auth with a custom SMS-gateway hook, storage behind signed URLs, Deno edge functions, own domain. The only case here where the whole stack was built by hand for a reliability-critical scenario.",
+    ru: "Инфраструктура развёрнута на своём сервере, а не арендована у облака: PostgreSQL с триггерами и функциями, авторизация с хуком на SMS-шлюз, хранилище за подписанными ссылками, edge-функции на Deno, свой домен. Каждый узел собран под сценарий, где отказ недопустим, — поэтому у сигнала три независимых пути.",
+    en: "The infrastructure runs on an own server instead of a rented cloud: PostgreSQL with triggers and functions, auth with an SMS-gateway hook, storage behind signed URLs, Deno edge functions, own domain. Every node was built for a scenario where failure is not an option — which is why the signal has three independent paths.",
   },
   stack: ["Flutter", "Supabase (self-hosted)", "PostgreSQL", "Deno", "TypeScript"],
   integrations: ["CloudPayments", "SMSC.ru"],

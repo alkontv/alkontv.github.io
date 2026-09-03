@@ -44,8 +44,8 @@ export const foodRescue: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Готовый двусторонний маркетплейс с деньгами под зарубежный рынок: локальный платёжный шлюз через собственную облачную функцию с редиректом, внутренний кошелёк и аналитика для бизнес-стороны — вещь, которой в подобных проектах обычно нет.",
-    en: "A working two-sided marketplace with money for a foreign market: a local payment gateway behind a custom cloud function with redirect, an in-app wallet, and analytics for the business side — something such projects usually lack.",
+    ru: "Двусторонний маркетплейс с живыми деньгами под зарубежный рынок: локальный платёжный шлюз подключён через облачную функцию с редиректом, внутренний кошелёк держит баланс, а бизнес-сторона видит аналитику остатков на графиках — то, что в подобных проектах обычно откладывают «на потом». 77 тыс. строк, 317 файлов, два приложения и админка.",
+    en: "A two-sided marketplace with real money for a foreign market: a local payment gateway wired through a cloud function with redirect, an in-app wallet holding balances, and leftover analytics on charts for the business side — the part such projects usually postpone. 77k lines, 317 files, two apps and an admin panel.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions", "Node.js"],
   integrations: ["Google Maps", "OneSignal", "FCM"],

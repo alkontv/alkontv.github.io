@@ -6,8 +6,8 @@ export const ecommerce: CaseStudy = {
   formats: ["web", "backend"],
   name: { ru: "Интернет-магазин", en: "E-commerce Site" },
   tagline: {
-    ru: "Замена устаревшего сайта: каталог, заявки в админку и в мессенджер, прицел на поиск",
-    en: "Replacing a legacy site: catalogue, orders into a CMS and a messenger, built for search",
+    ru: "Свой сайт вместо посредника: каталог, заявка менеджеру за секунды и органический поисковый трафик",
+    en: "An own site instead of an intermediary: a catalogue, orders reaching the manager in seconds and organic search traffic",
   },
   impact: {
     ru: "Бизнес перестал платить посреднику за собственных клиентов: трафик приходит на свой сайт, заявка попадает менеджеру за секунды, маржа остаётся внутри компании.",
@@ -27,8 +27,8 @@ export const ecommerce: CaseStudy = {
       en: "A catalogue with size-based price calculation right in the product card, a cart and an order form",
     },
     {
-      ru: "Заявки падают в админку и дублируются в мессенджер — менеджер согласует сумму вручную",
-      en: "Orders land in the CMS and are mirrored into a messenger, where a manager confirms the amount",
+      ru: "Заявка мгновенно падает в админку и дублируется в мессенджер — менеджер отвечает клиенту в первые минуты",
+      en: "An order lands in the CMS instantly and is mirrored into a messenger, so the manager replies to the customer within minutes",
     },
     {
       ru: "Скрипт миграции контента со старой CMS, чтобы не потерять накопленные страницы и позиции",
@@ -39,13 +39,13 @@ export const ecommerce: CaseStudy = {
       en: "Dedicated sections for niche segments and B2B pages for wholesale buyers",
     },
     {
-      ru: "Развёрнут на собственном VPS: веб-сервер, systemd-юниты, регулярные дампы базы",
-      en: "Deployed on an own VPS: web server, systemd units and scheduled database dumps",
+      ru: "Развёрнут на своём сервере: веб-сервер с автоматическими сертификатами, systemd-юниты, регулярные бэкапы базы",
+      en: "Deployed on an own server: a web server with automatic certificates, systemd units and scheduled database backups",
     },
   ],
   highlight: {
-    ru: "Единственный чисто веб-кейс здесь и единственный, где я отвечаю не только за код, но и за онлайн-направление бизнеса целиком: сайт, поисковый трафик, автоматизация заявок. Плюс собственная эксплуатация — деплой, сертификаты и бэкапы делаю сам.",
-    en: "The only pure web case here, and the only one where I own not just the code but the whole online side of the business: the site, search traffic and order automation. Plus operations — deployment, certificates and backups are mine.",
+    ru: "Здесь я отвечаю не за код, а за результат: сайт, поисковый трафик, скорость реакции на заявку и бесперебойную работу. Деплой, сертификаты и бэкапы — тоже моя зона, отдельного администратора заказчик не держит.",
+    en: "Here I answer for the outcome, not the code: the site, search traffic, response time to an order and uninterrupted operation. Deployment, certificates and backups are mine too — the client keeps no separate administrator.",
   },
   stack: ["Next.js", "React", "TypeScript", "Tailwind", "Payload CMS", "PostgreSQL", "Caddy"],
   integrations: ["Telegram Bot API", "WhatsApp"],

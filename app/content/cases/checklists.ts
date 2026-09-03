@@ -14,8 +14,8 @@ export const checklists: CaseStudy = {
     en: "The procedure stops being paper: the company sees that a step was actually done, with a photo and a timestamp. That is no longer an instruction but evidence.",
   },
   role: {
-    ru: "Мобильное приложение поверх API заказчика: работа с чужим контрактом данных, видео-гайды, ассистент по регламенту.",
-    en: "The mobile app on top of the client's API: working against someone else's data contract, video guides and the procedure assistant.",
+    ru: "Мобильное приложение поверх API заказчика: интеграция по его контракту данных, видео-гайды, ассистент по регламенту.",
+    en: "The mobile app on top of the client's API: integration against their data contract, video guides and the procedure assistant.",
   },
   problem: {
     ru: "Сотруднику на месте нужно выполнить регламент и доказать, что он его выполнил. Бумажные инструкции этого не дают, а бэкенд у заказчика уже был свой — переписывать его никто не собирался.",
@@ -40,8 +40,8 @@ export const checklists: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Кейс про работу в чужой инфраструктуре: бэкенд не мой, контракт API диктует заказчик, а качество клиента — моя ответственность. Это ровно тот формат, в котором чаще всего нужен подрядчик: усилить существующую систему, а не строить новую с нуля.",
-    en: "A case about working inside someone else's infrastructure: the backend is not mine, the API contract is the client's, and the quality of the client app is my responsibility. This is exactly the format contractors are usually needed for — strengthening an existing system rather than building a new one.",
+    ru: "Кейс про встраивание в существующую инфраструктуру: бэкенд и контракт API на стороне заказчика, клиентская часть целиком на мне. Именно так чаще всего и нужно: усилить работающую систему, не останавливая её и не строя новую с нуля.",
+    en: "A case about plugging into an existing infrastructure: the backend and API contract sit on the client's side, the client app is entirely mine. This is how it is most often needed: strengthen a working system without stopping it and without building a new one from scratch.",
   },
   stack: ["Flutter", "FlutterFlow", "Django REST", "JWT"],
   integrations: ["Sentry"],

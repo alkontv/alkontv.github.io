@@ -14,8 +14,8 @@ export const familyNetwork: CaseStudy = {
     en: "A social network you cannot mistake for another: a map of kinship instead of a feed. That is what makes people bring their relatives in rather than scroll strangers' posts.",
   },
   role: {
-    ru: "Приложение и веб на общей кодовой базе, собственная графическая механика орбит, серверная часть на облачных функциях.",
-    en: "App and web from one codebase, a custom orbital graphics mechanic, and the server side on cloud functions.",
+    ru: "Приложение и веб на общей кодовой базе, графическая механика орбит, написанная с нуля, серверная часть на облачных функциях.",
+    en: "App and web from one codebase, the orbital graphics mechanic written from scratch, and the server side on cloud functions.",
   },
   problem: {
     ru: "Заказчик хотел не очередное семейное древо списком, а метафору: семья как планетарная система, где пользователь в центре, а родня расходится по орбитам.",
@@ -40,8 +40,8 @@ export const familyNetwork: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Своя графическая механика внутри проекта на конструкторе — редкий случай: орбиты считаются и рисуются поверх сгенерированного интерфейса. Плюс деликатная предметная область, где приватность не фича, а требование.",
-    en: "A custom graphics mechanic inside a builder-based project — orbits are computed and drawn over the generated UI. Plus a delicate subject area where privacy is a requirement, not a feature.",
+    ru: "Орбиты родства считаются и отрисовываются кодом, написанным с нуля: готового компонента для такого не существует. Плюс деликатная предметная область, где приватность — не функция, а условие, и память об ушедших закрыта паролем. 39 тыс. строк, 199 файлов.",
+    en: "Kinship orbits are computed and drawn by code written from scratch: no off-the-shelf component does this. Plus a delicate subject area where privacy is a condition rather than a feature, and the memory of the departed sits behind a password. 39k lines, 199 files.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions"],
   integrations: [],

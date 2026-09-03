@@ -14,8 +14,8 @@ export const meditation: CaseStudy = {
     en: "A product you listen to rather than look at: the practice keeps going with the screen off, so the subscription no longer depends on holding the phone.",
   },
   role: {
-    ru: "Приложение целиком, включая аудиодвижок, дописанный руками поверх сгенерированного кода, и подписки.",
-    en: "The whole app, including the audio engine hand-written on top of generated code, and the subscriptions.",
+    ru: "Приложение целиком: аудиодвижок с фоновым воспроизведением, курсы и контент, подписки.",
+    en: "The whole app: the audio engine with background playback, courses and content, subscriptions.",
   },
   problem: {
     ru: "Контентному проекту про тело, разум и душу нужно было приложение, где практику можно слушать с выключенным экраном, а полный доступ открывается по подписке.",
@@ -40,8 +40,8 @@ export const meditation: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Аудио-продукт нельзя собрать одним конструктором: плеер, аудио-сессии и фоновое воспроизведение дописаны руками поверх сгенерированного кода. Около 51 тыс. строк, 157 файлов, версия 1.0.0+37 — релизных итераций было много.",
-    en: "An audio product cannot be assembled from a builder alone: the player, audio sessions and background playback were written by hand on top of generated code. Around 51k lines, 157 files, version 1.0.0+37 — many release iterations.",
+    ru: "Аудио — та часть, которую не закрыть готовыми компонентами: плеер, аудио-сессии, управление с заблокированного экрана и фоновое воспроизведение написаны под задачу и ведут себя одинаково на iOS и Android. 51 тыс. строк, 157 файлов, десятки релизных сборок.",
+    en: "Audio is the part no ready-made component covers: the player, audio sessions, lock-screen controls and background playback were written for this task and behave the same on iOS and Android. 51k lines, 157 files, dozens of release builds.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "just_audio", "Rive", "Lottie"],
   integrations: ["RevenueCat"],

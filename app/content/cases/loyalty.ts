@@ -6,8 +6,8 @@ export const loyalty: CaseStudy = {
   formats: ["mobile", "backend"],
   name: { ru: "Лояльность пекарни", en: "Bakery Loyalty" },
   tagline: {
-    ru: "Тонкий клиент с персональным QR поверх кассовой системы заведения",
-    en: "A thin client with a personal QR code on top of the venue point-of-sale system",
+    ru: "Приложение лояльности с персональным QR-кодом, встроенное в кассовую систему сети",
+    en: "A loyalty app with a personal QR code, built into the chain's point-of-sale system",
   },
   impact: {
     ru: "Программа лояльности, которая не мешает кассе: сеть считает баллы там, где уже считает чеки, а приложение остаётся витриной. Такую можно раскатывать на новые точки, ничего не переписывая.",
@@ -40,8 +40,8 @@ export const loyalty: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Разделение ответственности сделано осознанно: движок лояльности вынесен на облачный runtime и интегрирован с кассовой системой через OAuth2 и вебхуки, а мобильное приложение осталось тонким клиентом. Плюс работа под ближневосточный рынок с арабской локализацией.",
-    en: "The separation of concerns was deliberate: the loyalty engine sits on a cloud runtime and integrates with the point-of-sale system over OAuth2 and webhooks, while the mobile app stays a thin client. Plus delivery for a Middle Eastern market with Arabic localisation.",
+    ru: "Архитектура выбрана под рост сети: движок лояльности вынесен в облачный сервис и связан с кассой через OAuth2 и вебхуки, а приложение остаётся лёгким клиентом — новая точка подключается без переписывания. Плюс выход на ближневосточный рынок: арабский интерфейс с письмом справа налево.",
+    en: "The architecture is chosen for a growing chain: the loyalty engine sits in a cloud service tied to the till over OAuth2 and webhooks, while the app stays a light client — a new venue plugs in without a rewrite. Plus a Middle Eastern launch: an Arabic interface with right-to-left script.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "Google Cloud Run", "Node.js"],
   integrations: ["Foodics", "OAuth2", "FCM"],

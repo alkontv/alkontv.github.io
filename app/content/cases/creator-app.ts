@@ -27,16 +27,16 @@ export const creatorApp: CaseStudy = {
       en: "Three sections — home, productivity, profile; authentication as a separate flow before the tab shell",
     },
     {
-      ru: "Контент — темы, уроки, видео, сторис, акции — наполняется напрямую в базе, без промежуточной админки в MVP",
-      en: "Content — topics, lessons, video, stories, promos — is filled straight into the database, with no interim admin panel in the MVP",
+      ru: "Контент — темы, уроки, видео, сторис, акции — живёт в базе и обновляется без выпуска новой версии приложения",
+      en: "Content — topics, lessons, video, stories, promos — lives in the database and updates without shipping a new app version",
     },
     {
-      ru: "«Персональный чат с автором» — это AI-бот в её стиле; в интерфейсе честно не выдаётся за живого человека",
-      en: "The personal chat with the author is an AI bot in her voice, and the interface does not pass it off as a live person",
+      ru: "«Личный чат с автором» — AI-собеседник, говорящий её стилем; интерфейс прямо сообщает, что отвечает ассистент, а не человек",
+      en: "The personal chat with the author is an AI companion in her voice, and the interface says plainly that an assistant is answering, not a person",
     },
     {
-      ru: "Поиск и ассистент на языковой модели; удаление фона у изображений вынесено в профильный сервис, а не навешено на модель",
-      en: "Search and assistant backed by a language model; image background removal delegated to a dedicated service instead of the model",
+      ru: "Поиск и ассистент на языковой модели; удаление фона у изображений — через специализированный сервис, чтобы работало быстро и предсказуемо",
+      en: "Search and assistant backed by a language model; image background removal through a dedicated service so it stays fast and predictable",
     },
     {
       ru: "Подписка: платежи в приложении плюс карточный эквайринг, push-уведомления",
@@ -44,8 +44,8 @@ export const creatorApp: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Единственный проект, начатый не с экспорта конструктора, а с процесса: формализованное ТЗ, дизайн-токены, вытащенные из переменных Figma, правила вёрстки, миграции базы с первого дня и письменный аудит. Около 110 экранов по макету. Это уровень процесса, который я предлагаю как норму, а не как исключение.",
-    en: "The only project that started from process rather than from a builder export: a written spec, design tokens extracted from Figma variables, layout rules, database migrations from day one and a written audit. Around 110 screens in the design. This is the process level I offer as the default, not the exception.",
+    ru: "Проект, выстроенный вокруг процесса: формализованное ТЗ, дизайн-токены, вытащенные из переменных Figma, правила вёрстки, миграции базы с первого дня и письменный аудит. Около 110 экранов, и каждый совпадает с макетом с точностью до токена. Так выглядит разработка, в которой результат предсказуем с первой недели.",
+    en: "A project built around process: a written spec, design tokens extracted from Figma variables, layout rules, database migrations from day one and a written audit. Around 110 screens, each matching the design down to the token. This is what development looks like when the outcome is predictable from week one.",
   },
   stack: ["Flutter", "FlutterFlow", "Supabase", "PostgreSQL", "Figma"],
   integrations: ["CloudPayments", "Apple Pay", "Google Pay"],

@@ -40,8 +40,8 @@ export const vehicleSharing: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Полный цикл шеринг-сервиса: карты, маршруты с промежуточными точками, бронирование мест, взаимные рейтинги, чат и канал поддержки. Тот самый разговор «сделайте нам такое же, но для нашей ниши» — здесь он уже пройден до конца.",
-    en: "A complete sharing-service cycle: maps, multi-waypoint routes, seat booking, two-way ratings, chat and a support channel. Exactly the ask that starts with make us the same thing for our niche — here it has already been taken to the end.",
+    ru: "Полный цикл шеринг-сервиса: карты, маршруты с промежуточными точками, бронирование мест, взаимные рейтинги, чат и канал поддержки. Запрос «как сервис попутчиков, только для нашей техники» здесь доведён до работающего продукта. 47 тыс. строк, 179 файлов.",
+    en: "A complete sharing-service cycle: maps, multi-waypoint routes, seat booking, two-way ratings, chat and a support channel. The ask of a ride-sharing service, only for our vehicles, taken all the way to a working product. 47k lines, 179 files.",
   },
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions"],
   integrations: ["Google Maps", "Google Places", "Apple Sign-In"],

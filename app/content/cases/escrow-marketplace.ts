@@ -6,16 +6,16 @@ export const escrowMarketplace: CaseStudy = {
   formats: ["mobile", "web", "admin", "payments"],
   name: { ru: "Эскроу-маркетплейс", en: "Escrow Marketplace" },
   tagline: {
-    ru: "Деньги депонируются площадкой и уходят исполнителю только после работы",
-    en: "Money is held by the platform and released to the worker only after the job",
+    ru: "Площадка держит оплату и переводит её исполнителю только после принятой работы",
+    en: "The platform holds the payment and releases it to the worker only after the job is accepted",
   },
   impact: {
     ru: "Эскроу снимает единственное, что мешает двусторонней площадке взлететь, — недоверие. Пока деньги не держит платформа, заказчик не платит вперёд, а исполнитель не выходит на работу.",
     en: "Escrow removes the one thing that keeps a two-sided platform from taking off — distrust. Until the platform holds the money, the client will not pay upfront and the worker will not show up.",
   },
   role: {
-    ru: "Мобильное приложение, веб-версия, админка, платёжный контур с холдированием и выплатами, нативные обвязки под iOS и Android.",
-    en: "Mobile app, web build, admin panel, the payment flow with holds and payouts, plus native bridges for iOS and Android.",
+    ru: "Мобильное приложение, веб-версия, админка, платёжный контур с холдированием и выплатами, нативные модули под iOS и Android.",
+    en: "Mobile app, web build, admin panel, the payment flow with holds and payouts, plus native modules for iOS and Android.",
   },
   problem: {
     ru: "На площадке подработок обе стороны боятся друг друга: заказчик — что заплатит и не получит работу, исполнитель — что сделает и не получит денег. Снять этот страх можно только деньгами, которые держит платформа.",
@@ -39,13 +39,13 @@ export const escrowMarketplace: CaseStudy = {
       en: "The product ships in three parts: a mobile app, a web build as a PWA, and an admin panel",
     },
     {
-      ru: "Ручные обвязки на Kotlin и Swift там, где кроссплатформенного решения не хватало",
-      en: "Hand-written Kotlin and Swift bridges where the cross-platform layer fell short",
+      ru: "Нативные модули на Kotlin и Swift там, где кроссплатформенный слой не дотягивал",
+      en: "Native Kotlin and Swift modules where the cross-platform layer fell short",
     },
   ],
   highlight: {
-    ru: "Одна из самых взрослых денежных логик в списке: холдирование, выплата исполнителю и комиссия сделаны на реальном эквайринге отдельными облачными функциями. Самый объёмный репозиторий портфолио — около 110,8 тыс. строк, 347 файлов, порядка 30 маршрутов. В проде на iOS, Android и PWA.",
-    en: "One of the most grown-up money logics in the list: holding, payout and commission built on real acquiring through dedicated cloud functions. The largest repository in this portfolio — around 110.8k lines, 347 files, some 30 routes. Live in production on iOS, Android and PWA.",
+    ru: "Полноценный эскроу на реальном эквайринге: холдирование, выплата исполнителю и комиссия площадки выполняются отдельными облачными функциями, каждая операция изолирована и прослеживается. 110 тыс. строк, 347 файлов, около 30 маршрутов — и всё это в продакшене на iOS, Android и в вебе как PWA.",
+    en: "Full escrow on real acquiring: holding, worker payout and platform commission run as separate cloud functions, each operation isolated and traceable. 110k lines, 347 files, some 30 routes — all of it live on iOS, Android and on the web as a PWA.",
   },
   stack: ["Flutter", "FlutterFlow", "Kotlin", "Swift", "Firebase", "Cloud Functions"],
   integrations: ["Google Maps", "FCM", "Remote Config"],

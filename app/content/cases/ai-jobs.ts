@@ -6,8 +6,8 @@ export const aiJobs: CaseStudy = {
   formats: ["mobile", "ai", "backend"],
   name: { ru: "AI-подбор работы", en: "AI Job Matching" },
   tagline: {
-    ru: "Резюме и вакансия собираются в диалоге, а подбор идёт векторным поиском",
-    en: "Resumes and vacancies are assembled in a dialogue, and matching runs on vector search",
+    ru: "Резюме и вакансия собираются в разговоре, а подбор ищет по смыслу, а не по словам",
+    en: "Resumes and vacancies are assembled in a conversation, and matching searches by meaning rather than words",
   },
   impact: {
     ru: "Человек рассказывает о себе словами — и доходит до конца, вместо того чтобы бросить анкету на пятом поле. Подбор при этом становится точнее: он ищет по смыслу, а не по совпадению слов.",
@@ -44,8 +44,8 @@ export const aiJobs: CaseStudy = {
     },
   ],
   highlight: {
-    ru: "Лучший в списке пример «AI как способ ввода данных»: на входе разговор, на выходе структурированная запись в базе, по которой работает векторный поиск. Базовый сценарий замкнут сквозно — регистрация, резюме, подбор, чат, отзыв.",
-    en: "The best example here of AI as an input method: a conversation goes in, a structured database record comes out, and vector search runs on top of it. The core flow is closed end to end — sign-up, resume, matching, chat, review.",
+    ru: "AI здесь не чат-бот для галочки, а способ ввода данных: на входе разговор, на выходе структурированная запись в базе, по которой работает векторный поиск. Сценарий замкнут сквозно — регистрация, резюме, подбор, чат, отзыв — и работает на трёх языках. 51 тыс. строк, 185 файлов.",
+    en: "AI here is not a token chatbot but an input method: a conversation goes in, a structured database record comes out, and vector search runs on top of it. The flow is closed end to end — sign-up, resume, matching, chat, review — and works in three languages. 51k lines, 185 files.",
   },
   stack: ["Flutter", "FlutterFlow", "Supabase", "PostgreSQL"],
   integrations: [],
