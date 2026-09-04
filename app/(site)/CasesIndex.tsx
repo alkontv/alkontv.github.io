@@ -66,7 +66,7 @@ const CasesIndex = () => {
       <div className="hairline" />
 
       {/* ── Кейсы ──────────────────────────────────────────── */}
-      <section className="py-14">
+      <section id="cases" className="scroll-mt-24 py-14">
         <div className="mb-10 flex flex-wrap gap-2">
           <button
             type="button"
@@ -93,13 +93,15 @@ const CasesIndex = () => {
           {visible.map((item, i) => (
             <Link key={item.id} href={`/cases/${item.id}`} className="card-link group block">
               <article className="card flex h-full flex-col p-7 sm:p-8">
-                {/* кадрируем по центру: сверху у мокапа пустое поле,
-                    интересны сами экраны */}
+                {/* Телефоны «вырастают» из шапки карточки и уходят за нижний
+                    край. Мокап прозрачный и в кадре 4:3, поля вокруг телефонов
+                    пустые — поэтому картинка берётся шире карточки и сдвигается
+                    вверх, чтобы поле сверху ушло, а экраны заняли всю шапку. */}
                 {item.cover && (
-                  <div className="relative -mx-7 -mt-7 mb-6 h-48 overflow-hidden sm:-mx-8 sm:-mt-8">
+                  <div className="relative -mx-7 -mt-7 mb-6 h-56 overflow-hidden sm:-mx-8 sm:-mt-8">
                     <div
                       aria-hidden
-                      className="absolute top-1/2 left-1/2 h-48 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-2xl"
+                      className="pointer-events-none absolute top-1/2 left-1/2 h-56 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-accent/[0.12] blur-2xl"
                     />
                     {/* eslint-disable-next-line @next/next/no-img-element -- статический экспорт без оптимизатора */}
                     <img
@@ -107,7 +109,11 @@ const CasesIndex = () => {
                       alt=""
                       loading="lazy"
                       decoding="async"
-                      className="relative h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="absolute top-0 left-1/2 w-[150%] max-w-none -translate-x-1/2 -translate-y-[6%] transition-transform duration-500 group-hover:-translate-y-[9%]"
+                    />
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-surface via-surface/70 to-transparent"
                     />
                   </div>
                 )}

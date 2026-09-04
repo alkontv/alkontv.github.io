@@ -64,25 +64,25 @@ const CaseDetail = ({ id }: { id: string }) => {
         </p>
       </header>
 
-      {/* Экраны идут до текста: их смотрят раньше, чем читают. */}
+      {/* Экраны идут до текста: их смотрят раньше, чем читают. Рамки нет
+          намеренно — мокап уже со своей тенью, коробка вокруг него читалась
+          бы как вставленная картинка, а не как сам продукт. */}
       {item.cover && (
-        <div className="rise mb-10 overflow-hidden rounded-2xl bg-surface">
-          {/* высоту задаём картинке, а не рамке: мокап портретный и в широкой
-              пропорции он терялся бы посреди пустого поля */}
-          <div className="relative flex items-center justify-center px-6 py-10 sm:px-10">
-            <div
-              aria-hidden
-              className="absolute top-1/2 left-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element -- статический экспорт без оптимизатора */}
-            <img
-              src={item.cover}
-              alt={tx(item.name, lang)}
-              loading="lazy"
-              decoding="async"
-              className="relative max-h-[540px] w-auto max-w-full object-contain"
-            />
-          </div>
+        <div className="rise relative mb-14 flex justify-center">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-1/2 left-1/2 h-[90%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-accent/[0.09] blur-3xl"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- статический экспорт без оптимизатора */}
+          <img
+            src={item.cover}
+            alt={tx(item.name, lang)}
+            /* главный элемент страницы и он выше сгиба: грузим сразу */
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="relative w-full max-w-[860px]"
+          />
         </div>
       )}
 

@@ -3,49 +3,49 @@ import type { CaseStudy } from "../types";
 export const vpnApp: CaseStudy = {
   id: "vpn-app",
   industry: { ru: "Телеком и приватность", en: "Telecom and privacy" },
-  formats: ["mobile", "payments"],
-  name: { ru: "VPN-приложение", en: "VPN App" },
+  formats: ["mobile", "backend", "payments"],
+  name: { ru: "Мобильный VPN", en: "Mobile VPN" },
   tagline: {
-    ru: "Подключение одной кнопкой, выбор страны и мессенджер со сквозным шифрованием",
-    en: "One-tap connection, a country picker and an end-to-end encrypted messenger",
+    ru: "Своя сеть нод, свой бэкенд и приложение со встроенным шифрованным мессенджером",
+    en: "Its own node network, its own backend and an app with a built-in encrypted messenger",
   },
   impact: {
-    ru: "Подписка перестала жить только в мессенджере: у сервиса появился клиент в сторе, куда человек заходит каждый день. Это и канал продаж, и удержание — из приложения нет повода выходить.",
-    en: "The subscription stopped living inside a messenger alone: the service got a store client people open every day. That is both a sales channel and retention — there is no reason to leave the app.",
+    ru: "Продукт ни от кого не зависит: трафик идёт через свои ноды, подписка продаётся в сторе, переписка остаётся внутри приложения. Нет посредника, который может отключить, и нет чужой площадки, которая заберёт аудиторию.",
+    en: "The product depends on nobody: traffic goes through its own nodes, the subscription sells in the store, conversations stay inside the app. No intermediary that can switch it off, no third-party platform that takes the audience.",
   },
   role: {
-    ru: "Мобильное приложение целиком: интерфейс, работа с профилями подключения, встроенный мессенджер, подписка и выпуск в стор.",
-    en: "The whole mobile app: interface, connection profiles, the built-in messenger, subscription and store release.",
+    ru: "Всё: сеть нод, серверная часть с выдачей доступа и подписками, мобильное приложение и встроенный мессенджер.",
+    en: "Everything: the node network, the server side with provisioning and subscriptions, the mobile app and the built-in messenger.",
   },
   problem: {
-    ru: "У подписочного VPN-сервиса продажи и выдача доступа уже работали, но клиента не было — человек копировал ссылку в стороннее приложение. Нужен был свой, где подключение занимает одно касание.",
-    en: "The subscription VPN service already sold plans and provisioned access, but had no client of its own — people copied a link into a third-party app. It needed one where connecting takes a single tap.",
+    ru: "Нужен был самостоятельный VPN, а не надстройка над чужим сервисом: собственная инфраструктура, свой клиент в сторе и переписка, которая не уходит на сторону.",
+    en: "The ask was a VPN of its own rather than a layer over someone else's service: own infrastructure, an own store client, and messaging that does not leave the product.",
   },
   solution: [
+    {
+      ru: "Своя сеть нод: доступ выдаётся автоматически, сервер выбирается из каталога по странам",
+      en: "An own node network: access is provisioned automatically, the server is picked from a country catalogue",
+    },
     {
       ru: "Главный экран — одна кнопка подключения, таймер сессии и текущая локация",
       en: "The home screen is one connect button, a session timer and the current location",
     },
     {
-      ru: "Каталог серверов по странам с отметкой скорости и избранным",
-      en: "A server catalogue by country with speed marks and favourites",
+      ru: "Каталог серверов с отметкой скорости и избранным",
+      en: "A server catalogue with speed marks and favourites",
     },
     {
       ru: "Встроенный мессенджер со сквозным шифрованием: текст, медиа, вложения",
       en: "A built-in end-to-end encrypted messenger: text, media and attachments",
     },
     {
-      ru: "Подписка оформляется внутри приложения, доступ открывается сразу после оплаты",
+      ru: "Подписка оформляется в приложении, доступ открывается сразу после оплаты",
       en: "The subscription is bought inside the app and access opens right after payment",
-    },
-    {
-      ru: "Тёмная тема, собранная под долгие сессии и слабый свет",
-      en: "A dark theme built for long sessions and low light",
     },
   ],
   highlight: {
-    ru: "Клиент к инфраструктуре, которую я построил сам: приложение работает поверх тех же серверов и биллинга, что выдают доступ, продлевают и отключают подписку. Мессенджер со сквозным шифрованием встроен в клиент, а не подключён сбоку отдельным продуктом.",
-    en: "A client for infrastructure I built myself: the app runs on the same servers and billing that provision, renew and cut off the subscription. The end-to-end encrypted messenger is part of the client, not a separate product bolted on.",
+    ru: "Продукт целиком под одной рукой: ноды, серверная часть с выдачей доступа и подписками, приложение и мессенджер сделаны под одну задачу и стыкуются без прослоек. Сквозное шифрование переписки встроено в клиент, а не подключено сбоку отдельным сервисом.",
+    en: "A whole product in one pair of hands: nodes, the server side with provisioning and subscriptions, the app and the messenger were built for one job and fit together without glue layers. End-to-end encryption is part of the client, not a separate service bolted on.",
   },
   cover: "/covers/vpn-app.webp",
   stack: ["Flutter", "Dart"],
