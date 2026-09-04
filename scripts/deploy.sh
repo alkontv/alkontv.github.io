@@ -21,7 +21,9 @@ echo "==> Сборка статики для https://$SITE_HOST"
 NEXT_PUBLIC_SITE_URL="https://$SITE_HOST" npm run build
 
 test -f out/index.html || { echo "out/index.html не собрался"; exit 1; }
-test -f out/cases.html || { echo "out/cases.html не собрался"; exit 1; }
+# отдельной страницы /cases больше нет — витрина на главной,
+# кейсы лежат по адресам /cases/<id>
+test -f out/cases/safety.html || { echo "страницы кейсов не собрались"; exit 1; }
 
 echo "==> Заливка в $PORTFOLIO_SSH:$REMOTE_PATH"
 # --delete убирает с сервера файлы, которых больше нет в сборке:
@@ -29,7 +31,7 @@ echo "==> Заливка в $PORTFOLIO_SSH:$REMOTE_PATH"
 rsync -az --delete --checksum out/ "$PORTFOLIO_SSH:$REMOTE_PATH/"
 
 echo "==> Проверка после выкладки"
-for path in / /cases /resume; do
+for path in / /cases/safety /resume; do
 	code=$(curl -s -o /dev/null -m 15 -w '%{http_code}' "https://$SITE_HOST$path" || echo 000)
 	printf '  %-10s %s\n' "$path" "$code"
 	[ "$code" = "200" ] || { echo "  ^ ожидался 200"; exit 1; }
