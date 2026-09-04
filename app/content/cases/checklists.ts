@@ -43,6 +43,7 @@ export const checklists: CaseStudy = {
     ru: "Кейс про встраивание в существующую инфраструктуру: бэкенд и контракт API на стороне заказчика, клиентская часть целиком на мне. Именно так чаще всего и нужно: усилить работающую систему, не останавливая её и не строя новую с нуля.",
     en: "A case about plugging into an existing infrastructure: the backend and API contract sit on the client's side, the client app is entirely mine. This is how it is most often needed: strengthen a working system without stopping it and without building a new one from scratch.",
   },
+  cover: "/covers/checklists.webp",
   stack: ["Flutter", "FlutterFlow", "Django REST", "JWT"],
   integrations: ["Sentry"],
   featured: false,

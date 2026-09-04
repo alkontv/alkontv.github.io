@@ -47,6 +47,7 @@ export const creatorApp: CaseStudy = {
     ru: "Проект, выстроенный вокруг процесса: формализованное ТЗ, дизайн-токены, вытащенные из переменных Figma, правила вёрстки, миграции базы с первого дня и письменный аудит. Около 110 экранов, и каждый совпадает с макетом с точностью до токена. Так выглядит разработка, в которой результат предсказуем с первой недели.",
     en: "A project built around process: a written spec, design tokens extracted from Figma variables, layout rules, database migrations from day one and a written audit. Around 110 screens, each matching the design down to the token. This is what development looks like when the outcome is predictable from week one.",
   },
+  cover: "/covers/creator-app.webp",
   stack: ["Flutter", "FlutterFlow", "Supabase", "PostgreSQL", "Figma"],
   integrations: ["CloudPayments", "Apple Pay", "Google Pay"],
   featured: true,

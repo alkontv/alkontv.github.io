@@ -6,8 +6,8 @@ import { CASES, FEATURED_CASES, getCase } from "../cases";
 const ASCII_SAFE = /^[A-Za-z0-9 \-&.,/()]+$/;
 
 describe("каталог кейсов", () => {
-  it("содержит ровно 13 кейсов", () => {
-    expect(CASES).toHaveLength(13);
+  it("содержит ровно 14 кейсов", () => {
+    expect(CASES).toHaveLength(14);
   });
 
   it("идентификаторы уникальны", () => {
@@ -113,6 +113,21 @@ describe("гонорары", () => {
     expect(haystack).not.toContain("budget");
     CASES.forEach((c) => {
       expect(c as unknown as Record<string, unknown>).not.toHaveProperty("budget");
+    });
+  });
+});
+
+describe("обложки", () => {
+  it("указывают на webp в /covers", () => {
+    CASES.filter((c) => c.cover).forEach((c) => {
+      expect(c.cover).toMatch(/^\/covers\/[a-z0-9-]+\.webp$/);
+    });
+  });
+
+  it("имя файла обложки совпадает с идентификатором кейса", () => {
+    // иначе при переименовании кейса картинка молча отвяжется
+    CASES.filter((c) => c.cover).forEach((c) => {
+      expect(c.cover).toBe(`/covers/${c.id}.webp`);
     });
   });
 });

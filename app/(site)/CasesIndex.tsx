@@ -93,6 +93,25 @@ const CasesIndex = () => {
           {visible.map((item, i) => (
             <Link key={item.id} href={`/cases/${item.id}`} className="card-link group block">
               <article className="card flex h-full flex-col p-7 sm:p-8">
+                {/* кадрируем по центру: сверху у мокапа пустое поле,
+                    интересны сами экраны */}
+                {item.cover && (
+                  <div className="relative -mx-7 -mt-7 mb-6 h-48 overflow-hidden sm:-mx-8 sm:-mt-8">
+                    <div
+                      aria-hidden
+                      className="absolute top-1/2 left-1/2 h-48 w-4/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-2xl"
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element -- статический экспорт без оптимизатора */}
+                    <img
+                      src={item.cover}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="relative h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                )}
+
                 <div className="mb-5 flex items-baseline justify-between gap-4">
                   <span className="text-[0.7rem] uppercase tracking-[0.16em] text-accent">
                     {tx(item.industry, lang)}

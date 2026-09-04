@@ -47,6 +47,7 @@ export const safety: CaseStudy = {
     ru: "Инфраструктура развёрнута на своём сервере, а не арендована у облака: PostgreSQL с триггерами и функциями, авторизация с хуком на SMS-шлюз, хранилище за подписанными ссылками, edge-функции на Deno, свой домен. Каждый узел собран под сценарий, где отказ недопустим, — поэтому у сигнала три независимых пути.",
     en: "The infrastructure runs on an own server instead of a rented cloud: PostgreSQL with triggers and functions, auth with an SMS-gateway hook, storage behind signed URLs, Deno edge functions, own domain. Every node was built for a scenario where failure is not an option — which is why the signal has three independent paths.",
   },
+  cover: "/covers/safety.webp",
   stack: ["Flutter", "Supabase (self-hosted)", "PostgreSQL", "Deno", "TypeScript"],
   integrations: ["CloudPayments", "SMSC.ru"],
   diagram: "sos",

@@ -29,6 +29,8 @@ export interface CaseStudy {
   solution: LocalizedText[];
   /** Инженерная соль: почему кейс стоит показывать. */
   highlight: LocalizedText;
+  /** Мокап с экранами: прозрачный webp в /public/covers. Есть не у всех кейсов. */
+  cover?: string;
   stack: string[];
   integrations: string[];
   scale?: { loc?: number; files?: number };

@@ -47,6 +47,7 @@ export const aiJobs: CaseStudy = {
     ru: "AI здесь не чат-бот для галочки, а способ ввода данных: на входе разговор, на выходе структурированная запись в базе, по которой работает векторный поиск. Сценарий замкнут сквозно — регистрация, резюме, подбор, чат, отзыв — и работает на трёх языках. 51 тыс. строк, 185 файлов.",
     en: "AI here is not a token chatbot but an input method: a conversation goes in, a structured database record comes out, and vector search runs on top of it. The flow is closed end to end — sign-up, resume, matching, chat, review — and works in three languages. 51k lines, 185 files.",
   },
+  cover: "/covers/ai-jobs.webp",
   stack: ["Flutter", "FlutterFlow", "Supabase", "PostgreSQL"],
   integrations: [],
   scale: { loc: 51100, files: 185 },

@@ -43,6 +43,7 @@ export const loyalty: CaseStudy = {
     ru: "Архитектура выбрана под рост сети: движок лояльности вынесен в облачный сервис и связан с кассой через OAuth2 и вебхуки, а приложение остаётся лёгким клиентом — новая точка подключается без переписывания. Плюс выход на ближневосточный рынок: арабский интерфейс с письмом справа налево.",
     en: "The architecture is chosen for a growing chain: the loyalty engine sits in a cloud service tied to the till over OAuth2 and webhooks, while the app stays a light client — a new venue plugs in without a rewrite. Plus a Middle Eastern launch: an Arabic interface with right-to-left script.",
   },
+  cover: "/covers/loyalty.webp",
   stack: ["Flutter", "FlutterFlow", "Firebase", "Google Cloud Run", "Node.js"],
   integrations: ["Foodics", "OAuth2", "FCM"],
   scale: { loc: 17700, files: 116 },

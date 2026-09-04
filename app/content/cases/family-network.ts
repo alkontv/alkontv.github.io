@@ -43,6 +43,7 @@ export const familyNetwork: CaseStudy = {
     ru: "Орбиты родства считаются и отрисовываются кодом, написанным с нуля: готового компонента для такого не существует. Плюс деликатная предметная область, где приватность — не функция, а условие, и память об ушедших закрыта паролем. 39 тыс. строк, 199 файлов.",
     en: "Kinship orbits are computed and drawn by code written from scratch: no off-the-shelf component does this. Plus a delicate subject area where privacy is a condition rather than a feature, and the memory of the departed sits behind a password. 39k lines, 199 files.",
   },
+  cover: "/covers/family-network.webp",
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions"],
   integrations: [],
   scale: { loc: 39400, files: 199 },

@@ -64,6 +64,28 @@ const CaseDetail = ({ id }: { id: string }) => {
         </p>
       </header>
 
+      {/* Экраны идут до текста: их смотрят раньше, чем читают. */}
+      {item.cover && (
+        <div className="rise mb-10 overflow-hidden rounded-2xl bg-surface">
+          {/* высоту задаём картинке, а не рамке: мокап портретный и в широкой
+              пропорции он терялся бы посреди пустого поля */}
+          <div className="relative flex items-center justify-center px-6 py-10 sm:px-10">
+            <div
+              aria-hidden
+              className="absolute top-1/2 left-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element -- статический экспорт без оптимизатора */}
+            <img
+              src={item.cover}
+              alt={tx(item.name, lang)}
+              loading="lazy"
+              decoding="async"
+              className="relative max-h-[540px] w-auto max-w-full object-contain"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Деловой смысл вперёд технических деталей — клиент читает сверху. */}
       <div className="card mb-4 p-7 sm:p-9">
         <h2 className="mb-3 text-[0.72rem] uppercase tracking-[0.18em] text-accent">

@@ -43,6 +43,7 @@ export const consultations: CaseStudy = {
     ru: "Расчёт слотов — та часть, где обычно ломаются маркетплейсы услуг: пересечения, длительности и перерывы считаются в одном месте, а не размазаны по экранам. Оплата и чат связаны вебхуком, так что ни одна сессия не теряется между «заплатил» и «написал». Проект развивается до сих пор.",
     en: "Slot computation is where service marketplaces usually break: overlaps, durations and gaps are handled in one place instead of being smeared across screens. Payment and chat are tied by a webhook, so no session gets lost between paid and messaged. The project is still growing.",
   },
+  cover: "/covers/consultations.webp",
   stack: ["Flutter", "FlutterFlow", "Firebase"],
   integrations: [],
   featured: false,

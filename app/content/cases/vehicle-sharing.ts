@@ -43,6 +43,7 @@ export const vehicleSharing: CaseStudy = {
     ru: "Полный цикл шеринг-сервиса: карты, маршруты с промежуточными точками, бронирование мест, взаимные рейтинги, чат и канал поддержки. Запрос «как сервис попутчиков, только для нашей техники» здесь доведён до работающего продукта. 47 тыс. строк, 179 файлов.",
     en: "A complete sharing-service cycle: maps, multi-waypoint routes, seat booking, two-way ratings, chat and a support channel. The ask of a ride-sharing service, only for our vehicles, taken all the way to a working product. 47k lines, 179 files.",
   },
+  cover: "/covers/vehicle-sharing.webp",
   stack: ["Flutter", "FlutterFlow", "Firebase", "Cloud Functions"],
   integrations: ["Google Maps", "Google Places", "Apple Sign-In"],
   scale: { loc: 47000, files: 179 },

@@ -11,6 +11,7 @@ import { foodRescue } from "./food-rescue";
 import { escrowMarketplace } from "./escrow-marketplace";
 import { ecommerce } from "./ecommerce";
 import { vpnService } from "./vpn-service";
+import { vpnApp } from "./vpn-app";
 import { checklists } from "./checklists";
 import { aiJobs } from "./ai-jobs";
 
@@ -21,6 +22,7 @@ import { aiJobs } from "./ai-jobs";
 export const CASES: CaseStudy[] = [
   safety,
   vpnService,
+  vpnApp,
   escrowMarketplace,
   creatorApp,
   ecommerce,
